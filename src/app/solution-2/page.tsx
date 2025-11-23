@@ -16,7 +16,7 @@ export default function Solution1Page() {
         {/* Background Image */}
         <Image
           src="/solution-1-hero-355263.png"
-          alt="CCTV & Intelligent Surveillance Solutions"
+          alt="Network Infrastructure and Managed Services"
           fill
           priority
           className="object-cover"
@@ -33,15 +33,15 @@ export default function Solution1Page() {
         <div className="relative z-10 h-full">
           {/* Title - Position: left 142px, top 169px */}
           <div className="absolute" style={{ left: '142px', top: '169px' }}>
-            <h1 className="w-[722px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.32] text-white">
-              See Smarter. Secure Better. Act Faster.
+            <h1 className="w-[1172px] h-[197px] font-['TASA_Orbiter'] text-[62px] font-semibold leading-[1.32] text-white">
+            Empower Connectivity. Simplify Management. Accelerate Performance.
             </h1>
           </div>
 
           {/* Description - Position: left 142px, top 366px */}
           <div className="absolute" style={{ left: '142px', top: '366px' }}>
-            <p className="w-[812px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.44] text-white">
-              Protect people, assets, and infrastructure with Nexobots&apos; CCTV & Intelligent Surveillance Solutions.
+            <p className="w-[812px] h-[70px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.44] text-white">
+            Unlock business agility and reliability with Nexobots’ IT Network Infrastructure & Managed Services.
             </p>
           </div>
 
@@ -77,16 +77,16 @@ export default function Solution1Page() {
           {/* Main Heading - Position: left 166px, top 120px */}
           <div className="absolute" style={{ left: '166px', top: '120px' }}>
             <h2 className="w-[1108px] text-center font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.17] text-white">
-              Security today goes beyond visibility — it&apos;s about intelligence, responsiveness, and control.
+              In the digital-first era, a high-performing, secure, and agile network is essential for every enterprise.
               <br />
-              Enterprises need surveillance systems that not only record but also analyze, alert, and integrate seamlessly with broader security frameworks.
+              Yet, managing distributed systems, growing endpoints, and increasing data demands can quickly overwhelm internal IT teams.
             </h2>
           </div>
 
           {/* Subheading - Position: left 261px, top 239px */}
           <div className="absolute" style={{ left: '261px', top: '239px' }}>
             <p className="w-[918px] text-center font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.17] text-[#727272]">
-              Nexobots Technologies delivers CCTV & Intelligent Surveillance Solutions designed for modern enterprises, campuses, and industries. From IP-based cameras to AI-driven video analytics, we build scalable surveillance ecosystems that ensure proactive threat detection, real-time response, and complete situational awareness — across single or multi-site environments.
+            Nexobots Technologies delivers IT Network Infrastructure & Managed Services Solutions that combine robust network architecture with proactive management.We help organizations design, implement, and maintain intelligent, future-ready IT ecosystems — ensuring seamless connectivity, optimal uptime, and strategic scalability.            
             </p>
           </div>
 
@@ -148,26 +148,26 @@ export default function Solution1Page() {
         <div className="relative h-full w-full">
           {/* Main Heading - Position: left 119px, top 120px */}
           <div className="absolute" style={{ left: '119px', top: '120px' }}>
-            <h2 className="w-[973px] font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.4937] text-black">
-              Why Intelligent Surveillance Matters
+            <h2 className="w-[973px] h-[72px]font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.4937] text-black">
+              Why IT Network Infrastructure & Managed Services Matter
             </h2>
           </div>
 
           {/* Left Paragraph - Position: left 119px, top 241px */}
           <div className="absolute" style={{ left: '119px', top: '241px' }}>
-            <p className="w-[576px] font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
-              In a dynamic threat landscape, conventional CCTV systems are no longer enough.
+            <p className="w-[576px] h-[250px] mt-[30px] font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
+              Enterprises today depend on uninterrupted data flow, secure access, and predictable performance.
               <br />
-              Businesses need smart, connected, and data-driven surveillance networks that deliver actionable insights and enhance safety.
+              However, siloed infrastructure and reactive support models can limit operational efficiency and growth.
               <br />
-              Nexobots combines advanced imaging technology, AI analytics, and centralized monitoring to provide a complete surveillance solution.
+              Nexobots bridges this gap through an integrated network and management framework — built to enhance visibility, reduce downtime, and align IT performance with business outcomes.
             </p>
           </div>
 
           {/* Right Paragraph - Position: left 754px, top 241px */}
           <div className="absolute" style={{ left: '754px', top: '241px' }}>
-            <p className="w-[573px] font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
-              With Nexobots, you gain a trusted technology partner that helps you plan, deploy, and manage virtualized environments and cloud infrastructures efficiently. From workload migration to backup and DR orchestration, we ensure your IT environment runs smarter, faster, and safer.
+            <p className="w-[573px] h-[174px] mt-[30px] font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
+            Whether it’s network deployment, security integration, or 24/7 monitoring, our solutions ensure your IT foundation stays strong, scalable, and secure.
             </p>
           </div>
 
@@ -175,7 +175,7 @@ export default function Solution1Page() {
           <div className="absolute" style={{ left: '120px', top: '522px' }}>
             <Link
               href="#contact"
-              className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
+              className="inline-flex h-[45px] w-[155px] mt-[30px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
             </Link>
@@ -193,15 +193,15 @@ export default function Solution1Page() {
         <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
         <div className="mx-auto max-w-[1392.5px]">
           {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            IP CCTV Surveillance Systems
+          <h2 className=" max-w-[1172px] h-[200px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
+          Network Infrastructure Design & Implementation
           </h2>
 
           {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Modernize your security infrastructure with high-definition, network-based surveillance.
+          <p className="mb-[53px] max-w-[1284px] h-[90px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
+            We design, deploy, and optimize network infrastructure to support growth, security, and operational efficiency.
             <br />
-            Our IP CCTV systems deliver crystal-clear imaging, remote accessibility, and intelligent video storage — tailored for enterprises of all sizes.
+            Our solutions ensure seamless connectivity, high-performance networks, and scalable architecture — designed to meet current and future needs.
           </p>
 
           <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
@@ -229,19 +229,19 @@ export default function Solution1Page() {
                 {/* Services List */}
                 <div className="space-y-[54px] pl-[52px]">
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    HD/4K IP camera installation & configuration
+                  LAN/WAN architecture design & rollout
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    NVR-based recording & centralized storage
+                  Structured cabling (CAT6, CAT7 & Fiber)
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Multi-site live monitoring setup
+                  Wi-Fi coverage & access point deployment
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Secure remote access (web & mobile)
+                  Routing & switching configuration
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Integration with existing network infrastructure
+                  Network certification & performance validation
                   </p>
                 </div>
               </div>
@@ -254,7 +254,7 @@ export default function Solution1Page() {
               Outcome
             </h3>
             <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Enhanced visibility, reliable recording, and simplified monitoring through a unified platform.
+            Strong, scalable, and high-performance network backbone for growing digital demands.
             </p>
             <Link
               href="#contact"
@@ -284,14 +284,14 @@ export default function Solution1Page() {
         <div className="mx-auto max-w-[1392.5px]">
           {/* Title */}
           <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          ANPR (Automatic Number Plate Recognition) Systems
+          Firewall & Network Security Integration
           </h2>
 
           {/* Description */}
           <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Automate vehicle monitoring and access control with ANPR-enabled surveillance.
+          Safeguard your enterprise from evolving cyber threats.
             <br />
-            Our systems accurately capture, recognize, and log number plates for traffic management, parking, automation and perimeter control.
+            Our intelligent firewall and network security solutions combine performance and protection — securing every endpoint, gateway, and data stream.
           </p>
 
           <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
@@ -319,19 +319,19 @@ export default function Solution1Page() {
                 {/* Services List */}
                 <div className="space-y-[54px] pl-[52px]">
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  ANPR camera setup & calibration
+                  Next-Generation Firewall (NGFW) setup
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  License plate recognition software integration
+                  VPN & multi-site secure access
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Vehicle database & access control linkage
+                  Unified threat management (UTM) integration
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Real-time alerts & analytics dashboard
+                  Policy enforcement & application control
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Custom reporting & event recording
+                  Real-time monitoring & analytics
                   </p>
                 </div>
               </div>
@@ -344,7 +344,7 @@ export default function Solution1Page() {
               Outcome
             </h3>
             <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-              Improved perimeter security, efficient vehicle tracking, and seamless entry management.
+            Hardened security, zero-trust connectivity, and complete compliance assurance.
             </p>
             <Link
               href="#contact"
@@ -374,14 +374,14 @@ export default function Solution1Page() {
         <div className="mx-auto max-w-[1392.5px]">
           {/* Title */}
           <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            PTZ & Advanced Camera Solutions
+          Network Operations Center (NOC) & Continuous Monitoring
           </h2>
 
           {/* Description */}
           <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Achieve 360° situational awareness with Pan-Tilt-Zoom (PTZ) and specialized camera systems.
-            <br />
-            We deploy advanced imaging technologies designed for high-risk and large-scale environments.
+           Experience uninterrupted network visibility and proactive performance management.
+           <br></br>
+           Our 24/7 NOC delivers real-time oversight, ensuring maximum uptime and incident-free operations.
           </p>
 
           <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
@@ -409,19 +409,19 @@ export default function Solution1Page() {
                 {/* Services List */}
                 <div className="space-y-[54px] pl-[52px]">
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    PTZ, thermal, and panoramic camera deployment
+                  SLA-based escalation workflows
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Auto-tracking & motion detection configuration
+                  Incident diagnosis & root-cause analysis
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Low-light & infrared-enabled surveillance
+                  Event correlation & alert response
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Weatherproof & vandal-resistant enclosures
+                  Continuous network & server monitoring
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Integration with VMS and security platforms
+                  Performance trend analytics
                   </p>
                 </div>
               </div>
@@ -434,7 +434,7 @@ export default function Solution1Page() {
               Outcome
             </h3>
             <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Extended coverage, intelligent tracking, and superior clarity in every condition
+            Proactive issue resolution, improved uptime, and data-driven network optimization.
             </p>
             <Link
               href="#contact"
@@ -464,14 +464,14 @@ export default function Solution1Page() {
         <div className="mx-auto max-w-[1392.5px]">
           {/* Title */}
           <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            Centralized Video Management Systems (VMS)
+          Managed IT & Lifecycle Services
           </h2>
 
           {/* Description */}
           <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Achieve 360° situational awareness with Pan-Tilt-Zoom (PTZ) and specialized camera systems.
+          Optimize your IT operations with a dedicated, expert-managed framework.
             <br />
-            We deploy advanced imaging technologies designed for high-risk and large-scale environments.
+            We deliver complete IT lifecycle support — from configuration and backup to ongoing maintenance and optimization.
           </p>
 
           <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
@@ -499,19 +499,19 @@ export default function Solution1Page() {
                 {/* Services List */}
                 <div className="space-y-[54px] pl-[52px]">
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Multi-location VMS deployment
+                  IT asset lifecycle management
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    User access control & hierarchy setup
+                  Patch, update & backup management
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                   Storage optimization & redundancy planning
+                   Helpdesk & on-site support (L1–L3)
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Alarm & event management integration
+                  Preventive maintenance scheduling
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Scalability for large, multi-site operations
+                  Infrastructure performance audits
                   </p>
                 </div>
               </div>
@@ -524,7 +524,7 @@ export default function Solution1Page() {
               Outcome
             </h3>
             <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Unified command, simplified management, and enhanced operational visibility.
+            Operational continuity, predictable costs, and simplified IT management.
             </p>
             <Link
               href="#contact"
@@ -555,14 +555,14 @@ export default function Solution1Page() {
         <div className="mx-auto max-w-[1392.5px]">
           {/* Title */}
           <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            Remote Monitoring & Command Center Setup
+          Network Optimization & Performance Enhancement
           </h2>
 
           {/* Description */}
           <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-          Enable 24/7 surveillance operations with centralized command centers and remote viewing capabilities.
+            Ensure your infrastructure performs at its peak.
             <br />
-            We design and deploy intelligent monitoring rooms equipped with advanced visualization and alert systems.
+            Through continuous assessment and analytics, we fine-tune configurations and remove performance bottlenecks.
           </p>
 
           <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
@@ -590,19 +590,19 @@ export default function Solution1Page() {
                 {/* Services List */}
                 <div className="space-y-[54px] pl-[52px]">
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Command center design & implementation
+                  Bandwidth and throughput optimization
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    UMulti-screen monitoring & live streaming setup
+                  Load balancing & QoS configuration
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Remote viewing integration (VPN & cloud)
+                  Latency analysis & fault resolution
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Alarm management & escalation workflows
+                  Capacity planning & scaling strategy
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Operator training & system documentation
+                  Detailed performance reporting
                   </p>
                 </div>
               </div>
@@ -615,7 +615,7 @@ export default function Solution1Page() {
               Outcome
             </h3>
             <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Centralized control, real-time situational response, and enhanced decision-making.
+            Higher network efficiency, faster response, and maximum user satisfaction.
             </p>
             <Link
               href="#contact"
@@ -645,14 +645,14 @@ export default function Solution1Page() {
         <div className="mx-auto max-w-[1392.5px]">
           {/* Title */}
           <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          AI-Enabled Video Analytics
+           Multi-Vendor Integration & Support
           </h2>
 
           {/* Description */}
           <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Turn your surveillance data into actionable intelligence with AI-powered analytics.
+          Leverage flexibility without complexity.
             <br />
-            Our intelligent video systems leverage computer vision and machine learning to detect anomalies, automate alerts, and generate insights
+            Our engineers are certified across major OEMs — enabling seamless integration, cross-platform functionality, and consistent support.
           </p>
 
           <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
@@ -680,19 +680,19 @@ export default function Solution1Page() {
                 {/* Services List */}
                 <div className="space-y-[54px] pl-[52px]">
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    AI-based motion & intrusion detection
+                  Multi-OEM network component integration
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Facial recognition & people counting
+                  Hardware & software lifecycle management
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Behavior & crowd analytics
+                  Vendor coordination & warranty handling
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Object detection & perimeter violation alerts
+                  Firmware upgrades & standardization
                   </p>
                   <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Data dashboards & automated reports
+                  Multi-location deployment support
                   </p>
                 </div>
               </div>
@@ -705,7 +705,7 @@ export default function Solution1Page() {
               Outcome
             </h3>
             <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Proactive threat detection, improved operational intelligence, and smarter security decisions.
+            Interoperable, stable, and future-proof infrastructure built for business continuity.
             </p>
             <Link
               href="#contact"
@@ -737,9 +737,9 @@ export default function Solution1Page() {
           {/* Heading - Position: x 122, y 120 */}
           <div className="absolute" style={{ left: '122px', top: '120px', width: '1148px' }}>
             <h2 className="text-center font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.4937] text-black">
-            Why Choose Nexobots for CCTV & Intelligent 
+            Why Choose Nexobots for IT Network
             <br />
-            Surveillance Solutions
+            Infrastructure & Managed Services
             </h2>
           </div>
 
@@ -754,10 +754,10 @@ export default function Solution1Page() {
                   </div>
                 </div>
                 <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                End-to-End Surveillance Expertise
+                Strategic Design. Operational Excellence.
                 </h3>
                 <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                From camera installation to AI analytics, we deliver complete, integrated security ecosystems.
+                We combine consulting-driven design with hands-on management for full lifecycle value.
                 </p>
               </div>
 
@@ -772,7 +772,7 @@ export default function Solution1Page() {
                 Certified OEM Partnerships
                 </h3>
                 <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                We work with global leaders such as Hikvision, CP Plus, Dahua, Axis, and Bosch for world-class hardware and software performance.
+                Strong alliances with Cisco, D-Link, Fortinet, Palo Alto, and Aruba deliver best-in-class reliability.
 
                 </p>
               </div>
@@ -785,10 +785,10 @@ export default function Solution1Page() {
                   </div>
                 </div>
                 <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                Smart, Scalable Design
+                Proactive & Predictive Management
                 </h3>
                 <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Our modular architecture supports expansion across multiple sites and industries.
+                Real-time monitoring, analytics, and preventive maintenance minimize downtime.
                 </p>
               </div>
 
@@ -800,10 +800,10 @@ export default function Solution1Page() {
                   </div>
                 </div>
                 <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                AI-Driven Insights
+                SLA-Backed Service Reliability
                 </h3>
                 <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Real-time analytics transform raw video into intelligent, actionable data.
+                Defined response, resolution, and uptime commitments — guaranteed.
                 </p>
               </div>
 
@@ -815,10 +815,10 @@ export default function Solution1Page() {
                   </div>
                 </div>
                 <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                Integrated Security Framework
+                Security-First, Performance-Driven
                 </h3>
                 <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Seamless integration with access control, network, and data management systems
+                Our architectures embed cybersecurity and speed at every level of your network.
                 </p>
               </div>
             </div>
@@ -999,10 +999,10 @@ export default function Solution1Page() {
             <div className="mb-5 h-[120px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative">
                 <h3 className="mb-[3px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                What makes your CCTV solutions “intelligent”?
+                What’s included in Nexobots’ IT Network Infrastructure & Managed Services Solution?
                 </h3>
                 <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                Our systems combine IP-based cameras with AI analytics for real-time detection, automated alerts, and actionable insights.
+                It includes complete network design, implementation, management, and optimization — combining hardware, security, and support under a unified framework.
                 </p>
                 {/* Icon - Position: right 27px, top 31px */}
                 <div className="absolute right-[27px] top-[11px] h-6 w-6">
@@ -1029,7 +1029,7 @@ export default function Solution1Page() {
             <div className="mb-5 h-[64px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative flex items-center justify-between">
                 <h3 className="font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                Can you integrate CCTV with existing network and access control systems?
+                Can you integrate existing infrastructure with new solutions? 
                 </h3>
                 {/* Icon */}
                 <div className="h-6 w-6 flex-shrink-0">
@@ -1056,10 +1056,10 @@ export default function Solution1Page() {
             <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative">
                 <h3 className="mb-[15px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  What types of cameras do you provide?
+                 Do you offer real-time network monitoring?
                 </h3>
                 <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                We offer dome, bullet, PTZ, thermal, panoramic, and infrared cameras — tailored for indoor, outdoor, and industrial environments.
+                Yes. Our 24/7 NOC provides continuous visibility, proactive alerts, and immediate escalation handling.
                 </p>
                 {/* Icon */}
                 <div className="absolute right-[27px] top-[4px] h-6 w-6">
@@ -1086,10 +1086,10 @@ export default function Solution1Page() {
             <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative">
                 <h3 className="mb-[14px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                 Do you offer post-deployment support and maintenance?
+                How do you ensure data security across the network?
                 </h3>
                 <p className="pr-12 font-['Manrope'] text-[16px] font-medium leading-[1] text-[#333333]">
-                Absolutely. Our AMC and Managed Services teams provide ongoing maintenance, monitoring, and performance optimization.
+                We implement multi-layered security with next-gen firewalls, encryption, access control, and real-time threat intelligence.
                 </p>
                 {/* Icon */}
                 <div className="absolute right-[25px] top-[4px] h-6 w-6">
@@ -1116,10 +1116,10 @@ export default function Solution1Page() {
             <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative">
                 <h3 className="mb-[16px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                How do you ensure project timelines and quality?
+                Are your managed services customizable?
                 </h3>
                 <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                Every engagement is governed by detailed SLAs, project charters, and milestone-based delivery to maintain speed and reliability.
+                Yes. We offer modular service models to match your business size, infrastructure complexity, and performance goals.
                 </p>
                 {/* Icon */}
                 <div className="absolute right-[24px] top-[4px] h-6 w-6">
@@ -1146,10 +1146,10 @@ export default function Solution1Page() {
             <div className="h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative">
                 <h3 className="mb-[13px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                Do you provide consulting for hybrid or multi-cloud integration?
+                Do you provide support across multiple locations?
                 </h3>
                 <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                Yes. We design and implement hybrid and multi-cloud strategies that ensure interoperability and security across platforms.
+                Yes. With a nationwide footprint in 180+ cities, Nexobots ensures consistent on-site and remote support.
                 </p>
                 {/* Icon */}
                 <div className="absolute right-[24px] top-[4px] h-6 w-6">
