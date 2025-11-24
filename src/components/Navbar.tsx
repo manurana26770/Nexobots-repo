@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
-  { label: "Solutions", href: "/solutions", isActive: false },
-  { label: "Services", href: "/services", isActive: false },
-  { label: "Industries", href: "/industries", isActive: false },
-  { label: "Company", href: "/about", isActive: false },
-  { label: "Contact us", href: "/contact", isActive: true },
+  { label: "Solutions", href: "/solutions", isHighlighted: true },
+  { label: "Services", href: "/services", isHighlighted: false },
+  { label: "Industries", href: "/industries", isHighlighted: false },
+  { label: "Company", href: "/about", isHighlighted: false },
+  { label: "Contact us", href: "/contact", isHighlighted: false },
 ] as const;
 
 export function Navbar() {
@@ -19,8 +19,8 @@ export function Navbar() {
   const handleNavigate = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white">
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-9 md:px-12 lg:px-[72px]">
+    <header className="sticky top-0 z-50 border-b border-[#E5E5E5] bg-white/95 backdrop-blur">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-6 md:px-12 lg:px-[72px]">
         <Link
           href="/"
           className="flex items-center"
@@ -36,19 +36,17 @@ export function Navbar() {
           />
         </Link>
 
-        <nav
-          className="hidden items-center gap-6 lg:flex"
-          aria-label="Primary navigation"
-        >
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={handleNavigate}
-              style={{
-                opacity: link.isActive ? 1 : 0.8,
-              }}
-              className="font-sans text-[18px] font-normal uppercase leading-[1.366] tracking-normal text-black transition-opacity hover:opacity-100"
+              className={`font-display text-[18px] font-semibold uppercase tracking-[0.08em] transition-colors duration-200 ${
+                link.isHighlighted
+                  ? "text-[#333333]"
+                  : "text-[#1C1C1C]/80 hover:text-[#1C1C1C]"
+              }`}
             >
               {link.label}
             </Link>
@@ -59,13 +57,13 @@ export function Navbar() {
           <Link
             href="#contact"
             onClick={handleNavigate}
-            className="hidden rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 text-[14px] font-semibold leading-[1.366] text-[rgba(228,29,40,0.79)] transition hover:bg-gray-50 lg:inline-flex"
+            className="hidden rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 font-display text-[14px] font-semibold uppercase tracking-[0.32em] text-[#E11E24] transition hover:bg-[#F7F7F7] lg:inline-flex"
           >
             Get a Free Quote
           </Link>
           <button
             type="button"
-            className="inline-flex items-center gap-2 rounded-full border border-[#C4C4C4] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.32em] text-black transition hover:bg-gray-50 lg:hidden"
+            className="inline-flex items-center gap-2 rounded-full border border-[#C4C4C4] px-4 py-2 font-display text-[11px] font-semibold uppercase tracking-[0.32em] text-black transition hover:bg-[#F7F7F7] lg:hidden"
             aria-controls="mobile-nav"
             aria-expanded={isMenuOpen}
             onClick={handleToggle}
@@ -93,7 +91,7 @@ export function Navbar() {
       {isMenuOpen ? (
         <div
           id="mobile-nav"
-          className="border-t border-[#C4C4C4] bg-white px-6 py-4 lg:hidden"
+          className="border-t border-[#E5E5E5] bg-white px-6 py-4 lg:hidden"
         >
           <nav
             className="flex flex-col gap-4"
@@ -104,7 +102,9 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={handleNavigate}
-                className="font-sans text-base font-normal uppercase text-black transition hover:opacity-70"
+                className={`font-display text-base font-semibold uppercase tracking-[0.08em] transition ${
+                  link.isHighlighted ? "text-[#333333]" : "text-[#1C1C1C]"
+                }`}
               >
                 {link.label}
               </Link>
