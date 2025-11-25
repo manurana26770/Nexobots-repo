@@ -164,28 +164,16 @@ export default function AboutPage() {
       <section className="relative h-[911px] w-full overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/about-hero-bg.png"
-            alt="About Hero"
+            src="/about-hero-grid.png"
+            alt="About Hero - Futuristic Technology Grid"
             fill
             priority
             className="object-cover"
             sizes="100vw"
           />
         </div>
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/60" />
-        {/* Blur overlay */}
-        <div
-          className="absolute"
-          style={{
-            width: "1830px",
-            height: "682px",
-            left: "-195px",
-            top: "319px",
-            background: "black",
-            filter: "blur(233.9px)",
-          }}
-        />
+        {/* Dark overlay - reduced opacity to show the grid pattern better */}
+        <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full items-center px-6 md:px-12 lg:px-[128px]">
           <div className="max-w-[1027px]">
             <h1
