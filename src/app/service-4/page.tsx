@@ -46,7 +46,7 @@ export default function Service4Page() {
 
           {/* CTA Button - Position: x 142, y 556 (114px from description) */}
           <Link
-            href="#contact"
+            href="/contact"
             className="mt-[44px] inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-transparent px-[29px] py-[20px] font-['Manrope'] text-[20px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-white/10"
           >
             Talk to an Expert
@@ -97,7 +97,7 @@ export default function Service4Page() {
           {/* Get In Touch Button - Position: x 643, y 334 */}
           <div className="absolute" style={{ left: '643px', top: '334px' }}>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
@@ -180,7 +180,7 @@ export default function Service4Page() {
           {/* Get In Touch Button - Position: x 120, y 497 */}
           <div className="absolute" style={{ left: '120px', top: '497px' }}>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
@@ -266,7 +266,7 @@ export default function Service4Page() {
               enterprise-grade security.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -361,7 +361,7 @@ export default function Service4Page() {
               hardware footprint.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -455,7 +455,7 @@ export default function Service4Page() {
               Minimal downtime, faster recovery, and assured data protection.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs

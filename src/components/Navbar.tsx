@@ -55,7 +55,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <Link
-            href="#contact"
+            href="/contact"
             onClick={handleNavigate}
             className="hidden rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 font-display text-[14px] font-semibold uppercase tracking-[0.32em] text-[#E11E24] transition hover:bg-[#F7F7F7] lg:inline-flex"
           >
@@ -110,7 +110,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="#contact"
+              href="/contact"
               onClick={handleNavigate}
               className="rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 text-[14px] font-semibold text-[rgba(228,29,40,0.79)]"
             >

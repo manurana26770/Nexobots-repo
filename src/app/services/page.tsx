@@ -113,7 +113,8 @@ export default function ServicesPage() {
                 performance.
               </p>
 
-              <button
+              <Link
+                href="/contact"
                 className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-8 py-4 transition-all hover:bg-gray-900"
                 style={{
                   width: "253px",
@@ -138,7 +139,7 @@ export default function ServicesPage() {
                   height={41}
                   className="h-[41px] w-[41px]"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -343,7 +344,8 @@ export default function ServicesPage() {
             turn technology into your competitive advantage.
           </p>
 
-          <button
+          <Link
+            href="/contact"
             className="mx-auto mt-12 flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 transition-all hover:bg-gray-900"
             style={{
               width: "155px",
@@ -361,7 +363,7 @@ export default function ServicesPage() {
             >
               Get In Touch
             </span>
-          </button>
+          </Link>
         </div>
       </section>
 

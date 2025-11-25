@@ -48,7 +48,7 @@ export default function Solution1Page() {
           {/* CTA Button - Position: left 142px, top 489px */}
           <div className="absolute" style={{ left: '142px', top: '489px' }}>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-[20px] font-['Manrope'] text-[20px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Talk to an Expert
@@ -93,7 +93,7 @@ export default function Solution1Page() {
           {/* CTA Button - Position: left 643px, top 399px */}
           <div className="absolute" style={{ left: '643px', top: '399px' }}>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
@@ -174,7 +174,7 @@ export default function Solution1Page() {
           {/* CTA Button - Position: left 120px, top 522px */}
           <div className="absolute" style={{ left: '120px', top: '522px' }}>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
@@ -257,7 +257,7 @@ export default function Solution1Page() {
             Enhanced visibility, reliable recording, and simplified monitoring through a unified platform.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -347,7 +347,7 @@ export default function Solution1Page() {
               Improved perimeter security, efficient vehicle tracking, and seamless entry management.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -437,7 +437,7 @@ export default function Solution1Page() {
             Extended coverage, intelligent tracking, and superior clarity in every condition
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -527,7 +527,7 @@ export default function Solution1Page() {
             Unified command, simplified management, and enhanced operational visibility.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -618,7 +618,7 @@ export default function Solution1Page() {
             Centralized control, real-time situational response, and enhanced decision-making.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -708,7 +708,7 @@ export default function Solution1Page() {
             Proactive threat detection, improved operational intelligence, and smarter security decisions.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs

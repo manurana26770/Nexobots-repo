@@ -46,7 +46,7 @@ export default function Service3Page() {
 
             {/* CTA Button */}
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white px-[29px] py-[20px] font-['Manrope'] text-[20px] font-semibold leading-[1.366] tracking-[0.02em] text-black transition hover:bg-gray-100"
             >
               Talk to an Expert
@@ -134,7 +134,7 @@ export default function Service3Page() {
           {/* CTA Button - Positioned absolutely as in Figma */}
           <div className="absolute" style={{ left: '643px', top: '350px' }}>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
@@ -223,7 +223,7 @@ export default function Service3Page() {
               hardware lifespan.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -313,7 +313,7 @@ export default function Service3Page() {
               IT efficiency.
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs
@@ -399,7 +399,7 @@ export default function Service3Page() {
               compliance-ready asset documentation
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Let&apos;s Discuss Needs

@@ -5,10 +5,10 @@ const footerColumns = [
   {
     title: "Solutions",
     links: [
-      { label: "Smart Network", href: "/solution-1" },
-      { label: "Infrastructure CCTV Solutions", href: "/solution-2" },
-      { label: "Secure access & Biometrics", href: "#" },
-      { label: "End to end IT Services", href: "#" },
+      { label: "CCTV & Intelligent Surveillance", href: "/solution-1" },
+      { label: "IT Infrastructure & Managed Services", href: "/solution-2" },
+      { label: "Secure Biometric & Access Control", href: "/solution-3" },
+      { label: "Smart Network Infrastructure", href: "/solution-4" },
     ],
   },
   {
@@ -33,7 +33,7 @@ const footerColumns = [
     title: "Company",
     links: [
       { label: "About us", href: "/about" },
-      { label: "Blogs", href: "#" },
+      { label: "Blogs", href: "/blog" },
       { label: "News & Media", href: "#" },
       { label: "Contact Us", href: "/contact" },
     ],

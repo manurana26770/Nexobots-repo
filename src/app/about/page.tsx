@@ -189,7 +189,7 @@ export default function AboutPage() {
               Technology
             </h1>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-white/10"
               style={{
                 width: "261px",
@@ -279,7 +279,7 @@ export default function AboutPage() {
             </p>
           </div>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-800"
             style={{
               width: "209px",
@@ -596,7 +596,7 @@ export default function AboutPage() {
           </p>
           <div className="text-center">
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-800"
               style={{
                 width: "155px",
@@ -873,7 +873,7 @@ export default function AboutPage() {
             your business and industry to thrive in the digital era.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-black/30 bg-black transition-all hover:bg-gray-800"
             style={{
               width: "155px",

@@ -107,7 +107,7 @@ export default function Service2Page() {
                 Nexobots’ IT Support, Monitoring & Optimization Services.
               </p>
               <Link
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-5 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
               >
                 Talk to an Expert
@@ -153,7 +153,7 @@ export default function Service2Page() {
             </div>
              <div className="flex justify-center">
                 <Link
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
                 >
                     Get In Touch
@@ -223,7 +223,7 @@ export default function Service2Page() {
       <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
         <div className="mx-auto max-w-[1200px] text-center">
              <Link
-                href="#contact"
+                href="/contact"
                 className="mb-12 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
               >
                 Get In Touch
@@ -289,7 +289,7 @@ export default function Service2Page() {
                         Faster issue resolution, minimal downtime, and predictable IT operations.
                      </p>
                       <Link
-                        href="#contact"
+                        href="/contact"
                         className="inline-flex w-fit items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
                     >
                         Let&apos;s Discuss Needs
@@ -345,7 +345,7 @@ export default function Service2Page() {
                         Early issue detection, improved uptime, and data-driven infrastructure insights.
                      </p>
                       <Link
-                        href="#contact"
+                        href="/contact"
                         className="inline-flex w-fit items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
                     >
                         Let&apos;s Discuss Needs
@@ -401,7 +401,7 @@ export default function Service2Page() {
                         Higher system efficiency, lower operational costs, and enhanced user experience.
                      </p>
                       <Link
-                        href="#contact"
+                        href="/contact"
                         className="inline-flex w-fit items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
                     >
                         Let&apos;s Discuss Needs

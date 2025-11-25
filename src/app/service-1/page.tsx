@@ -76,7 +76,7 @@ export default function Service1Page() {
                 Infrastructure Consulting & System Integration services.
               </p>
               <Link
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-white px-[29px] py-5 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
               >
                 Talk to an Expert
@@ -150,7 +150,7 @@ export default function Service1Page() {
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-12 text-center">
             <Link
-              href="#contact"
+              href="/contact"
               className="mb-12 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
             >
               Get In Touch
@@ -241,7 +241,7 @@ export default function Service1Page() {
                 scalability.
               </p>
               <Link
-                href="#contact"
+                href="/contact"
                 className="mt-6 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
               >
                 Let&apos;s Discuss Needs
@@ -312,7 +312,7 @@ export default function Service1Page() {
                 reduce operational complexity.
               </p>
               <Link
-                href="#contact"
+                href="/contact"
                 className="mt-6 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
               >
                 Start Your Integration Project

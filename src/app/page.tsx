@@ -282,43 +282,17 @@ export default function Home() {
             <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
               {solutions.map((solution, index) => {
                 // Map solutions to routes: 
-                // Index 0: Smart Structured Cabling -> # (not yet implemented)
+                // Index 0: Smart Structured Cabling -> /solution-4 (Smart Network Infrastructure)
                 // Index 1: CCTV & Intelligent Surveillance -> /solution-1
-                // Index 2: Biometric & Access Control -> # (not yet implemented)
+                // Index 2: Biometric & Access Control -> /solution-3
                 // Index 3: IT Infrastructure & Managed Services -> /solution-2
-                const solutionRoutes = ["#", "/solution-1", "#", "/solution-2"];
+                const solutionRoutes = ["/solution-4", "/solution-1", "/solution-3", "/solution-2"];
                 const solutionRoute = solutionRoutes[index];
                 return (
                   <div key={solution.title} className="flex justify-center">
-                    {solutionRoute !== "#" ? (
-                      <Link href={solutionRoute}>
-                        <article
-                          className="relative h-[442px] w-[303px] overflow-hidden rounded-[10px] shadow-[0_25px_60px_rgba(15,18,23,0.25)] transition-transform hover:scale-105 cursor-pointer"
-                          style={{ width: "303px" }}
-                        >
-                          <Image
-                            src={solution.image}
-                            alt={solution.title}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/95" />
-                          <div className="relative z-10 flex h-full flex-col justify-end p-8 text-left">
-                            {solution.blurb ? (
-                              <p className="mb-4 text-[15px] font-medium leading-[1.4] text-white/80">
-                                {solution.blurb}
-                              </p>
-                            ) : null}
-                            <h3 className="font-display text-[24px] font-bold uppercase tracking-[0.08em] text-white">
-                              {solution.title}
-                            </h3>
-                          </div>
-                        </article>
-                      </Link>
-                    ) : (
+                    <Link href={solutionRoute}>
                       <article
-                        className="relative h-[442px] w-[303px] overflow-hidden rounded-[10px] shadow-[0_25px_60px_rgba(15,18,23,0.25)]"
+                        className="relative h-[442px] w-[303px] overflow-hidden rounded-[10px] shadow-[0_25px_60px_rgba(15,18,23,0.25)] transition-transform hover:scale-105 cursor-pointer"
                         style={{ width: "303px" }}
                       >
                         <Image
@@ -340,7 +314,7 @@ export default function Home() {
                           </h3>
                         </div>
                       </article>
-                    )}
+                    </Link>
                   </div>
                 );
               })}
@@ -631,7 +605,7 @@ export default function Home() {
                       {blog.excerpt}
                     </p>
                     <Link
-                      href="#"
+                      href="/blog"
                       className="mt-[45px] inline-flex h-[45px] w-[148px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-black/80"
                     >
                       Read More
@@ -1062,7 +1036,7 @@ export default function Home() {
                   </p>
                   <p className="text-sm text-[#696969]">{blog.excerpt}</p>
                   <Link
-                    href="#"
+                    href="/blog"
                     className="mt-auto inline-flex items-center gap-3 rounded-[75px] border border-black/10 px-5 py-2 text-[15px] font-semibold uppercase tracking-[0.2em] text-black transition hover:bg-black hover:text-white"
                   >
                     Read More

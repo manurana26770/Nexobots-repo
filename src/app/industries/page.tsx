@@ -281,7 +281,7 @@ export default function IndustriesPage() {
               Empowering Every Industry with Smart, Secure, and Scalable Technology
             </h1>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex h-[67px] w-[253px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
               style={{
                 padding: "20px 29px",
@@ -496,7 +496,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "339px",
@@ -786,7 +786,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "286px",
@@ -1076,7 +1076,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "262px",
@@ -1366,7 +1366,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "267px",
@@ -1656,7 +1656,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "262px",
@@ -1824,7 +1824,7 @@ export default function IndustriesPage() {
             Let&apos;s collaborate to design technology solutions that empower your business and industry to thrive in the digital era.
           </p>
           <Link
-            href="#contact"
+            href="/contact"
             className="mx-auto inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-black/30 bg-black transition-all hover:bg-black/90"
             style={{
               padding: "12px 25px",

@@ -128,7 +128,8 @@ export default function SolutionsPage() {
                 strengthen security, and enable scalable digital growth.
               </p>
 
-              <button
+              <Link
+                href="/contact"
                 className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-8 py-4 transition-all hover:bg-gray-900"
                 style={{
                   width: "253px",
@@ -153,7 +154,7 @@ export default function SolutionsPage() {
                   height={41}
                   className="h-[41px] w-[41px]"
                 />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -282,7 +283,7 @@ export default function SolutionsPage() {
 
                 {/* Button */}
                 <Link
-                  href={solution.id === "cctv-surveillance" ? "/solution-1" : solution.id === "it-infrastructure" ? "/solution-2" : "#"}
+                  href={solution.id === "cctv-surveillance" ? "/solution-1" : solution.id === "it-infrastructure" ? "/solution-2" : solution.id === "biometric-access" ? "/solution-3" : solution.id === "smart-network" ? "/solution-4" : "#"}
                   className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 transition-all hover:bg-gray-900"
                   style={{
                     width: "348px",
@@ -352,7 +353,8 @@ export default function SolutionsPage() {
             strategic advantage.
           </p>
 
-          <button
+          <Link
+            href="/contact"
             className="mx-auto mt-12 flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 transition-all hover:bg-gray-900"
             style={{
               width: "155px",
@@ -370,7 +372,7 @@ export default function SolutionsPage() {
             >
               Get In Touch
             </span>
-          </button>
+          </Link>
         </div>
       </section>
 
