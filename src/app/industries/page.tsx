@@ -1,96 +1,133 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ContactForm } from "@/components/ContactForm";
+import Partners from "@/components/Partners";
 import Image from "next/image";
+
+// Icon Components
+const WifiIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 9L2 10C5.5 6.5 10.5 6.5 14 10L15 9C10.5 4.5 3.5 4.5 1 9ZM5 13L6 14C7.5 12.5 9.5 12.5 11 14L12 13C9.5 10.5 4.5 10.5 5 13ZM9 17L12 20L15 17C13.5 15.5 10.5 15.5 9 17Z" fill="#E11E24"/>
+  </svg>
+);
+
+const MonitorIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="3" width="20" height="14" rx="2" stroke="#E11E24" strokeWidth="2" fill="none"/>
+    <path d="M8 21H16" stroke="#E11E24" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M12 17V21" stroke="#E11E24" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const FingerIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2C10.5 2 9.5 3 9.5 4.5V9.5C9.5 10.5 10.5 11.5 11.5 11.5C12.5 11.5 13.5 10.5 13.5 9.5V4.5C13.5 3 12.5 2 12 2Z" fill="#E11E24"/>
+    <path d="M12 12.5C10.5 12.5 9.5 13.5 9.5 15V20C9.5 21.5 10.5 22.5 12 22.5C13.5 22.5 14.5 21.5 14.5 20V15C14.5 13.5 13.5 12.5 12 12.5Z" fill="#E11E24"/>
+  </svg>
+);
+
+const ArchiveIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="4" width="18" height="4" rx="1" fill="#E11E24"/>
+    <path d="M4 8V19C4 20.1 4.9 21 6 21H18C19.1 21 20 20.1 20 19V8H4Z" fill="#E11E24"/>
+    <path d="M9 12H15" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+  </svg>
+);
+
+const getIconComponent = (icon: string) => {
+  switch (icon) {
+    case "wifi":
+      return <WifiIcon />;
+    case "monitor":
+      return <MonitorIcon />;
+    case "finger":
+      return <FingerIcon />;
+    case "archive":
+      return <ArchiveIcon />;
+    default:
+      return null;
+  }
+};
 
 const industries = [
   {
-    id: "realestate",
-    title: "Real Estate & Smart Infrastructure",
-    subtitle:
-      "Building intelligent, connected, and secure spaces for modern living and working.",
-    image: "/industry-realestate-d966f0.png",
-    what: "From commercial complexes to residential communities, Nexobots helps real estate developers and facility managers implement cutting-edge IT and security infrastructure that enhances safety, efficiency, and digital connectivity. Our solutions turn traditional spaces into smart, future-ready environments.",
-    cta: "Transform Your Properties",
+    id: "corporate",
+    title: "Corporate & Enterprise",
+    subtitle: "Empowering enterprises with secure, scalable, and future-ready IT infrastructure.",
+    image: "/hero-industries-1e0a14.png",
+    what: "We help businesses build reliable, high-performance IT environments that connect teams, secure data, and support long-term growth. Our expertise spans structured cabling, networking, surveillance, and managed IT services — designed to keep enterprise operations running efficiently and securely.",
+    cta: "Let's Discuss Your Enterprise Needs",
     services: [
-      "IT & Security Consulting for smart city, commercial, and residential projects.",
-      "System Integration of surveillance, access control, fire safety, and building automation systems.",
-      "AMC & Managed Support for round-the-clock maintenance and uptime.",
-      "Cloud & Virtualization Enablement for centralized monitoring and property management dashboards.",
+      "Strategic IT Infrastructure Consulting for scalable enterprise systems.",
+      "System Integration for seamless network and software interoperability.",
+      "AMC & Support with proactive monitoring and guaranteed uptime.",
+      "Cloud & Virtualization solutions for efficiency and hybrid environments.",
     ],
     features: [
       {
         icon: "wifi",
         title: "Smart Network Infrastructure",
-        description:
-          "High-speed backbone networks for buildings, estates, and townships with seamless Wi-Fi and IoT connectivity.",
+        description: "Robust, enterprise-grade networks with secure switching, firewalls, and optimized Wi-Fi.",
       },
       {
         icon: "monitor",
         title: "Intelligent Surveillance",
-        description:
-          "Integrated CCTV, ANPR, and centralized monitoring for property-wide security and safety compliance.",
+        description: "IP-based CCTV, video management systems, and remote monitoring for complete visibility.",
       },
       {
         icon: "finger",
         title: "Secure Access & Biometrics",
-        description:
-          "Smart access systems for residents, visitors, and facility staff with mobile or RFID authentication.",
+        description: "Biometric and RFID-based access solutions for employees and visitors.",
       },
       {
         icon: "archive",
         title: "End-to-End IT Services",
-        description:
-          "Infrastructure design, implementation, and maintenance for smart buildings and control centers.",
+        description: "From planning to management, ensure business continuity and performance.",
       },
     ],
   },
   {
-    id: "retail",
-    title: "Retail & Hospitality",
-    subtitle:
-      "Driving customer experience, operational efficiency, and secure transactions.",
-    image: "/industry-retail.png",
-    what: "Retail and hospitality businesses thrive on speed, reliability, and customer trust. Nexobots enables these industries with IT and security infrastructure that connects locations, enhances safety, and streamlines guest experiences.",
-    cta: "Enhance Your Operations",
+    id: "education",
+    title: "Education & Research",
+    subtitle: "Creating connected, secure, and tech-driven learning environments.",
+    image: "/industry-education.png",
+    what: "We help institutions modernize their campuses with smart infrastructure that enhances collaboration, security, and digital learning. From classroom Wi-Fi to secure access, Nexobots delivers connected experiences for students, faculty, and researchers.",
+    cta: "Let's Build a Smarter Campus",
     services: [
-      "IT Strategy Consulting for omnichannel and digital transformation.",
-      "System Integration of POS, booking, CRM, and inventory systems.",
-      "AMC & Monitoring to ensure always-on operations.",
-      "Cloud Enablement for customer data, apps, and analytics.",
+      "Consulting & IT Roadmaps for digital transformation in education.",
+      "System Integration for LMS, library, and cloud platforms.",
+      "Comprehensive AMC ensuring seamless academic operations.",
+      "Virtualization Support for labs, learning platforms, and research networks.",
     ],
     features: [
       {
         icon: "wifi",
         title: "Smart Network Infrastructure",
-        description:
-          "Reliable Wi-Fi and secure networks for POS, guests, and back-office systems.",
+        description: "High-speed wired and wireless networks across classrooms, labs, and hostels.",
       },
       {
         icon: "monitor",
         title: "Intelligent Surveillance",
-        description:
-          "CCTV and remote monitoring for stores, hotels, and restaurants.",
+        description: "Monitoring systems for exam halls, campuses, and student facilities.",
       },
       {
         icon: "finger",
         title: "Secure Access & Biometrics",
-        description:
-          "Smart locks, staff access, and visitor management systems.",
+        description: "Attendance, hostel entry, and visitor management using smart authentication.",
       },
       {
         icon: "archive",
         title: "End-to-End IT Services",
-        description:
-          "IT management for POS, reservations, loyalty, and CRM systems.",
+        description: "Implementation and support for e-learning and research environments.",
       },
     ],
   },
   {
     id: "healthcare",
     title: "Healthcare & Pharma",
-    subtitle:
-      "Securing sensitive data, optimizing patient care, and powering research innovation.",
+    subtitle: "Securing sensitive data, optimizing patient care, and powering research innovation.",
     image: "/industry-healthcare.png",
     what: "Healthcare and pharma organizations rely on technology for compliance, patient care, and R&D. Nexobots delivers resilient IT infrastructure and security solutions to safeguard data and improve operational efficiency.",
     cta: "Secure Your Healthcare IT",
@@ -104,108 +141,94 @@ const industries = [
       {
         icon: "wifi",
         title: "Smart Network Infrastructure",
-        description:
-          "Secure, compliant, and high-availability networks for hospitals, labs, and clinics",
+        description: "Secure, compliant, and high-availability networks for hospitals, labs, and clinics",
       },
       {
         icon: "monitor",
         title: "Intelligent Surveillance",
-        description:
-          "Monitoring systems for ICUs, pharmacies, and critical care units.",
+        description: "Monitoring systems for ICUs, pharmacies, and critical care units.",
       },
       {
         icon: "finger",
         title: "Secure Access & Biometrics",
-        description:
-          "Controlled access for OTs, pharma stores, and restricted facilities.",
+        description: "Controlled access for OTs, pharma stores, and restricted facilities.",
       },
       {
         icon: "archive",
         title: "End-to-End IT Services",
-        description:
-          "Infrastructure for EMR, telemedicine, and research data management.",
+        description: "Infrastructure for EMR, telemedicine, and research data management.",
       },
     ],
   },
   {
-    id: "education",
-    title: "Education & Research",
-    subtitle:
-      "Enabling seamless learning, secure collaboration, and innovation across campuses.",
-    image: "/hero-industries-1e0a14.png", // Placeholder
-    what: "Educational institutions need robust, scalable, and secure technology ecosystems. Nexobots empowers schools, colleges, and research centers with modern IT infrastructure that supports digital learning, remote access, and campus-wide connectivity.",
-    cta: "Build Your Smart Campus",
+    id: "retail",
+    title: "Retail & Hospitality",
+    subtitle: "Driving customer experience, operational efficiency, and secure transactions.",
+    image: "/industry-retail.png",
+    what: "Retail and hospitality businesses thrive on speed, reliability, and customer trust. Nexobots enables these industries with IT and security infrastructure that connects locations, enhances safety, and streamlines guest experiences.",
+    cta: "Enhance Your Operations",
     services: [
-      "IT Infrastructure Consulting for educational technology roadmaps.",
-      "System Integration of LMS, ERP, and campus management systems.",
-      "Proactive AMC & Support to ensure uptime during exams and sessions.",
-      "Cloud Solutions for e-learning, research data, and collaboration tools.",
+      "IT Strategy Consulting for omnichannel and digital transformation.",
+      "System Integration of POS, booking, CRM, and inventory systems.",
+      "AMC & Monitoring to ensure always-on operations.",
+      "Cloud Enablement for customer data, apps, and analytics.",
     ],
     features: [
       {
         icon: "wifi",
         title: "Smart Network Infrastructure",
-        description:
-          "High-speed campus networks with Wi-Fi coverage for classrooms, labs, and dormitories.",
+        description: "Reliable Wi-Fi and secure networks for POS, guests, and back-office systems.",
       },
       {
         icon: "monitor",
         title: "Intelligent Surveillance",
-        description:
-          "CCTV and monitoring for campus security, entry points, and restricted zones.",
+        description: "CCTV and remote monitoring for stores, hotels, and restaurants.",
       },
       {
         icon: "finger",
         title: "Secure Access & Biometrics",
-        description:
-          "Access control for labs, libraries, and hostel facilities with biometric systems.",
+        description: "Smart locks, staff access, and visitor management systems.",
       },
       {
         icon: "archive",
         title: "End-to-End IT Services",
-        description:
-          "Infrastructure for digital classrooms, research labs, and data centers.",
+        description: "IT management for POS, reservations, loyalty, and CRM systems.",
       },
     ],
   },
   {
-    id: "corporate",
-    title: "Corporate & Enterprise",
-    subtitle:
-      "Empowering enterprises with secure, scalable, and future-ready IT infrastructure.",
-    image: "/hero-industries-1e0a14.png", // Placeholder
-    what: "We help businesses build reliable, high-performance IT environments that connect teams, secure data, and support long-term growth. Our expertise spans structured cabling, networking, surveillance, and managed IT services — designed to keep enterprise operations running efficiently and securely.",
-    cta: "Let's Discuss Your Enterprise Needs",
+    id: "realestate",
+    title: "Real Estate & Smart Infrastructure",
+    subtitle: "Building intelligent, connected, and secure spaces for modern living and working.",
+    image: "/industry-realestate-d966f0.png",
+    what: "From commercial complexes to residential communities, Nexobots helps real estate developers and facility managers implement cutting-edge IT and security infrastructure that enhances safety, efficiency, and digital connectivity. Our solutions turn traditional spaces into smart, future-ready environments.",
+    cta: "Transform Your Properties",
     services: [
-      "Strategic IT Infrastructure Consulting for scalable enterprise systems.",
-      "System Integration for seamless network and software interoperability.",
-      "AMC & Support with proactive monitoring and guaranteed uptime.",
-      "Cloud & Virtualization solutions for efficiency and hybrid environments.",
+      "IT & Security Consulting for smart city, commercial, and residential projects.",
+      "System Integration of surveillance, access control, fire safety, and building automation systems.",
+      "AMC & Managed Support for round-the-clock maintenance and uptime.",
+      "Cloud & Virtualization Enablement for centralized monitoring and property management dashboards.",
     ],
     features: [
       {
         icon: "wifi",
         title: "Smart Network Infrastructure",
-        description:
-          "Robust, enterprise-grade networks with secure switching, firewalls, and optimized Wi-Fi.",
+        description: "High-speed backbone networks for buildings, estates, and townships with seamless Wi-Fi and IoT connectivity.",
       },
       {
         icon: "monitor",
         title: "Intelligent Surveillance",
-        description:
-          "IP-based CCTV, video management systems, and remote monitoring for complete visibility.",
+        description: "Integrated CCTV, ANPR, and centralized monitoring for property-wide security and safety compliance.",
       },
       {
         icon: "finger",
         title: "Secure Access & Biometrics",
-        description:
-          "Biometric and RFID-based access solutions for employees and visitors.",
+        description: "Smart access systems for residents, visitors, and facility staff with mobile or RFID authentication.",
       },
       {
         icon: "archive",
         title: "End-to-End IT Services",
-        description:
-          "From planning to management, ensure business continuity and performance.",
+        description: "Infrastructure design, implementation, and maintenance for smart buildings and control centers.",
       },
     ],
   },
@@ -213,14 +236,14 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <div className="bg-shell text-ink">
+    <div className="bg-[#F8F8F8] text-black">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative isolate min-h-[791px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/hero-industries-1e0a14.png"
+            src="/hero-industries-new.png"
             alt="Industries we serve"
             fill
             priority
@@ -228,8 +251,10 @@ export default function IndustriesPage() {
             sizes="100vw"
           />
         </div>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/60 z-[1]" aria-hidden="true" />
         <div
-          className="absolute bg-black"
+          className="absolute bg-black z-[1]"
           style={{
             width: "1830px",
             height: "682px",
@@ -240,22 +265,33 @@ export default function IndustriesPage() {
           aria-hidden="true"
         />
         <div className="relative z-10 flex min-h-[791px] items-center py-24">
-          <div className="mx-auto w-full max-w-[1440px] px-6 md:px-12 lg:px-[131px]">
+          <div className="mx-auto w-full max-w-[1440px] px-6 md:px-12 lg:px-[72px]">
             <h1
-              className="font-display text-white text-[32px] md:text-[40px] lg:text-[48px]"
+              className="font-['TASA_Orbiter'] text-white text-[32px] md:text-[40px] lg:text-[48px]"
               style={{
                 fontWeight: 600,
                 lineHeight: "1.494",
                 maxWidth: "1027px",
+                position: "relative",
+                zIndex: 20,
+                textShadow: "0 2px 8px rgba(0, 0, 0, 0.5)",
               }}
             >
               Empowering Every Industry with Smart, Secure, and Scalable
               Technology
             </h1>
-            <button className="mt-8 md:mt-12 lg:mt-[67px] flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-4 md:px-8 md:py-5 lg:w-[243px] lg:h-[67px] transition-all hover:bg-white/10">
+            <button 
+              className="mt-[67px] flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-white/10 relative z-20"
+              style={{
+                width: "243px",
+                height: "67px",
+                padding: "20px 29px",
+              }}
+            >
               <span
-                className="font-sans text-white text-base md:text-lg lg:text-[20px]"
+                className="font-['Manrope'] text-white"
                 style={{
+                  fontSize: "20px",
                   fontWeight: 600,
                   lineHeight: "1.366",
                   letterSpacing: "0.02em",
@@ -268,7 +304,7 @@ export default function IndustriesPage() {
                 alt=""
                 width={41}
                 height={41}
-                className="h-8 w-8 md:h-10 md:w-10 lg:h-[41px] lg:w-[41px]"
+                className="h-[41px] w-[41px]"
               />
             </button>
           </div>
@@ -277,15 +313,15 @@ export default function IndustriesPage() {
 
       {/* Below Hero Section */}
       <section
-        className="flex items-center justify-center px-6 md:px-12"
+        className="flex items-center justify-center px-6 md:px-12 lg:px-[72px]"
         style={{
           minHeight: "261px",
           backgroundColor: "#F8F8F8",
         }}
       >
-        <div className="mx-auto w-full max-w-[1440px] py-12 md:py-16 lg:py-[71px]">
+        <div className="mx-auto w-full max-w-[1440px] py-[71px]">
           <p
-            className="font-display text-center text-black text-[20px] md:text-[26px] lg:text-[32px]"
+            className="font-['TASA_Orbiter'] text-center text-black text-[20px] md:text-[26px] lg:text-[32px]"
             style={{
               fontWeight: 700,
               lineHeight: "1.318",
@@ -305,27 +341,27 @@ export default function IndustriesPage() {
       {industries.map((industry) => (
         <section
           key={industry.id}
-          className="bg-shell px-6 py-20 md:px-12 md:py-24 lg:py-32"
+          className="bg-[#F8F8F8] px-6 py-20 md:px-12 md:py-24 lg:px-[72px] lg:py-[120px]"
           style={{
-            backgroundColor: "#F8F8F8",
             minHeight: "1333px",
           }}
         >
           <div className="mx-auto w-full max-w-[1440px]">
             {/* Industry Header */}
-            <div className="mb-12 px-0 lg:px-[72px]">
+            <div className="mb-12 md:mb-16 lg:mb-20">
               <h2
-                className="font-display text-[40px] md:text-[52px] lg:text-[64px] text-black"
+                className="font-['TASA_Orbiter'] text-black text-[32px] md:text-[40px] lg:text-[64px]"
                 style={{
                   fontWeight: 600,
                   lineHeight: "1.22",
                   maxWidth: "788px",
+                  marginBottom: "30px",
                 }}
               >
                 {industry.title}
               </h2>
               <p
-                className="mt-6 md:mt-8 lg:mt-[50px] font-display text-[20px] md:text-[22px] lg:text-[24px] text-black"
+                className="font-['TASA_Orbiter'] text-black text-[18px] md:text-[20px] lg:text-[24px]"
                 style={{
                   fontWeight: 600,
                   lineHeight: "1.08",
@@ -337,29 +373,28 @@ export default function IndustriesPage() {
             </div>
 
             {/* Image + Services Grid */}
-            <div className="grid gap-8 lg:grid-cols-[1fr_442px] lg:gap-12">
+            <div className="grid gap-12 lg:grid-cols-[992px_442px]">
               {/* Left: Image + What We Deliver */}
-              <div className="space-y-8 lg:space-y-12">
+              <div className="space-y-12">
                 <div
-                  className="overflow-hidden"
+                  className="relative overflow-hidden rounded-[13px]"
                   style={{
-                    borderRadius: "13px",
                     width: "100%",
                     maxWidth: "992px",
-                    height: "auto",
+                    height: "474px",
                   }}
                 >
                   <Image
                     src={industry.image}
                     alt={industry.title}
-                    width={992}
-                    height={474}
-                    className="h-auto w-full object-cover"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 992px"
                   />
                 </div>
-                <div className="px-0 lg:px-[32px]">
+                <div className="space-y-4">
                   <h3
-                    className="font-display text-[32px] md:text-[36px] lg:text-[40px] text-black"
+                    className="font-['TASA_Orbiter'] text-black text-[28px] md:text-[32px] lg:text-[40px]"
                     style={{
                       fontWeight: 600,
                       lineHeight: "1.08",
@@ -368,7 +403,7 @@ export default function IndustriesPage() {
                     What We Deliver
                   </h3>
                   <p
-                    className="mt-4 md:mt-6 font-display text-[18px] md:text-[20px] lg:text-[22px] text-black"
+                    className="font-['TASA_Orbiter'] text-black text-[18px] md:text-[20px] lg:text-[22px]"
                     style={{
                       fontWeight: 600,
                       lineHeight: "0.98",
@@ -381,9 +416,9 @@ export default function IndustriesPage() {
               </div>
 
               {/* Right: How We Support You */}
-              <div className="space-y-6 lg:space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 <h3
-                  className="font-display text-[28px] md:text-[30px] lg:text-[32px] text-black"
+                  className="font-['TASA_Orbiter'] text-black text-[24px] md:text-[28px] lg:text-[32px]"
                   style={{
                     fontWeight: 600,
                     lineHeight: "1.08",
@@ -411,15 +446,16 @@ export default function IndustriesPage() {
                       backgroundColor: "#E11E24",
                     }}
                   />
-                  <div className="space-y-2 pl-8">
+                  <div className="space-y-2" style={{ paddingLeft: "32px" }}>
                     {industry.services.map((service, i) => (
                       <p
                         key={i}
-                        className="font-display text-[14px] md:text-[15px] lg:text-[16px] text-black"
+                        className="font-['TASA_Orbiter'] text-black"
                         style={{
+                          fontSize: i === 0 ? "20px" : "16px",
                           fontWeight: 600,
                           lineHeight: "1.08",
-                          paddingBottom: i === 0 ? "8px" : "8px",
+                          paddingBottom: "8px",
                         }}
                       >
                         {service}
@@ -430,15 +466,16 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <button
-                  className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white px-6 py-3 transition-all hover:bg-gray-50"
+                  className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-50"
                   style={{
-                    width: "auto",
-                    minWidth: "300px",
+                    width: "100%",
+                    maxWidth: "442px",
                     height: "45px",
+                    padding: "12px 24px",
                   }}
                 >
                   <span
-                    className="font-sans text-black"
+                    className="font-['Manrope'] text-black"
                     style={{
                       fontSize: "15px",
                       fontWeight: 600,
@@ -453,14 +490,21 @@ export default function IndustriesPage() {
             </div>
 
             {/* Features Grid */}
-            <div className="mt-16 lg:mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:px-[69px]">
+            <div 
+              className="flex flex-wrap justify-start mt-12 md:mt-16 lg:mt-20"
+              style={{
+                gap: "24px",
+              }}
+            >
               {industry.features.map((feature, i) => (
                 <article
                   key={i}
-                  className="flex flex-col gap-5 rounded-[9px] border border-transparent bg-white p-6"
+                  className="flex flex-col rounded-[9px] border border-transparent bg-white"
                   style={{
                     width: "100%",
                     maxWidth: "318px",
+                    padding: "24px",
+                    gap: "20px",
                   }}
                 >
                   <div
@@ -471,11 +515,12 @@ export default function IndustriesPage() {
                       backgroundColor: "#F8F8F8",
                     }}
                   >
-                    <div className="h-6 w-6 bg-primary/30 rounded" />
+                    {getIconComponent(feature.icon)}
                   </div>
                   <h4
-                    className="font-display text-[16px] text-black"
+                    className="font-['TASA_Orbiter'] text-black"
                     style={{
+                      fontSize: "16px",
                       fontWeight: 600,
                       lineHeight: "1.08",
                     }}
@@ -483,8 +528,9 @@ export default function IndustriesPage() {
                     {feature.title}
                   </h4>
                   <p
-                    className="font-display text-[15px]"
+                    className="font-['TASA_Orbiter']"
                     style={{
+                      fontSize: "15px",
                       fontWeight: 500,
                       lineHeight: "1.08",
                       color: "#A4A4A4",
@@ -500,68 +546,38 @@ export default function IndustriesPage() {
       ))}
 
       {/* Our Partners Section */}
-      <section
-        className="bg-shell px-6 py-20 md:px-12"
-        style={{
-          backgroundColor: "#F8F8F8",
-        }}
-      >
-        <div className="mx-auto w-full max-w-[1200px] space-y-12">
-          <div className="space-y-6 text-center">
-            <p
-              className="font-display text-[14px] font-medium uppercase tracking-[0.4em]"
-              style={{ color: "#9C9C9C" }}
-            >
-              Our Partners
-            </p>
-            <h2
-              className="font-display text-[40px] md:text-[48px] lg:text-[56px] text-black"
-              style={{
-                fontWeight: 600,
-                lineHeight: "1.3",
-              }}
-            >
-              Trusted Technology Alliances
-            </h2>
-          </div>
-          <div className="flex justify-center">
-            <Image
-              src="/partners-logos.png"
-              alt="Technology partners"
-              width={906}
-              height={417}
-              className="h-auto w-full max-w-[906px]"
-            />
-          </div>
-        </div>
-      </section>
+      <Partners />
 
       {/* CTA Section */}
       <section
-        className="px-6 py-24 md:px-12"
+        className="flex items-center justify-center px-6 py-24 md:px-12 md:py-24 lg:px-[72px] lg:py-[120px]"
         style={{
           minHeight: "723px",
           backgroundColor: "#000000",
         }}
       >
-        <div className="mx-auto flex min-h-[600px] w-full max-w-[1440px] flex-col items-center justify-center space-y-12 text-center">
+        <div className="mx-auto w-full max-w-[1440px] text-center">
           <h2
-            className="font-display text-white text-[40px] md:text-[52px] lg:text-[64px]"
+            className="font-['TASA_Orbiter'] text-white text-[32px] md:text-[40px] lg:text-[64px]"
             style={{
               fontWeight: 600,
               lineHeight: "1.494",
               maxWidth: "1148px",
+              margin: "0 auto",
             }}
           >
             Ready to Transform Your Industry with Smart, Secure, and Scalable
             IT Solutions?
           </h2>
           <p
-            className="font-sans text-white/80 text-[16px] md:text-[18px] lg:text-[20px]"
+            className="font-['Manrope'] text-white text-[16px] md:text-[18px] lg:text-[20px]"
             style={{
               fontWeight: 400,
               lineHeight: "1.4",
               maxWidth: "854px",
+              margin: "0 auto",
+              marginTop: "32px",
+              opacity: 0.8,
             }}
           >
             Let&apos;s discuss how Nexobots can deliver tailored technology
@@ -569,14 +585,15 @@ export default function IndustriesPage() {
             and digital transformation.
           </p>
           <button
-            className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white px-8 py-4 transition-all hover:bg-gray-50"
+            className="mx-auto mt-12 flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-50"
             style={{
               width: "auto",
               height: "45px",
+              padding: "12px 24px",
             }}
           >
             <span
-              className="font-sans text-black"
+              className="font-['Manrope'] text-black"
               style={{
                 fontSize: "15px",
                 fontWeight: 600,
@@ -591,308 +608,11 @@ export default function IndustriesPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section
-        className="bg-shell px-6 py-24 md:px-12"
-        style={{
-          minHeight: "739px",
-          backgroundColor: "#F8F8F8",
-        }}
-      >
-        <div className="mx-auto w-full max-w-[1440px]">
-          <div className="mb-12 space-y-4 text-center">
-            <p
-              className="font-sans text-[14px] font-medium uppercase tracking-[0.4em]"
-              style={{ color: "#707070" }}
-            >
-              Contact Us
-            </p>
-            <h2
-              className="font-sans text-[28px] md:text-[32px] lg:text-[36px] text-black"
-              style={{
-                fontWeight: 600,
-                lineHeight: "1.5",
-              }}
-            >
-              Get in Touch
-            </h2>
-          </div>
-
-          <div className="mx-auto grid max-w-[1300px] gap-12 lg:grid-cols-2">
-            {/* Contact Form */}
-            <form className="space-y-6">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter your full name"
-                    className="w-full rounded-2xl border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full rounded-2xl border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Phone Number
-                  </label>
-                  <div className="flex items-center gap-3 rounded-2xl border border-[#CECECE] bg-[#F2F2F2] px-4 py-3">
-                    <div className="flex items-center gap-2">
-                      <Image
-                        src="/hero-industries-1e0a14.png"
-                        alt="Flag"
-                        width={21}
-                        height={21}
-                        className="h-5 w-5 rounded"
-                      />
-                      <span className="text-[#4C4C4C]">▼</span>
-                    </div>
-                    <input
-                      type="tel"
-                      placeholder="Enter phone number"
-                      className="flex-1 bg-transparent text-base text-black outline-none"
-                      style={{ fontWeight: 500 }}
-                    />
-                  </div>
-                </div>
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter company name"
-                    className="w-full rounded-2xl border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <label
-                  className="font-sans text-[14px] text-black"
-                  style={{ fontWeight: 600 }}
-                >
-                  Message
-                </label>
-                <textarea
-                  placeholder="Tell us about your project or requirements"
-                  rows={6}
-                  className="w-full rounded-2xl border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                  style={{ fontWeight: 500, resize: "none" }}
-                />
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded border border-[#C9C9C9] bg-transparent">
-                  <div className="h-4 w-4 rounded bg-primary" />
-                </div>
-                <label
-                  className="font-sans text-[14px]"
-                  style={{ fontWeight: 500, color: "#4C4C4C" }}
-                >
-                  I agree with Terms of Use and Privacy Policy
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex items-center gap-3 rounded-[75px] border border-[rgba(70,70,70,0.3)] bg-black px-6 py-3 text-white transition hover:bg-gray-900"
-              >
-                <span
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 300,
-                    lineHeight: "0.78",
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  Submit
-                </span>
-              </button>
-            </form>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h3
-                  className="font-sans text-[18px] text-black"
-                  style={{ fontWeight: 500 }}
-                >
-                  Nexobots Technologies LLP
-                </h3>
-                <p
-                  className="mt-4 font-sans text-[16px]"
-                  style={{ fontWeight: 400, color: "#4C4C4C", lineHeight: "1.5" }}
-                >
-                  India&apos;s leading provider of structured cabling, networking,
-                  surveillance, biometric access, and managed IT services.
-                </p>
-              </div>
-              <Image
-                src="/contact-illustration.png"
-                alt="Nexobots team"
-                width={317}
-                height={145}
-                className="h-auto w-full max-w-[317px] rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <ContactForm />
 
       {/* Footer */}
-      <footer
-        className="px-6 py-16 md:px-12"
-        style={{
-          minHeight: "633px",
-          backgroundColor: "#000000",
-        }}
-      >
-        <div className="mx-auto w-full max-w-[1440px]">
-          <div className="grid gap-12 lg:grid-cols-[1fr_940px] lg:px-[103px]">
-            {/* Left: Logo & Description */}
-            <div className="space-y-6">
-              <Image src="/logo.svg" alt="Nexobots" width={182} height={33} />
-              <p
-                className="font-sans text-[16px]"
-                style={{
-                  fontWeight: 500,
-                  lineHeight: "1.3",
-                  color: "#9C9C9C",
-                  maxWidth: "280px",
-                }}
-              >
-                Nexobots Technologies — Building intelligent, secure, and
-                scalable infrastructure for enterprises and industries across
-                India.
-              </p>
-              <div className="flex gap-2">
-                <button
-                  className="flex h-[37px] w-[41px] items-center justify-center rounded bg-[#1D1D1D]"
-                  aria-label="LinkedIn"
-                >
-                  <div className="h-5 w-5 bg-[#98989A] rounded" />
-                </button>
-                <button
-                  className="flex h-[37px] w-[39px] items-center justify-center rounded bg-[#1D1D1D]"
-                  aria-label="Twitter"
-                >
-                  <div className="h-5 w-5 bg-[#98989A] rounded" />
-                </button>
-                <button
-                  className="flex h-[37px] w-[40px] items-center justify-center rounded bg-[#1D1D1D]"
-                  aria-label="Facebook"
-                >
-                  <div className="h-[17px] w-[17px] bg-[#98989A] rounded" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right: Links Grid */}
-            <div className="grid gap-12 md:grid-cols-4">
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Solutions
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>Smart Network</li>
-                  <li>CCTV Solutions</li>
-                  <li>Access Control</li>
-                  <li>IT Services</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Services
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>Consulting</li>
-                  <li>Integration</li>
-                  <li>AMC Support</li>
-                  <li>Cloud Services</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Industries
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>Corporate</li>
-                  <li>Education</li>
-                  <li>Healthcare</li>
-                  <li>Retail</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Company
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>About Us</li>
-                  <li>Blogs</li>
-                  <li>News</li>
-                  <li>Contact</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div
-            className="mt-16 border-t pt-9 text-center"
-            style={{
-              borderColor: "rgba(255, 255, 255, 0.2)",
-            }}
-          >
-            <p
-              className="font-sans text-[16px] text-white"
-              style={{ fontWeight: 400 }}
-            >
-              Copyright © {new Date().getFullYear()} Nexobots Technologies LLP |
-              All Rights Reserved | Privacy Policy
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
+

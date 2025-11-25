@@ -1,6 +1,8 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { ContactForm } from "@/components/ContactForm";
 import Image from "next/image";
 
 const solutions = [
@@ -92,7 +94,7 @@ export default function SolutionsPage() {
             {/* Left Column - Title */}
             <div>
               <h1
-                className="font-display text-black text-[36px] md:text-[44px] lg:text-[50px]"
+                className="font-['TASA_Orbiter'] text-black text-[36px] md:text-[44px] lg:text-[50px]"
                 style={{
                   fontWeight: 600,
                   lineHeight: "1.32",
@@ -107,7 +109,7 @@ export default function SolutionsPage() {
             {/* Right Column - Description + CTA */}
             <div className="flex flex-col justify-center space-y-8">
               <p
-                className="font-display text-black text-[16px] md:text-[18px] lg:text-[20px]"
+                className="font-['Manrope'] text-black text-[16px] md:text-[18px] lg:text-[20px]"
                 style={{
                   fontWeight: 600,
                   lineHeight: "1.32",
@@ -133,7 +135,7 @@ export default function SolutionsPage() {
                 }}
               >
                 <span
-                  className="font-sans text-white"
+                  className="font-['Manrope'] text-white"
                   style={{
                     fontSize: "20px",
                     fontWeight: 600,
@@ -168,12 +170,11 @@ export default function SolutionsPage() {
           >
             {/* Title */}
             <h2
-              className="font-sans text-black text-[32px] md:text-[40px] lg:text-[48px] mb-8"
+              className="font-['TASA_Orbiter'] text-black text-[32px] md:text-[40px] lg:text-[48px] mb-8"
               style={{
                 fontWeight: 700,
                 lineHeight: "1.366",
                 letterSpacing: "0.02em",
-                textTransform: solution.id === "biometric-access" ? "capitalize" : "lowercase",
               }}
             >
               {solution.title}
@@ -216,7 +217,7 @@ export default function SolutionsPage() {
                 {/* Description Text Over Image */}
                 <div className="absolute bottom-6 left-6 right-6">
                   <p
-                    className="font-sans text-white whitespace-pre-line"
+                    className="font-['Manrope'] text-white whitespace-pre-line"
                     style={{
                       fontSize: "24px",
                       fontWeight: 700,
@@ -262,7 +263,7 @@ export default function SolutionsPage() {
                         </svg>
                       </div>
                       <p
-                        className="font-sans text-black ml-6"
+                        className="font-['Manrope'] text-black ml-6"
                         style={{
                           fontSize: "16px",
                           fontWeight: 600,
@@ -285,7 +286,7 @@ export default function SolutionsPage() {
                   }}
                 >
                   <span
-                    className="font-sans text-white"
+                    className="font-['Manrope'] text-white"
                     style={{
                       fontSize: "15px",
                       fontWeight: 600,
@@ -312,7 +313,7 @@ export default function SolutionsPage() {
       >
         <div className="mx-auto w-full max-w-[1440px] text-center">
           <h2
-            className="font-display text-black text-[40px] md:text-[52px] lg:text-[64px]"
+            className="font-['TASA_Orbiter'] text-black text-[40px] md:text-[52px] lg:text-[64px]"
             style={{
               fontWeight: 600,
               lineHeight: "1.494",
@@ -324,7 +325,7 @@ export default function SolutionsPage() {
           </h2>
 
           <p
-            className="mt-8 font-sans text-black text-[16px] md:text-[18px] lg:text-[20px]"
+            className="mt-8 font-['Manrope'] text-black text-[16px] md:text-[18px] lg:text-[20px]"
             style={{
               fontWeight: 400,
               lineHeight: "1.4",
@@ -355,7 +356,7 @@ export default function SolutionsPage() {
             }}
           >
             <span
-              className="font-sans text-white"
+              className="font-['Manrope'] text-white"
               style={{
                 fontSize: "15px",
                 fontWeight: 600,
@@ -369,297 +370,11 @@ export default function SolutionsPage() {
         </div>
       </section>
 
-      {/* Contact Form Section - Same as Industries page */}
-      <section
-        className="bg-shell px-6 py-24 md:px-12"
-        style={{
-          minHeight: "739px",
-          backgroundColor: "#FFFFFF",
-        }}
-      >
-        <div className="mx-auto w-full max-w-[1440px]">
-          <div className="mb-12 space-y-4 text-center">
-            <p
-              className="font-sans text-[14px] font-medium uppercase tracking-[0.4em]"
-              style={{ color: "#707070" }}
-            >
-              Contact Us
-            </p>
-            <h2
-              className="font-sans text-[28px] md:text-[32px] lg:text-[36px] text-black"
-              style={{
-                fontWeight: 600,
-                lineHeight: "1.5",
-              }}
-            >
-              Get in Touch
-            </h2>
-          </div>
+      {/* Contact Form Section */}
+      <ContactForm />
 
-          <div className="mx-auto grid max-w-[1300px] gap-12 lg:grid-cols-2">
-            {/* Contact Form */}
-            <form className="space-y-6">
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter First Name"
-                    className="w-full rounded-md border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Enter Last Name"
-                    className="w-full rounded-md border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Enter your Email"
-                    className="w-full rounded-md border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-                <div className="space-y-3">
-                  <label
-                    className="font-sans text-[14px] text-black"
-                    style={{ fontWeight: 600 }}
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="Enter phone number"
-                    className="w-full rounded-md border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                    style={{ fontWeight: 500 }}
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-3">
-                <label
-                  className="font-sans text-[14px] text-black"
-                  style={{ fontWeight: 600 }}
-                >
-                  Message
-                </label>
-                <textarea
-                  placeholder="Tell us about your project or requirements"
-                  rows={6}
-                  className="w-full rounded-md border border-[#CECECE] bg-[#F2F2F2] px-4 py-3 text-base text-black outline-none transition focus:border-primary"
-                  style={{ fontWeight: 500, resize: "none" }}
-                />
-              </div>
-
-              <div className="flex items-center gap-3">
-                <div className="flex h-6 w-6 items-center justify-center rounded border border-[#C9C9C9] bg-transparent">
-                  <div className="h-4 w-4 rounded bg-primary" />
-                </div>
-                <label
-                  className="font-sans text-[14px]"
-                  style={{ fontWeight: 500, color: "#4C4C4C" }}
-                >
-                  I agree with Terms of Use and Privacy Policy
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex items-center gap-3 rounded-[75px] border border-[rgba(70,70,70,0.3)] bg-black px-6 py-3 text-white transition hover:bg-gray-900"
-              >
-                <span
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 300,
-                    lineHeight: "0.78",
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  Submit
-                </span>
-              </button>
-            </form>
-
-            {/* Contact Info */}
-            <div className="space-y-8">
-              <div>
-                <h3
-                  className="font-sans text-[18px] text-black"
-                  style={{ fontWeight: 500 }}
-                >
-                  Nexobots Technologies LLP
-                </h3>
-                <p
-                  className="mt-4 font-sans text-[16px]"
-                  style={{ fontWeight: 400, color: "#4C4C4C", lineHeight: "1.5" }}
-                >
-                  India&apos;s leading provider of structured cabling, networking,
-                  surveillance, biometric access, and managed IT services.
-                </p>
-              </div>
-              <Image
-                src="/contact-illustration.png"
-                alt="Nexobots team"
-                width={317}
-                height={145}
-                className="h-auto w-full max-w-[317px] rounded-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer - Same as Industries page */}
-      <footer
-        className="px-6 py-16 md:px-12"
-        style={{
-          minHeight: "633px",
-          backgroundColor: "#000000",
-        }}
-      >
-        <div className="mx-auto w-full max-w-[1440px]">
-          <div className="grid gap-12 lg:grid-cols-[1fr_940px] lg:px-[103px]">
-            {/* Left: Logo & Description */}
-            <div className="space-y-6">
-              <Image src="/logo.svg" alt="Nexobots" width={182} height={33} />
-              <p
-                className="font-sans text-[16px]"
-                style={{
-                  fontWeight: 500,
-                  lineHeight: "1.3",
-                  color: "#9C9C9C",
-                  maxWidth: "280px",
-                }}
-              >
-                nexobots Technologies LLP India&apos;s leading provider of structured
-                cabling, networking, surveillance, biometric access, and managed IT
-                services
-              </p>
-              <div className="flex gap-2">
-                <button
-                  className="flex h-[37px] w-[41px] items-center justify-center rounded bg-[#1D1D1D]"
-                  aria-label="LinkedIn"
-                >
-                  <div className="h-5 w-5 bg-[#98989A] rounded" />
-                </button>
-                <button
-                  className="flex h-[37px] w-[39px] items-center justify-center rounded bg-[#1D1D1D]"
-                  aria-label="Twitter"
-                >
-                  <div className="h-5 w-5 bg-[#98989A] rounded" />
-                </button>
-                <button
-                  className="flex h-[37px] w-[40px] items-center justify-center rounded bg-[#1D1D1D]"
-                  aria-label="Facebook"
-                >
-                  <div className="h-[17px] w-[17px] bg-[#98989A] rounded" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right: Links Grid */}
-            <div className="grid gap-12 md:grid-cols-4">
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Solutions
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>Smart Network</li>
-                  <li>Infrastructure CCTV Solutions</li>
-                  <li>Secure access & Biometrics</li>
-                  <li>End to end IT Services</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Services
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>IT Infrastructure Consulting</li>
-                  <li>System Integration</li>
-                  <li>AMC Suooort</li>
-                  <li>Cloud & Virtualization support</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Industries
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>Corporate & Enterprises</li>
-                  <li>Education & Research</li>
-                  <li>Healthcare & Pharma</li>
-                  <li>Retail & Hospitality</li>
-                </ul>
-              </div>
-              <div className="space-y-6">
-                <h4
-                  className="font-display text-[32px] text-white"
-                  style={{ fontWeight: 500 }}
-                >
-                  Company
-                </h4>
-                <ul className="space-y-4 font-sans text-[14px] text-[#9C9C9C]">
-                  <li>About us</li>
-                  <li>Blogs</li>
-                  <li>News & Media</li>
-                  <li>Contact Us</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Copyright */}
-          <div
-            className="mt-16 border-t pt-9 text-center"
-            style={{
-              borderColor: "rgba(255, 255, 255, 0.2)",
-            }}
-          >
-            <p
-              className="font-sans text-[16px] text-white"
-              style={{ fontWeight: 400 }}
-            >
-              Copyright © {new Date().getFullYear()} Nexobots    |   All Rights
-              Reserved   |   Privacy Policy
-            </p>
-          </div>
-        </div>
-      </footer>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
