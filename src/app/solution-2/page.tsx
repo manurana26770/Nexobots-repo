@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
-export default function Solution1Page() {
+export default function Solution2Page() {
   return (
     <div className="bg-white text-black">
       <Navbar />
@@ -1029,7 +1029,7 @@ export default function Solution1Page() {
             <div className="mb-5 h-[64px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
               <div className="relative flex items-center justify-between">
                 <h3 className="font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                Can you integrate existing infrastructure with new solutions? 
+                Can you integrate existing infrastructure with new solutions?
                 </h3>
                 {/* Icon */}
                 <div className="h-6 w-6 flex-shrink-0">

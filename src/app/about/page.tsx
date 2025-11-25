@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { ContactForm } from "@/components/ContactForm";
 import { Footer } from "@/components/Footer";
+import Testimonials from "@/components/Testimonials";
 
 const dataPointers = [
   { value: "400+", label: "Projects Competed" },
@@ -11,27 +14,24 @@ const dataPointers = [
   { value: "99%", label: "Retention Rate" },
 ] as const;
 
-const visionPoints = [
-  { title: "Our Visison", isMain: true },
-  { title: "Misson", isMain: false },
-  { title: "Our Purpose", isMain: false },
-] as const;
-
 const pointers = [
   {
     title: "Customer Focus",
     description:
       "We put our customers at the center of everything we do — understanding their needs and delivering solutions that drive measurable impact and long-term partnerships.",
+    icon: "customer",
   },
   {
     title: "Quality First",
     description:
       "We are committed to excellence in every detail — ensuring every project, product, and service meets the highest standards of performance and reliability.",
+    icon: "quality",
   },
   {
     title: "Reliability",
     description:
       "We deliver on our promises with consistency and accountability — providing dependable technology and support that businesses can trust.",
+    icon: "reliability",
   },
 ] as const;
 
@@ -95,68 +95,182 @@ const testimonials = [
   },
 ] as const;
 
+// Icon Components
+const CPUIcon = ({ size = "76" }: { size?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="3" width="70" height="70" rx="15" stroke="#E9E9E9" strokeWidth="1" fill="none"/>
+    <rect x="22.17" y="22.17" width="31.67" height="31.67" stroke="#E11E24" strokeWidth="1" fill="none"/>
+    <rect x="31.67" y="31.67" width="12.67" height="12.67" fill="#E11E24"/>
+    <rect x="31.67" y="12.67" width="12.67" height="9.5" fill="#E11E24"/>
+    <rect x="53.83" y="31.67" width="9.5" height="12.67" fill="#E11E24"/>
+    <rect x="31.67" y="53.83" width="12.67" height="9.5" fill="#E11E24"/>
+    <rect x="12.67" y="31.67" width="9.5" height="12.67" fill="#E11E24"/>
+  </svg>
+);
+
+const UnlockIcon = ({ size = "70" }: { size?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="70" height="70" rx="15" stroke="#E9E9E9" strokeWidth="1" fill="none"/>
+    <path d="M25.42 33.04C25.42 28.5 29.04 25 33.25 25C37.46 25 41.08 28.5 41.08 33.04V43.21" stroke="#E11E24" strokeWidth="2" fill="none"/>
+    <path d="M10.17 23.13H50.84V53.63H10.17V23.13Z" stroke="#E11E24" strokeWidth="2" fill="none"/>
+    <circle cx="30.5" cy="38.38" r="10.17" fill="#E11E24"/>
+  </svg>
+);
+
+const FilterIcon = ({ size = "70" }: { size?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.5" y="0" width="70" height="70" rx="15" stroke="#E9E9E9" strokeWidth="1" fill="none"/>
+    <line x1="35" y1="20.42" x2="35" y2="20.42" stroke="#E11E24" strokeWidth="2"/>
+    <line x1="11.67" y1="20.42" x2="23.34" y2="20.42" stroke="#E11E24" strokeWidth="2"/>
+    <line x1="49.58" y1="49.58" x2="58.33" y2="49.58" stroke="#E11E24" strokeWidth="2"/>
+    <line x1="11.67" y1="49.58" x2="35" y2="49.58" stroke="#E11E24" strokeWidth="2"/>
+    <circle cx="29.17" cy="20.42" r="5.83" stroke="#E11E24" strokeWidth="2" fill="none"/>
+    <circle cx="43.75" cy="49.58" r="5.83" stroke="#E11E24" strokeWidth="2" fill="none"/>
+  </svg>
+);
+
+const getIconComponent = (icon: string, size: string = "76") => {
+  switch (icon) {
+    case "cpu":
+      return <CPUIcon size={size} />;
+    case "unlock":
+      return <UnlockIcon size={size} />;
+    case "filter":
+      return <FilterIcon size={size} />;
+    default:
+      return null;
+  }
+};
+
+const getPointerIcon = (icon: string) => {
+  switch (icon) {
+    case "customer":
+      return <Image src="/pointer-customer-icon.svg" alt="Customer Focus" width={41.15} height={41.15} />;
+    case "quality":
+      return <Image src="/pointer-quality-icon.svg" alt="Quality First" width={31.76} height={41.05} />;
+    case "reliability":
+      return <Image src="/pointer-reliability-icon.svg" alt="Reliability" width={35} height={41} />;
+    default:
+      return null;
+  }
+};
+
 export default function AboutPage() {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-[#F8F8F8] text-black">
       <Navbar />
 
-      {/* Hero Image Section */}
-      <section className="relative h-[791px] w-full overflow-hidden">
-        <Image
-          src="/about-hero.png"
-          alt="About Hero"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/40" style={{ backdropFilter: "blur(233.9px)" }} />
-      </section>
-
-      {/* Hero Text Section */}
-      <section className="relative bg-black px-6 py-24 text-white md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1027px] text-center">
-          <h1 className="font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.494] text-white md:text-[56px] lg:text-[64px]">
-            Empowering Every Industry with Smart, Secure, and Scalable
-            Technology
-          </h1>
-          <Link
-            href="#contact"
-            className="mt-12 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-5 text-[20px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
-          >
-            Talk to an Expert
-            <svg
-              width="41"
-              height="41"
-              viewBox="0 0 41 41"
-              fill="none"
-              className="h-[41px] w-[41px]"
+      {/* Hero Section */}
+      <section className="relative h-[911px] w-full overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/about-hero-grid.png"
+            alt="About Hero - Futuristic Technology Grid"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        {/* Dark overlay - reduced opacity to show the grid pattern better */}
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="relative z-10 flex h-full items-center px-6 md:px-12 lg:px-[128px]">
+          <div className="max-w-[1027px]">
+            <h1
+              className="text-white text-[32px] md:text-[48px] lg:text-[64px]"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontWeight: 600,
+                lineHeight: "1.494",
+                marginBottom: "67px",
+              }}
             >
-              <path
-                d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                stroke="white"
-                strokeWidth="2"
+              Empowering Every Industry with Smart, Secure, and Scalable
+              Technology
+            </h1>
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-white/10"
+              style={{
+                width: "261px",
+                height: "67px",
+                padding: "20px 29px",
+              }}
+            >
+              <span
+                className="text-white"
+                style={{
+                  fontFamily: "Manrope",
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Talk to an Expert
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
+                className="h-[41px] w-[41px]"
               />
-            </svg>
-          </Link>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* We Are Nexobots Section */}
-      <section className="bg-white px-6 py-24 md:px-12 lg:px-[107px]">
+      <section 
+        className="bg-white px-6 py-24 md:px-12 lg:px-[107px]"
+        style={{
+          minHeight: "713px",
+        }}
+      >
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="mb-16 font-['TASA_Orbiter'] text-[72px] font-semibold leading-[1.494] text-black md:text-[80px] lg:text-[96px]">
+          <h2
+            className="text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "96px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              marginBottom: "64px",
+              maxWidth: "1027px",
+            }}
+          >
             We are nexobots
           </h2>
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
-            <p className="font-['TASA_Orbiter'] text-[20px] font-medium leading-[1.32] text-black md:text-[22px] lg:text-[24px]">
+          <div className="grid grid-cols-1 gap-0 md:grid-cols-2" style={{ marginBottom: "26px" }}>
+            <p
+              className="text-black"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                width: "573px",
+                maxWidth: "100%",
+              }}
+            >
               Nexobots Technologies is one of India&apos;s leading IT and
               security infrastructure companies, with a strong presence across
               180+ cities. We deliver end-to-end technology solutions that
               power seamless connectivity, intelligent security, and scalable
               digital ecosystems for enterprises nationwide.
             </p>
-            <p className="font-['TASA_Orbiter'] text-[20px] font-medium leading-[1.32] text-black md:text-[22px] lg:text-[24px]">
+            <p
+              className="text-black"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                width: "573px",
+                maxWidth: "100%",
+              }}
+            >
               With a commitment to innovation and reliability, we design,
               implement, and manage infrastructure that enables organizations to
               thrive in the digital era. Our solutions blend cutting-edge
@@ -166,22 +280,32 @@ export default function AboutPage() {
           </div>
           <Link
             href="#contact"
-            className="mt-8 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-5 text-[20px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
+            className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-800"
+            style={{
+              width: "209px",
+              height: "67px",
+              padding: "20px 29px",
+            }}
           >
-            Get In Touch
-            <svg
-              width="41"
-              height="41"
-              viewBox="0 0 41 41"
-              fill="none"
-              className="h-[41px] w-[41px]"
+            <span
+              className="text-white"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "20px",
+                fontWeight: 600,
+                lineHeight: "1.366",
+                letterSpacing: "0.02em",
+              }}
             >
-              <path
-                d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                stroke="white"
-                strokeWidth="2"
-              />
-            </svg>
+              Get In Touch
+            </span>
+            <Image
+              src="/find-out-more-arrow.svg"
+              alt=""
+              width={41}
+              height={41}
+              className="h-[41px] w-[41px]"
+            />
           </Link>
         </div>
       </section>
@@ -191,14 +315,37 @@ export default function AboutPage() {
         <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-center gap-3">
           {dataPointers.map((pointer, index) => (
             <div key={pointer.label} className="flex items-center gap-3">
-              <div className="flex w-[306px] flex-col items-center justify-center gap-[6px] py-5">
+              <div
+                className="flex flex-col items-center justify-center gap-[6px] py-5"
+                style={{
+                  width: "306px",
+                  padding: "20px 62px",
+                }}
+              >
                 <div className="text-center">
-                  <p className="font-['Manrope'] text-[55px] font-bold uppercase leading-[1.366] text-white">
+                  <p
+                    className="text-white"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "55px",
+                      fontWeight: 700,
+                      lineHeight: "1.366",
+                      textTransform: "uppercase",
+                    }}
+                  >
                     {pointer.value}
                   </p>
                 </div>
                 <div className="text-center">
-                  <p className="font-['Manrope'] text-[20px] font-normal leading-[1.366] text-[#CACACA]">
+                  <p
+                    className="text-[#CACACA]"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "20px",
+                      fontWeight: 400,
+                      lineHeight: "1.366",
+                    }}
+                  >
                     {pointer.label}
                   </p>
                 </div>
@@ -213,25 +360,62 @@ export default function AboutPage() {
 
       {/* Our Vision Section */}
       <section className="relative h-[669px] overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/about-vision-bg.png"
+            alt="Our Vision Background"
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         <div className="absolute inset-0 bg-black/68" />
-        <Image
-          src="/about-hero.png"
-          alt="Our Vision Background"
-          fill
-          className="object-cover"
-          sizes="100vw"
-        />
         <div className="relative z-10 flex h-full items-center px-6 md:px-12 lg:px-[106px]">
-          <div className="relative max-w-[542px] space-y-8 rounded-[22px] p-12">
-            <div className="absolute left-0 top-0 h-[95px] w-[7px] rounded-[22px] bg-[#E11E24]" />
-            <div className="space-y-8">
-              <h2 className="font-['TASA_Orbiter'] text-[64px] font-semibold leading-[0.93] text-white">
+          <div
+            className="relative space-y-8 rounded-[22px] p-12"
+            style={{
+              maxWidth: "542px",
+            }}
+          >
+            <div
+              className="absolute left-0 top-0 rounded-[22px] bg-[#E11E24]"
+              style={{
+                width: "7px",
+                height: "95px",
+              }}
+            />
+            <div className="space-y-8" style={{ paddingLeft: "37px" }}>
+              <h2
+                className="text-white"
+                style={{
+                  fontFamily: "TASA Orbiter",
+                  fontSize: "64px",
+                  fontWeight: 600,
+                  lineHeight: "0.93",
+                }}
+              >
                 Our Visison
               </h2>
-              <h3 className="font-['TASA_Orbiter'] text-[36px] font-bold leading-[1.494] text-white">
+              <h3
+                className="text-white"
+                style={{
+                  fontFamily: "TASA Orbiter",
+                  fontSize: "36px",
+                  fontWeight: 700,
+                  lineHeight: "1.494",
+                }}
+              >
                 Misson
               </h3>
-              <h3 className="font-['TASA_Orbiter'] text-[36px] font-bold leading-[1.494] text-white">
+              <h3
+                className="text-white"
+                style={{
+                  fontFamily: "TASA Orbiter",
+                  fontSize: "36px",
+                  fontWeight: 700,
+                  lineHeight: "1.494",
+                }}
+              >
                 Our Purpose
               </h3>
             </div>
@@ -242,10 +426,26 @@ export default function AboutPage() {
       {/* Content Block Section */}
       <section className="bg-white px-6 py-24 md:px-12 lg:px-[136px]">
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="mb-6 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.26] text-black md:text-[44px] lg:text-[48px]">
+          <h2
+            className="mb-6 text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "48px",
+              fontWeight: 600,
+              lineHeight: "1.26",
+            }}
+          >
             To be India&apos;s most trusted technology partner —
           </h2>
-          <p className="font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.26] text-black md:text-[36px] lg:text-[40px]">
+          <p
+            className="text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "40px",
+              fontWeight: 600,
+              lineHeight: "1.26",
+            }}
+          >
             Empowering organizations to build intelligent, secure, and
             future-ready IT infrastructures that drive business excellence and
             positive change.
@@ -254,15 +454,79 @@ export default function AboutPage() {
       </section>
 
       {/* Pointers Section */}
-      <section className="bg-black px-6 py-[120px] md:px-12 lg:px-[49px]">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="flex flex-wrap items-start justify-center gap-[89px]">
+      <section 
+        className="bg-black"
+        style={{
+          padding: "120px 49px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div
+          style={{
+            width: "1341.2px",
+            maxWidth: "100%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {/* Icons Row */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "352px",
+              marginBottom: "24px",
+              alignItems: "center",
+            }}
+          >
             {pointers.map((pointer) => (
-              <div key={pointer.title} className="max-w-[300px]">
-                <h3 className="mb-3 font-['TASA_Orbiter'] text-[20px] font-bold leading-[0.95] tracking-[0.02em] text-white">
+              <div 
+                key={`icon-${pointer.title}`}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {getPointerIcon(pointer.icon)}
+              </div>
+            ))}
+          </div>
+          
+          {/* Text Row */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              gap: "89px",
+              alignItems: "flex-start",
+            }}
+          >
+            {pointers.map((pointer, index) => (
+              <div
+                key={pointer.title}
+                style={{
+                  width: index === 2 ? "281px" : "300px",
+                  height: "138px",
+                }}
+              >
+                <p
+                  className="text-white"
+                  style={{
+                    fontFamily: "TASA Orbiter",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "0.95",
+                    letterSpacing: "0.02em",
+                    whiteSpace: "pre-line",
+                  }}
+                >
                   {pointer.title}
-                </h3>
-                <p className="font-['TASA_Orbiter'] text-[20px] font-bold leading-[0.95] tracking-[0.02em] text-white">
+                  {"\n\n"}
                   {pointer.description}
                 </p>
               </div>
@@ -275,8 +539,12 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-white px-6 py-24 md:px-12 lg:px-[71px]">
         {/* Gradient Background */}
         <div
-          className="absolute inset-0 opacity-50"
+          className="absolute"
           style={{
+            left: "-65.13px",
+            top: "98px",
+            width: "1570.13px",
+            height: "928px",
             background:
               "linear-gradient(156deg, rgba(215, 240, 255, 1) 0%, rgba(217, 207, 255, 1) 28%, rgba(255, 209, 234, 1) 56%, rgba(255, 227, 210, 1) 84%)",
             filter: "blur(336.5px)",
@@ -284,18 +552,41 @@ export default function AboutPage() {
         />
         <div className="relative z-10 mx-auto max-w-[1303px]">
           <div className="mb-16 text-center">
-            <p className="mb-4 font-['TASA_Orbiter'] text-[18px] font-medium leading-[1.2] text-black">
+            <p
+              className="mb-4 text-black"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontSize: "18px",
+                fontWeight: 500,
+                lineHeight: "1.2",
+              }}
+            >
               Why nexobots
             </p>
-            <h2 className="font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.494] text-black md:text-[36px] lg:text-[40px]">
+            <h2
+              className="text-black"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontSize: "40px",
+                fontWeight: 600,
+                lineHeight: "1.494",
+              }}
+            >
               The Critical Smart IT Infrastructure for the AI Era
             </h2>
           </div>
-          <p className="mx-auto mb-8 max-w-[862px] text-center font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.494] text-black md:text-[22px]">
+          <p
+            className="mx-auto mb-8 text-center text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "22px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "862px",
+            }}
+          >
             In a world driven by automation, data, and intelligent systems, your
             technology infrastructure must do more than connect—it must enable.
-          </p>
-          <p className="mx-auto mb-12 max-w-[862px] text-center font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.494] text-black md:text-[22px]">
             At Nexobots Technologies, we deliver the backbone of enterprise
             transformation: high-performance networks, secure systems, and
             scalable architectures designed for tomorrow&apos;s demands. Whether
@@ -306,22 +597,32 @@ export default function AboutPage() {
           <div className="text-center">
             <Link
               href="#contact"
-              className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
+              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-800"
+              style={{
+                width: "155px",
+                height: "45px",
+                padding: "12px 24px",
+              }}
             >
-              Get In Touch
-              <svg
-                width="41"
-                height="41"
-                viewBox="0 0 41 41"
-                fill="none"
-                className="h-[20px] w-[20px]"
+              <span
+                className="text-white"
+                style={{
+                  fontFamily: "Manrope",
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
               >
-                <path
-                  d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                  stroke="white"
-                  strokeWidth="1"
-                />
-              </svg>
+                Get In Touch
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
+                className="h-[20px] w-[20px]"
+              />
             </Link>
           </div>
         </div>
@@ -330,35 +631,101 @@ export default function AboutPage() {
       {/* Outcomes Section */}
       <section className="bg-white px-6 py-24 md:px-12 lg:px-[95px]">
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="mb-4 text-center font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.494] text-black md:text-[36px] lg:text-[40px]">
+          <h2
+            className="mb-4 text-center text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "40px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+            }}
+          >
             Delivering Outcomes That Matter
           </h2>
-          <p className="mx-auto mb-16 max-w-[748px] text-center font-['Manrope'] text-[20px] font-bold leading-[1.75] text-black md:text-[24px]">
+          <p
+            className="mx-auto mb-4 text-center text-black"
+            style={{
+              fontFamily: "Manrope",
+              fontSize: "24px",
+              fontWeight: 700,
+              lineHeight: "1.75",
+              maxWidth: "748px",
+            }}
+          >
             We focus on real results—so your infrastructure doesn&apos;t just
             work, it delivers value.
           </p>
-          <p className="mx-auto mb-16 max-w-[748px] text-center font-['Manrope'] text-[20px] font-bold leading-[1.75] text-black md:text-[24px]">
+          <p
+            className="mx-auto mb-16 text-center text-black"
+            style={{
+              fontFamily: "Manrope",
+              fontSize: "24px",
+              fontWeight: 700,
+              lineHeight: "1.75",
+              maxWidth: "748px",
+            }}
+          >
             From reducing risk and ensuring uptime to enabling growth and
             innovation, Nexobots&apos; services exceed expectation and transform
             operations.
           </p>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {outcomes.map((outcome) => (
-              <div
-                key={outcome.title}
-                className="rounded-[21px] bg-white p-9 shadow-sm"
-              >
-                <div className="mb-8 flex h-[70px] w-[70px] items-center justify-center rounded-[15px] border border-[#E9E9E9]">
-                  <div className="h-[61px] w-[61px] rounded bg-[#E11E24]/10" />
+          <div className="flex flex-wrap justify-center gap-6">
+            {outcomes.map((outcome, index) => {
+              // Different padding and width for each card based on Figma
+              const cardStyles = [
+                { padding: "36px 38px 75px", width: "400px", iconSize: "76px" }, // First card
+                { padding: "47px 33px 36px", width: "389px", iconSize: "70px" }, // Second card
+                { padding: "36px 51px", width: "400px", iconSize: "70px" }, // Third card
+              ];
+              const style = cardStyles[index];
+              
+              return (
+                <div
+                  key={outcome.title}
+                  className="rounded-[21px] bg-white shadow-sm"
+                  style={{
+                    padding: style.padding,
+                    width: style.width,
+                    height: "396px",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "30px",
+                  }}
+                >
+                  <div
+                    className="flex items-center justify-center rounded-[15px] border border-[#E9E9E9]"
+                    style={{
+                      width: style.iconSize,
+                      height: style.iconSize,
+                    }}
+                  >
+                    {getIconComponent(outcome.icon, style.iconSize)}
+                  </div>
+                  <h3
+                    className="text-black"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "24px",
+                      fontWeight: 700,
+                      lineHeight: "1.208",
+                    }}
+                  >
+                    {outcome.title}
+                  </h3>
+                  <p
+                    className="text-[#A4A4A4]"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "20px",
+                      fontWeight: 700,
+                      lineHeight: "1.05",
+                    }}
+                  >
+                    {outcome.description}
+                  </p>
                 </div>
-                <h3 className="mb-6 font-['Manrope'] text-[24px] font-bold leading-[1.208] text-black">
-                  {outcome.title}
-                </h3>
-                <p className="font-['Manrope'] text-[20px] font-bold leading-[1.05] text-[#A4A4A4]">
-                  {outcome.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -366,19 +733,36 @@ export default function AboutPage() {
       {/* Advantages Section */}
       <section className="bg-white px-6 py-24 md:px-12 lg:px-[94px]">
         <div className="mx-auto max-w-[1440px]">
-          <h2 className="mb-4 text-center font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.494] text-black md:text-[36px]">
+          <h2
+            className="mb-4 text-center text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "36px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+            }}
+          >
             The nexobots Advantage.
             <br />
             Your Competitive Edge in Smart IT Infrastructure.
           </h2>
-          <p className="mx-auto mb-16 max-w-[849px] text-center font-['Manrope'] text-[20px] font-bold leading-[1.4] text-black">
+          <p
+            className="mx-auto mb-16 text-center text-black"
+            style={{
+              fontFamily: "Manrope",
+              fontSize: "20px",
+              fontWeight: 700,
+              lineHeight: "1.4",
+              maxWidth: "849px",
+            }}
+          >
             Bringing together expertise, innovation, and trusted partnerships to
             power the connected enterprise.
           </p>
           <div className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="relative h-[664px] overflow-hidden rounded-[18px]">
               <Image
-                src="/about-advantage-1-3df8a1.png"
+                src="/about-advantage-1.png"
                 alt="Advantage 1"
                 fill
                 className="object-cover"
@@ -406,13 +790,34 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          <div className="flex flex-wrap gap-[90px]">
+          <div
+            className="flex flex-nowrap"
+            style={{
+              gap: "90px",
+            }}
+          >
             {advantages.map((advantage) => (
-              <div key={advantage.title} className="max-w-[423px]">
-                <h3 className="mb-4 font-['Manrope'] text-[24px] font-bold leading-[1.167] text-black">
+              <div key={advantage.title} style={{ maxWidth: "423px", flexShrink: 0 }}>
+                <h3
+                  className="mb-4 text-black"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "24px",
+                    fontWeight: 700,
+                    lineHeight: "1.167",
+                  }}
+                >
                   {advantage.title}
                 </h3>
-                <p className="font-['Manrope'] text-[15px] font-medium leading-[1.867] text-[#696969]">
+                <p
+                  className="text-[#696969]"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    lineHeight: "1.867",
+                  }}
+                >
                   {advantage.description}
                 </p>
               </div>
@@ -422,74 +827,79 @@ export default function AboutPage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-white px-6 py-24 md:px-12 lg:px-[82px]">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="mb-16 text-center">
-            <p className="mb-4 font-['Manrope'] text-[18px] font-medium leading-[1.366] text-black">
-              Testimonials
-            </p>
-            <h2 className="font-['TASA_Orbiter'] text-[32px] font-bold leading-[1.222] text-black md:text-[36px]">
-              Trusted by Enterprises. Proven Through Experience
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="rounded-[13px] border border-[#D9D9D9] bg-white p-6"
-              >
-                <div className="mb-4">
-                  <p className="font-['Manrope'] text-[22px] font-normal leading-[1.366] tracking-[0.02em] text-black">
-                    {testimonial.name}
-                  </p>
-                  <p className="font-['Manrope'] text-[12px] font-normal leading-[1.366] tracking-[0.02em] text-black">
-                    {testimonial.role}
-                  </p>
-                </div>
-                <p className="font-['Manrope'] text-[16px] font-light leading-[1.75] tracking-[0.02em] text-black">
-                  {testimonial.quote}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Testimonials testimonials={testimonials} />
 
       {/* Closing CTA Section */}
-      <section className="bg-black px-6 py-24 text-white md:px-12 lg:px-[146px]">
+      <section className="bg-white px-6 py-24 text-black md:px-12 lg:px-[146px]">
         <div className="mx-auto max-w-[1148px] text-center">
-          <h2 className="mb-8 font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.494] text-white md:text-[56px] lg:text-[64px]">
+          <h2
+            className="mb-8 text-black"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+            }}
+          >
             Partner with nexobots to Transform Your Industry with Smarter IT
           </h2>
-          <p className="mx-auto mb-4 max-w-[854px] font-['Manrope'] text-[18px] font-normal leading-[1.4] text-white md:text-[20px]">
+          <p
+            className="mx-auto mb-4 text-black"
+            style={{
+              fontFamily: "Manrope",
+              fontSize: "20px",
+              fontWeight: 400,
+              lineHeight: "1.4",
+              maxWidth: "854px",
+            }}
+          >
             Every industry faces unique challenges — but the right technology
             turns those challenges into opportunities. At Nexobots Technologies,
             we combine innovation, integration, and intelligence to help
             organizations build connected, secure, and future-ready
             environments.
           </p>
-          <p className="mx-auto mb-8 max-w-[854px] font-['Manrope'] text-[18px] font-normal leading-[1.4] text-white md:text-[20px]">
+          <p
+            className="mx-auto mb-8 text-black"
+            style={{
+              fontFamily: "Manrope",
+              fontSize: "20px",
+              fontWeight: 400,
+              lineHeight: "1.4",
+              maxWidth: "854px",
+            }}
+          >
             Let&apos;s collaborate to design technology solutions that empower
             your business and industry to thrive in the digital era.
           </p>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
+            className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-black/30 bg-black transition-all hover:bg-gray-800"
+            style={{
+              width: "155px",
+              height: "45px",
+              padding: "12px 24px",
+            }}
           >
-            Get In Touch
-            <svg
-              width="41"
-              height="41"
-              viewBox="0 0 41 41"
-              fill="none"
-              className="h-[20px] w-[20px]"
+            <span
+              className="text-white"
+              style={{
+                fontFamily: "Manrope",
+                fontSize: "15px",
+                fontWeight: 600,
+                lineHeight: "1.366",
+                letterSpacing: "0.02em",
+              }}
             >
-              <path
-                d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                stroke="white"
-                strokeWidth="1"
-              />
-            </svg>
+              Get In Touch
+            </span>
+            <Image
+              src="/find-out-more-arrow.svg"
+              alt=""
+              width={41}
+              height={41}
+              className="h-[20px] w-[20px]"
+            />
           </Link>
         </div>
       </section>
@@ -502,4 +912,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

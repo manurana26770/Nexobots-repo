@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -9,6 +10,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    company: "",
     phone: "",
     message: "",
   });
@@ -16,6 +18,8 @@ export default function ContactPage() {
   const [errors, setErrors] = useState({
     name: "",
     email: "",
+    company: "",
+    phone: "",
     message: "",
   });
 
@@ -30,6 +34,8 @@ export default function ContactPage() {
     const newErrors = {
       name: "",
       email: "",
+      company: "",
+      phone: "",
       message: "",
     };
 
@@ -44,22 +50,26 @@ export default function ContactPage() {
       newErrors.email = "Please enter a valid email address";
     }
 
+    if (!formData.company.trim()) {
+      newErrors.company = "Company name is required";
+    }
+
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     }
 
     setErrors(newErrors);
 
-    // If no errors, submit form (you can add API call here)
-    if (!newErrors.name && !newErrors.email && !newErrors.message) {
+    // If no errors, submit form
+    if (!newErrors.name && !newErrors.email && !newErrors.company && !newErrors.message) {
       console.log("Form submitted:", formData);
-      // TODO: Add API endpoint call here
-      alert("Form submitted successfully! (Connect to your API endpoint)");
+      alert("Form submitted successfully!");
       
       // Reset form
       setFormData({
         name: "",
         email: "",
+        company: "",
         phone: "",
         message: "",
       });
@@ -87,147 +97,517 @@ export default function ContactPage() {
     <div className="bg-white text-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="bg-black px-6 py-24 text-white md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-          <p className="mb-4 font-['Inter'] text-[24px] font-normal leading-[1.5] text-white">
-            Contact Us
-          </p>
-          <h1 className="mb-6 font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.3] text-white md:text-[56px] lg:text-[64px]">
-            Partner with Nexobots to Build the Infrastructure of Tomorrow
+      {/* Hero Section with Background Image */}
+      <section className="relative h-[247px] w-full overflow-hidden">
+        {/* Background Image - positioned to show bottom portion (from 644px down) */}
+        <div 
+          className="absolute"
+          style={{
+            top: "-644px",
+            left: "0",
+            width: "100%",
+            height: "891px",
+          }}
+        >
+          <Image
+            src="/contact-hero-bg.png"
+            alt="Contact Hero Background"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+
+        {/* Blurred Rectangle Overlay */}
+        <div
+          className="absolute"
+          style={{
+            left: "-22px",
+            top: "775px",
+            width: "1499px",
+            height: "656px",
+            backgroundColor: "#000000",
+            filter: "blur(386.2px)",
+            opacity: 0.3,
+          }}
+        />
+
+        {/* Red Line */}
+        <div
+          className="absolute"
+          style={{
+            left: "82px",
+            top: "48.5px",
+            width: "3px",
+            height: "81px",
+            backgroundColor: "#E11E24",
+          }}
+        />
+
+        {/* "Let's Connect" Heading */}
+        <div
+          className="absolute"
+          style={{
+            left: "118px",
+            top: "57px",
+          }}
+        >
+          <h1
+            className="text-white"
+            style={{
+              fontFamily: "TASA Orbiter",
+              fontSize: "48px",
+              fontWeight: 600,
+              lineHeight: "1.32",
+            }}
+          >
+            Let&apos;s Connect
           </h1>
-          <p className="max-w-[900px] font-['Manrope'] text-[18px] font-normal leading-[1.5] text-white md:text-[20px]">
-            Tell us about your project or IT needs, and our experts will get
-            back to you with the best solution to simplify and strengthen your
-            IT infrastructure
+        </div>
+      </section>
+
+      {/* Description Text */}
+      <section className="bg-white px-6 py-12 md:px-12 lg:px-[118px]">
+        <div className="mx-auto max-w-[1440px]">
+          <p
+            className="text-black"
+            style={{
+              fontFamily: "Inter",
+              fontSize: "30px",
+              fontWeight: 600,
+              lineHeight: "1.3",
+              maxWidth: "1207px",
+            }}
+          >
+            Please fill the form below and our team will reach out with the right
+            solution for you.
           </p>
         </div>
       </section>
 
       {/* Contact Form Section */}
-      <section className="bg-white px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1287px]">
-          <form onSubmit={handleSubmit} className="space-y-12">
-            {/* Name Field */}
-            <div className="border-b border-[#CACACA] pb-8">
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="w-full bg-transparent font-['Inter'] text-[24px] font-normal leading-[1.5] text-black placeholder:text-black focus:outline-none"
-                aria-label="Your Name"
-                aria-required="true"
-                aria-invalid={!!errors.name}
-              />
-              {errors.name && (
-                <p className="mt-2 text-sm text-[#E11E24]">{errors.name}</p>
-              )}
+      <section className="bg-white px-6 py-12 md:px-12 lg:px-[118px]">
+        <div className="mx-auto" style={{ maxWidth: "1205px" }}>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+            {/* Name and Email Row */}
+            <div className="flex flex-col gap-6 md:flex-row md:gap-[50px]">
+              {/* Name Field */}
+              <div className="flex flex-col flex-1" style={{ gap: "12px" }}>
+                <label
+                  className="text-black"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "1.5",
+                    color: "#5B5B5B",
+                  }}
+                >
+                  Name
+                </label>
+                <div
+                  className="flex items-center"
+                  style={{
+                    backgroundColor: "#FBFBFB",
+                    border: "1px solid #E2E2E2",
+                    borderRadius: "15px",
+                    padding: "16px 20px",
+                    height: "64px",
+                  }}
+                >
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Enter Full Name"
+                    className="w-full bg-transparent text-black placeholder:text-[#4C4C4C] focus:outline-none"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      lineHeight: "1.5",
+                    }}
+                    aria-label="Name"
+                    aria-required="true"
+                    aria-invalid={!!errors.name}
+                  />
+                </div>
+                {errors.name && (
+                  <p className="mt-1 text-sm text-[#E11E24]">{errors.name}</p>
+                )}
+              </div>
+
+              {/* Email Field */}
+              <div className="flex flex-col flex-1" style={{ gap: "12px" }}>
+                <label
+                  className="text-black"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "1.5",
+                    color: "#5B5B5B",
+                  }}
+                >
+                  Email
+                </label>
+                <div
+                  className="flex items-center"
+                  style={{
+                    backgroundColor: "#FBFBFB",
+                    border: "1px solid #E2E2E2",
+                    borderRadius: "15px",
+                    padding: "16px 20px",
+                    height: "64px",
+                  }}
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Enter Email Address"
+                    className="w-full bg-transparent text-black placeholder:text-[#4C4C4C] focus:outline-none"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      lineHeight: "1.5",
+                    }}
+                    aria-label="Email"
+                    aria-required="true"
+                    aria-invalid={!!errors.email}
+                  />
+                </div>
+                {errors.email && (
+                  <p className="mt-1 text-sm text-[#E11E24]">{errors.email}</p>
+                )}
+              </div>
             </div>
 
-            {/* Email Field */}
-            <div className="border-b border-[#CACACA] pb-8">
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Email Address"
-                className="w-full bg-transparent font-['Inter'] text-[24px] font-normal leading-[1.5] text-black placeholder:text-black focus:outline-none"
-                aria-label="Email Address"
-                aria-required="true"
-                aria-invalid={!!errors.email}
-              />
-              {errors.email && (
-                <p className="mt-2 text-sm text-[#E11E24]">{errors.email}</p>
-              )}
-            </div>
+            {/* Company Name and Phone Number Row */}
+            <div className="flex flex-col gap-6 md:flex-row md:gap-[50px]">
+              {/* Company Name Field */}
+              <div className="flex flex-col flex-1" style={{ gap: "12px" }}>
+                <label
+                  className="text-black"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "1.5",
+                    color: "#5B5B5B",
+                  }}
+                >
+                  Company Name
+                </label>
+                <div
+                  className="flex items-center"
+                  style={{
+                    backgroundColor: "#FBFBFB",
+                    border: "1px solid #E2E2E2",
+                    borderRadius: "15px",
+                    padding: "16px 16px 16px 20px",
+                    height: "64px",
+                  }}
+                >
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    placeholder="Enter Company Name"
+                    className="w-full bg-transparent text-black placeholder:text-[#4C4C4C] focus:outline-none"
+                    style={{
+                      fontFamily: "Manrope",
+                      fontSize: "16px",
+                      fontWeight: 500,
+                      lineHeight: "1.5",
+                    }}
+                    aria-label="Company Name"
+                    aria-required="true"
+                    aria-invalid={!!errors.company}
+                  />
+                </div>
+                {errors.company && (
+                  <p className="mt-1 text-sm text-[#E11E24]">{errors.company}</p>
+                )}
+              </div>
 
-            {/* Phone Field (Optional) */}
-            <div className="border-b border-[#CACACA] pb-8">
-              <input
-                type="tel"
-                name="phone"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder="Phone Number (optional)"
-                className="w-full bg-transparent font-['Inter'] text-[24px] font-normal leading-[1.5] text-black placeholder:text-black focus:outline-none"
-                aria-label="Phone Number"
-              />
+              {/* Phone Number Field with Country Code */}
+              <div className="flex flex-col flex-1" style={{ gap: "12px" }}>
+                <label
+                  className="text-black"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "20px",
+                    fontWeight: 700,
+                    lineHeight: "1.5",
+                    color: "#5B5B5B",
+                  }}
+                >
+                  Phone Number
+                </label>
+                <div className="flex items-center gap-3">
+                  {/* Country Code Selector */}
+                  <div
+                    className="flex items-center gap-1"
+                    style={{
+                      backgroundColor: "#FBFBFB",
+                      border: "1px solid #E2E2E2",
+                      borderRadius: "15px",
+                      padding: "10px 12px",
+                      height: "64px",
+                    }}
+                  >
+                    <Image
+                      src="/contact-phone-flag.png"
+                      alt="India Flag"
+                      width={21}
+                      height={21}
+                      className="rounded"
+                    />
+                    <svg
+                      width="10"
+                      height="5"
+                      viewBox="0 0 10 5"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 0L5 5L10 0"
+                        stroke="#4C4C4C"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  {/* Phone Input */}
+                  <div
+                    className="flex items-center flex-1"
+                    style={{
+                      backgroundColor: "#FBFBFB",
+                      border: "1px solid #E2E2E2",
+                      borderRadius: "15px",
+                      padding: "16px 20px",
+                      height: "64px",
+                    }}
+                  >
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Enter Phone Number"
+                      className="w-full bg-transparent text-black placeholder:text-[#4C4C4C] focus:outline-none"
+                      style={{
+                        fontFamily: "Manrope",
+                        fontSize: "16px",
+                        fontWeight: 500,
+                        lineHeight: "1.5",
+                      }}
+                      aria-label="Phone Number"
+                      aria-invalid={!!errors.phone}
+                    />
+                  </div>
+                </div>
+                {errors.phone && (
+                  <p className="mt-1 text-sm text-[#E11E24]">{errors.phone}</p>
+                )}
+              </div>
             </div>
 
             {/* Message Field */}
-            <div className="border-b border-[#CACACA] pb-8">
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Message"
-                rows={4}
-                className="w-full bg-transparent font-['Inter'] text-[24px] font-normal leading-[1.5] text-black placeholder:text-black focus:outline-none"
-                aria-label="Message"
-                aria-required="true"
-                aria-invalid={!!errors.message}
-              />
+            <div className="flex flex-col" style={{ gap: "12px" }}>
+              <label
+                className="text-black"
+                style={{
+                  fontFamily: "Manrope",
+                  fontSize: "20px",
+                  fontWeight: 700,
+                  lineHeight: "1.5",
+                  color: "#5B5B5B",
+                }}
+              >
+                Message
+              </label>
+              <div
+                className="flex items-start"
+                style={{
+                  backgroundColor: "#FBFBFB",
+                  border: "1px solid #E2E2E2",
+                  borderRadius: "15px",
+                  padding: "16px",
+                  minHeight: "220px",
+                }}
+              >
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Enter your Message"
+                  rows={8}
+                  className="w-full bg-transparent text-black placeholder:text-[#4C4C4C] focus:outline-none resize-none"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "16px",
+                    fontWeight: 500,
+                    lineHeight: "1.5",
+                    minHeight: "188px",
+                  }}
+                  aria-label="Message"
+                  aria-required="true"
+                  aria-invalid={!!errors.message}
+                />
+              </div>
               {errors.message && (
-                <p className="mt-2 text-sm text-[#E11E24]">{errors.message}</p>
+                <p className="mt-1 text-sm text-[#E11E24]">{errors.message}</p>
               )}
             </div>
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-5 text-[20px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Leave us a Message
-              <svg
-                width="41"
-                height="41"
-                viewBox="0 0 41 41"
-                fill="none"
-                className="h-[20px] w-[20px]"
+            <div className="flex justify-end pt-4">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-[rgba(70,70,70,0.3)] bg-black transition-all hover:bg-gray-800"
+                style={{
+                  width: "152px",
+                  height: "49px",
+                }}
               >
-                <path
-                  d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                  stroke="white"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
+                <span
+                  className="text-white"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "20px",
+                    fontWeight: 300,
+                    lineHeight: "0.78",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Submit
+                </span>
+              </button>
+            </div>
           </form>
         </div>
       </section>
 
-      {/* Info Section */}
-      <section className="bg-white px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-            {/* Address */}
-            <div>
-              <h3 className="mb-4 font-['Manrope'] text-[20px] font-semibold leading-[1.366] text-black">
-                Our Office
-              </h3>
-              <p className="mb-6 font-['Manrope'] text-[16px] font-normal leading-[1.5] text-black">
-                #20/1, 2nd Main, Yeshwanthpur Industry, Bengaluru-560022, India
-              </p>
+      {/* Contact Info Section */}
+      <section
+        className="relative w-full bg-white"
+      >
+        <div
+          className="mx-auto flex flex-col gap-[69px] md:flex-row"
+          style={{
+            padding: "80px 240px 80px 98px",
+            maxWidth: "1440px",
+            width: "100%",
+          }}
+        >
+          {/* Header */}
+          <div className="flex flex-col" style={{ gap: "24px" }}>
+            <h2
+              className="text-black"
+              style={{
+                fontFamily: "Inter",
+                fontSize: "40px",
+                fontWeight: 700,
+                lineHeight: "1.3",
+                width: "443px",
+              }}
+            >
+              How Can We Assist you Today
+            </h2>
+          </div>
+
+          {/* Cards Container */}
+          <div className="flex flex-col gap-6 md:flex-row">
+            {/* Registered Address Card */}
+            <div
+              className="flex flex-col bg-white"
+              style={{
+                gap: "27px",
+                padding: "0px 32px 32px",
+                borderRadius: "8px",
+              }}
+            >
+              {/* Heading */}
+              <div className="flex flex-col" style={{ gap: "25px" }}>
+                <div className="flex flex-col" style={{ gap: "5px" }}>
+                  <p
+                    className="text-black"
+                    style={{
+                      fontFamily: "Inter",
+                      fontSize: "22px",
+                      fontWeight: 600,
+                      lineHeight: "1.21",
+                    }}
+                  >
+                    Registered Address
+                  </p>
+                  <div
+                    style={{
+                      width: "27px",
+                      height: "3px",
+                      backgroundColor: "#000000",
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Details */}
+              <div className="flex flex-col" style={{ gap: "25px" }}>
+                <p
+                  className="text-black"
+                  style={{
+                    fontFamily: "Inter",
+                    fontSize: "20px",
+                    fontWeight: 500,
+                    lineHeight: "1.6",
+                    width: "246px",
+                  }}
+                >
+                  #20/1, 2nd Main, Yeshwanthpur Industry, Bengaluru-560022, India
+                </p>
+              </div>
+
+              {/* Button */}
               <Link
                 href="https://maps.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-[53px] border border-[#262626] bg-[#F5F5F5] px-6 py-3 text-[14px] font-medium text-white transition hover:bg-[#E5E5E5]"
+                className="inline-flex items-center justify-center gap-1 rounded-[65px] border border-[#F2F2F2] bg-white transition hover:bg-gray-50"
+                style={{
+                  padding: "14px 20px",
+                  width: "fit-content",
+                }}
               >
-                <span className="text-black">Get Directions</span>
+                <span
+                  className="text-[#555555]"
+                  style={{
+                    fontFamily: "Inter",
+                    fontSize: "14px",
+                    fontWeight: 400,
+                    lineHeight: "1.5",
+                    letterSpacing: "-0.03em",
+                  }}
+                >
+                  Get Directions
+                </span>
                 <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
                   fill="none"
-                  className="h-5 w-5"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M5 15L15 5M15 5H8M15 5V12"
-                    stroke="black"
+                    d="M6.5 0L6.5 13M6.5 13L13 6.5M6.5 13L0 6.5"
+                    stroke="#555555"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -236,82 +616,69 @@ export default function ContactPage() {
               </Link>
             </div>
 
-            {/* Email */}
-            <div>
-              <h3 className="mb-4 font-['Manrope'] text-[20px] font-semibold leading-[1.366] text-black">
-                Email Us
-              </h3>
-              <a
-                href="mailto:info@nexobots.com"
-                className="font-['Manrope'] text-[16px] font-normal leading-[1.5] text-[#E11E24] hover:underline"
-              >
-                info@nexobots.com
-              </a>
-              <br />
-              <a
-                href="mailto:support@nexobots.com"
-                className="font-['Manrope'] text-[16px] font-normal leading-[1.5] text-[#E11E24] hover:underline"
-              >
-                support@nexobots.com
-              </a>
-            </div>
+            {/* Contact Details Card */}
+            <div
+              className="flex flex-col bg-white"
+              style={{
+                gap: "27px",
+                padding: "0px 32px 32px",
+                borderRadius: "8px",
+              }}
+            >
+              {/* Heading */}
+              <div className="flex flex-col" style={{ gap: "25px" }}>
+                <div className="flex flex-col" style={{ gap: "5px" }}>
+                  <p
+                    className="text-black"
+                    style={{
+                      fontFamily: "Inter",
+                      fontSize: "22px",
+                      fontWeight: 600,
+                      lineHeight: "1.21",
+                    }}
+                  >
+                    Contact Details
+                  </p>
+                  <div
+                    style={{
+                      width: "27px",
+                      height: "3px",
+                      backgroundColor: "#000000",
+                    }}
+                  />
+                </div>
+              </div>
 
-            {/* Phone */}
-            <div>
-              <h3 className="mb-4 font-['Manrope'] text-[20px] font-semibold leading-[1.366] text-black">
-                Call Us
-              </h3>
-              <a
-                href="tel:+918012345678"
-                className="font-['Manrope'] text-[16px] font-normal leading-[1.5] text-black hover:text-[#E11E24]"
-              >
-                +91 80 1234 5678
-              </a>
-              <br />
-              <a
-                href="tel:+918087654321"
-                className="font-['Manrope'] text-[16px] font-normal leading-[1.5] text-black hover:text-[#E11E24]"
-              >
-                +91 80 8765 4321
-              </a>
-              <p className="mt-4 font-['Manrope'] text-[14px] font-normal leading-[1.5] text-[#696969]">
-                Monday - Friday: 9:00 AM - 6:00 PM IST
-                <br />
-                Saturday: 9:00 AM - 1:00 PM IST
-              </p>
-            </div>
-          </div>
-
-          {/* Map Placeholder */}
-          <div className="mt-16 h-[400px] w-full overflow-hidden rounded-lg bg-[#F5F5F5]">
-            <div className="flex h-full items-center justify-center">
-              <div className="text-center">
-                <svg
-                  className="mx-auto mb-4 h-16 w-16 text-[#CACACA]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+              {/* Details - Phone */}
+              <div className="flex flex-col" style={{ gap: "25px" }}>
+                <a
+                  href="tel:+918884480040"
+                  className="text-black hover:underline"
+                  style={{
+                    fontFamily: "Inter",
+                    fontSize: "22px",
+                    fontWeight: 500,
+                    lineHeight: "1.21",
+                  }}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <p className="font-['Manrope'] text-[16px] font-normal text-[#696969]">
-                  Map Integration Placeholder
-                  <br />
-                  <span className="text-sm">
-                    Replace with Google Maps iframe or Mapbox component
-                  </span>
-                </p>
+                  +91 88844 80040
+                </a>
+              </div>
+
+              {/* Details - Email */}
+              <div className="flex flex-col" style={{ gap: "25px" }}>
+                <a
+                  href="mailto:contact@nexobots.com"
+                  className="text-black hover:underline"
+                  style={{
+                    fontFamily: "Inter",
+                    fontSize: "22px",
+                    fontWeight: 500,
+                    lineHeight: "1.21",
+                  }}
+                >
+                  contact@nexobots.com
+                </a>
               </div>
             </div>
           </div>
@@ -323,4 +690,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
