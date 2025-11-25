@@ -280,33 +280,70 @@ export default function Home() {
               </h2>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-              {solutions.map((solution) => (
-                <div key={solution.title} className="flex justify-center">
-                  <article
-                    className="relative h-[442px] w-[303px] overflow-hidden rounded-[10px] shadow-[0_25px_60px_rgba(15,18,23,0.25)]"
-                    style={{ width: "303px" }}
-                  >
-                    <Image
-                      src={solution.image}
-                      alt={solution.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/95" />
-                    <div className="relative z-10 flex h-full flex-col justify-end p-8 text-left">
-                      {solution.blurb ? (
-                        <p className="mb-4 text-[15px] font-medium leading-[1.4] text-white/80">
-                          {solution.blurb}
-                        </p>
-                      ) : null}
-                      <h3 className="font-display text-[24px] font-bold uppercase tracking-[0.08em] text-white">
-                        {solution.title}
-                      </h3>
-                    </div>
-                  </article>
-                </div>
-              ))}
+              {solutions.map((solution, index) => {
+                // Map solutions to routes: 
+                // Index 0: Smart Structured Cabling -> # (not yet implemented)
+                // Index 1: CCTV & Intelligent Surveillance -> /solution-1
+                // Index 2: Biometric & Access Control -> # (not yet implemented)
+                // Index 3: IT Infrastructure & Managed Services -> /solution-2
+                const solutionRoutes = ["#", "/solution-1", "#", "/solution-2"];
+                const solutionRoute = solutionRoutes[index];
+                return (
+                  <div key={solution.title} className="flex justify-center">
+                    {solutionRoute !== "#" ? (
+                      <Link href={solutionRoute}>
+                        <article
+                          className="relative h-[442px] w-[303px] overflow-hidden rounded-[10px] shadow-[0_25px_60px_rgba(15,18,23,0.25)] transition-transform hover:scale-105 cursor-pointer"
+                          style={{ width: "303px" }}
+                        >
+                          <Image
+                            src={solution.image}
+                            alt={solution.title}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/95" />
+                          <div className="relative z-10 flex h-full flex-col justify-end p-8 text-left">
+                            {solution.blurb ? (
+                              <p className="mb-4 text-[15px] font-medium leading-[1.4] text-white/80">
+                                {solution.blurb}
+                              </p>
+                            ) : null}
+                            <h3 className="font-display text-[24px] font-bold uppercase tracking-[0.08em] text-white">
+                              {solution.title}
+                            </h3>
+                          </div>
+                        </article>
+                      </Link>
+                    ) : (
+                      <article
+                        className="relative h-[442px] w-[303px] overflow-hidden rounded-[10px] shadow-[0_25px_60px_rgba(15,18,23,0.25)]"
+                        style={{ width: "303px" }}
+                      >
+                        <Image
+                          src={solution.image}
+                          alt={solution.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/95" />
+                        <div className="relative z-10 flex h-full flex-col justify-end p-8 text-left">
+                          {solution.blurb ? (
+                            <p className="mb-4 text-[15px] font-medium leading-[1.4] text-white/80">
+                              {solution.blurb}
+                            </p>
+                          ) : null}
+                          <h3 className="font-display text-[24px] font-bold uppercase tracking-[0.08em] text-white">
+                            {solution.title}
+                          </h3>
+                        </div>
+                      </article>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

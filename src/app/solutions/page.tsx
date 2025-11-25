@@ -2,8 +2,9 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ContactForm } from "@/components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
+import Link from "next/link";
 
 const solutions = [
   {
@@ -241,20 +242,21 @@ export default function SolutionsPage() {
                   {solution.features.map((feature, i) => (
                     <div
                       key={i}
-                      className="relative flex items-center gap-4 rounded-[67px] border border-[#DADADA] bg-white px-6 py-4"
+                      className="relative flex items-center rounded-[67px] border border-[#DADADA] bg-white pl-8 pr-6 py-4"
                       style={{
                         height: "65px",
                         maxWidth: "486px",
                       }}
                     >
-                      {/* Star Icon */}
-                      <div className="absolute -left-2 flex-shrink-0">
+                      {/* Star Icon - positioned inside the card */}
+                      <div className="absolute left-4 top-1/2 -translate-y-1/2 flex-shrink-0 z-10">
                         <svg
                           width="17"
                           height="18"
                           viewBox="0 0 17 18"
                           fill="none"
                           xmlns="http://www.w3.org/2000/svg"
+                          className="h-[18px] w-[17px]"
                         >
                           <path
                             d="M8.5 0L10.4 6.5H17L11.3 10.5L13.2 17L8.5 13L3.8 17L5.7 10.5L0 6.5H6.6L8.5 0Z"
@@ -263,12 +265,13 @@ export default function SolutionsPage() {
                         </svg>
                       </div>
                       <p
-                        className="font-['Manrope'] text-black ml-6"
+                        className="font-['Manrope'] text-black w-full"
                         style={{
                           fontSize: "16px",
                           fontWeight: 600,
                           lineHeight: "2.25",
                           letterSpacing: "0.02em",
+                          paddingLeft: "20px",
                         }}
                       >
                         {feature}
@@ -278,7 +281,8 @@ export default function SolutionsPage() {
                 </div>
 
                 {/* Button */}
-                <button
+                <Link
+                  href={solution.id === "cctv-surveillance" ? "/solution-1" : solution.id === "it-infrastructure" ? "/solution-2" : "#"}
                   className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 transition-all hover:bg-gray-900"
                   style={{
                     width: "348px",
@@ -296,7 +300,7 @@ export default function SolutionsPage() {
                   >
                     {solution.buttonText}
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </section>

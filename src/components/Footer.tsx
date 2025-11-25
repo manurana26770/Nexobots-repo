@@ -5,33 +5,38 @@ const footerColumns = [
   {
     title: "Solutions",
     links: [
-      "Smart Network",
-      "Infrastructure CCTV Solutions",
-      "Secure access & Biometrics",
-      "End to end IT Services",
+      { label: "Smart Network", href: "/solution-1" },
+      { label: "Infrastructure CCTV Solutions", href: "/solution-2" },
+      { label: "Secure access & Biometrics", href: "#" },
+      { label: "End to end IT Services", href: "#" },
     ],
   },
   {
     title: "Services",
     links: [
-      "IT Infrastructure Consulting",
-      "System Integration",
-      "AMC Support",
-      "Cloud & Virtualization support",
+      { label: "IT Infrastructure Consulting", href: "/service-1" },
+      { label: "System Integration", href: "/service-2" },
+      { label: "AMC Support", href: "/service-3" },
+      { label: "Cloud & Virtualization support", href: "/service-4" },
     ],
   },
   {
     title: "Industries",
     links: [
-      "Corporate & Enterprises",
-      "Education & Research",
-      "Healthcare & Pharma",
-      "Retail & Hospitality",
+      { label: "Corporate & Enterprises", href: "/industries" },
+      { label: "Education & Research", href: "/industries" },
+      { label: "Healthcare & Pharma", href: "/industries" },
+      { label: "Retail & Hospitality", href: "/industries" },
     ],
   },
   {
     title: "Company",
-    links: ["About us", "Blogs", "News & Media", "Contact Us"],
+    links: [
+      { label: "About us", href: "/about" },
+      { label: "Blogs", href: "#" },
+      { label: "News & Media", href: "#" },
+      { label: "Contact Us", href: "/contact" },
+    ],
   },
 ] as const;
 
@@ -91,12 +96,12 @@ export function Footer() {
               </h4>
                 <ul className="space-y-5">
                 {column.links.map((link) => (
-                  <li key={link}>
+                  <li key={typeof link === 'string' ? link : link.label}>
                     <Link
-                      href="#"
+                      href={typeof link === 'string' ? '#' : link.href}
                       className="font-['Manrope'] text-[14px] font-medium leading-[1.366] text-[#9C9C9C] transition hover:text-white"
                     >
-                      {link}
+                      {typeof link === 'string' ? link : link.label}
                     </Link>
                   </li>
                 ))}

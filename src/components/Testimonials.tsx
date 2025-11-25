@@ -137,7 +137,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
 
             return (
               <div
-                key={authorName || index}
+                key={`testimonial-${index}`}
                 className="absolute bg-white rounded-[13px] border border-[#D9D9D9]"
                 style={{
                   left: `${position.x}px`,
@@ -247,7 +247,7 @@ export default function Testimonials({ testimonials }: TestimonialsProps) {
 
             return (
               <div
-                key={authorName || index}
+                key={`testimonial-mobile-${index}`}
                 className="bg-white rounded-[13px] border border-[#D9D9D9]"
                 style={{
                   width: "411px",

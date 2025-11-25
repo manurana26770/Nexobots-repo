@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ContactForm } from "@/components/ContactForm";
+import ContactForm from "@/components/ContactForm";
 
 const services = [
   {
@@ -270,7 +271,8 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Button */}
-                  <button
+                  <Link
+                    href={`/service-${service.id}`}
                     className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 transition-all hover:bg-gray-900"
                     style={{
                       width: "348px",
@@ -288,7 +290,7 @@ export default function ServicesPage() {
                     >
                       {service.ctaText}
                     </span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             </section>
