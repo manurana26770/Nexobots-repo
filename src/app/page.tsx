@@ -417,36 +417,38 @@ export default function Home() {
                   <div key={service.id} className="space-y-[12px]">
                     {isExpanded ? (
                       <div className="space-y-[12px]">
-                        <div className="flex w-full items-center justify-between gap-[693px] px-6 py-6">
-                          <div className="flex items-center gap-20">
-                            <p className="font-['TASA_Orbiter'] text-[28px] font-semibold leading-[1.57] tracking-[0.02em] text-white">
-                              {service.id}
-                            </p>
-                            <p className="font-['Manrope'] text-[28px] font-semibold uppercase leading-[1.57] tracking-[0.04em] text-white">
-                              {service.title}
-                            </p>
-                          </div>
-                          <button
-                            onClick={() => toggleService(service.id)}
-                            className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#434343] bg-white transition hover:bg-white/90"
-                            aria-label={`Collapse ${service.title}`}
-                          >
-                            <svg
-                              width="14"
-                              height="14"
-                              viewBox="0 0 14 14"
-                              fill="none"
-                              className="text-black"
-                            >
-                              <path
-                                d="M0 7H14"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                              />
-                            </svg>
-                          </button>
+                      <div className="flex w-full items-center justify-between px-6 py-6">
+                        <div className="flex items-center gap-20">
+                          <p className="font-['TASA_Orbiter'] text-[28px] font-semibold leading-[1.57] tracking-[0.02em] text-white">
+                            {service.id}
+                          </p>
+                          <p className="font-['Manrope'] text-[28px] font-semibold uppercase leading-[1.57] tracking-[0.04em] text-white">
+                            {service.title}
+                          </p>
                         </div>
+                        <button
+                          onClick={() => toggleService(service.id)}
+                          className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#434343] bg-white transition hover:bg-white/90 flex-shrink-0"
+                          aria-label={`Collapse ${service.title}`}
+                          style={{ minWidth: "46px", minHeight: "46px" }}
+                        >
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 14 14"
+                            fill="none"
+                            className="text-black"
+                            style={{ display: "block" }}
+                          >
+                            <path
+                              d="M0 7H14"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
                         <div className="flex flex-col items-end gap-[12px] pb-6">
                           <div className="flex w-full flex-col gap-[10px] px-6 pb-[10px] pt-[10px]">
                             <div className="flex gap-4">
@@ -479,7 +481,7 @@ export default function Home() {
                         </div>
                       </div>
                     ) : (
-                      <div className="flex w-full items-center justify-between gap-[693px] px-6 py-6">
+                      <div className="flex w-full items-center justify-between px-6 py-6">
                         <div className="flex items-center gap-20">
                           <p className="font-['TASA_Orbiter'] text-[28px] font-semibold leading-[1.57] tracking-[0.02em] text-white/60">
                             {service.id}
@@ -490,8 +492,9 @@ export default function Home() {
                         </div>
                         <button
                           onClick={() => toggleService(service.id)}
-                          className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#434343] bg-white transition hover:bg-white/90"
+                          className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#434343] bg-white transition hover:bg-white/90 flex-shrink-0"
                           aria-label={`Expand ${service.title}`}
+                          style={{ minWidth: "46px", minHeight: "46px" }}
                         >
                           <svg
                             width="14"
@@ -499,6 +502,7 @@ export default function Home() {
                             viewBox="0 0 14 14"
                             fill="none"
                             className="text-black"
+                            style={{ display: "block" }}
                           >
                             <path
                               d="M7 0V14M7 14L14 7M7 14L0 7"
