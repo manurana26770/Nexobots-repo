@@ -11,8 +11,8 @@ const blogPosts = [
     id: 1,
     title: "The Impact of Technology on the Workplace: How Technology is Changing",
     excerpt: "As organizations embrace digital transformation, network infrastructure plays a critical role in ensuring performance and security.",
-    category: "Infrastructure",
-    date: "March 15, 2024",
+    category: "Data Security",
+    date: "August 20, 2022",
     image: "/blog-1.png",
     Author: "Tracey Wilson",
   },
@@ -20,8 +20,8 @@ const blogPosts = [
     id: 2,
     title: "The Impact of Technology on the Workplace: How Technology is Changing",
     excerpt: "Traditional CCTV systems are evolving into intelligent surveillance networks with AI-enabled analytics.",
-    category: "Security",
-    date: "March 10, 2024",
+    category: "Technology",
+    date: "August 20, 2022",
     image: "/blog-2.png",
     Author: "Jason Francisco",
   },
@@ -29,8 +29,8 @@ const blogPosts = [
     id: 3,
     title: "The Impact of Technology on the Workplace: How Technology is Changing",
     excerpt: "Explore the latest trends in data center design, from energy efficiency to modular architectures.",
-    category: "Cloud",
-    date: "March 5, 2024",
+    category: "Technology",
+    date: "August 20, 2022",
     image: "/blog-3.png",
     Author: "Elizabeth Slavin",
   },
@@ -38,27 +38,27 @@ const blogPosts = [
     id: 4,
     title: "The Impact of Technology on the Workplace: How Technology is Changing",
     excerpt: "Learn how 5G technology is transforming enterprise connectivity and enabling new use cases.",
-    category: "Network",
-    date: "March 1, 2024",
-    image: "/blog-4.png",
+    category: "Data Security",
+    date: "August 20, 2022",
+    image: "/blog-1.png",
     Author: "Tracey Wilson",
   },
   {
     id: 5,
     title: "The Impact of Technology on the Workplace: How Technology is Changing",
     excerpt: "Discover the essential strategies for securing your organization's digital assets in an evolving threat landscape.",
-    category: "Security",
-    date: "February 25, 2024",
-    image: "/blog-5.png",
+    category: "Technology",
+    date: "August 20, 2022",
+    image: "/blog-2.png",
     Author: "Jason Francisco",
   },
   {
     id: 6,
     title: "The Impact of Technology on the Workplace: How Technology is Changing",
     excerpt: "Explore how IoT technology is revolutionizing building management and creating smarter workspaces.",
-    category: "IoT",
-    date: "February 20, 2024",
-    image: "/blog-6.png",
+    category: "Technology",
+    date: "August 20, 2022",
+    image: "/blog-3.png",
     Author: "Elizabeth Slavin",
   },
 ] as const;
@@ -68,35 +68,76 @@ export default function BlogPage() {
     <div className="bg-white text-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-[450px] w-full bg-white px-[142px] pt-[120px]">
-        {/* "Blogs" text on the right side */}
-        <div className="absolute left-[142px] top-[120px]">
-          <p className="font-['TASA_Orbiter'] text-[18px] font-medium leading-[1.2] text-black">
-            Blogs
-          </p>
-        </div>
+      {/* Hero Section - Exact from Figma */}
+      <section className="relative w-full bg-white" style={{ padding: "120px 81px 120px" }}>
+        <div className="mx-auto max-w-[1440px]">
+          <div className="relative">
+            {/* "Blogs" text - Exact from Figma */}
+            <div className="mb-[25px]">
+              <p
+                className="font-['Inter'] text-black"
+                style={{
+                  fontSize: "24px",
+                  fontWeight: 400,
+                  lineHeight: "1.5",
+                }}
+              >
+                Blogs
+              </p>
+            </div>
 
-        {/* Main Heading */}
-        <div className="absolute left-[142px] top-[180px]">
-          <h1 className="w-[1135px] h-[168px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.2] text-black">
-          Partner with Nexobots to Build the Infrastructure of Tomorrow
-          </h1>
-        </div>
+            {/* Main Heading - Exact from Figma */}
+            <div className="mb-[58px]">
+              <h1
+                className="font-['TASA_Orbiter'] text-black"
+                style={{
+                  fontSize: "64px",
+                  fontWeight: 600,
+                  lineHeight: "1.32",
+                  maxWidth: "1135px",
+                }}
+              >
+                Nexobots Blogs – IT Infrastructure & Network Insights
+              </h1>
+            </div>
 
-        {/* Description Text - 3 lines on the left */}
-        <div className="absolute right-[142px] top-[380px]">
-          <p className="w-[524px] h-[96px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.44] text-black">
-          Whether you’re planning a new IT rollout, upgrading your network, or exploring managed services — we are here to help.
-          </p>
+            {/* Description Text - Exact from Figma: positioned on the right */}
+            <div
+              className="absolute"
+              style={{
+                right: "0",
+                top: "225px",
+                maxWidth: "574px",
+              }}
+            >
+              <p
+                className="font-['TASA_Orbiter'] text-black"
+                style={{
+                  fontSize: "24px",
+                  fontWeight: 600,
+                  lineHeight: "1.32",
+                }}
+              >
+                Discover the latest developments in the IT industry and gain insights
+                into the world of IT networking and the infrastructure that powers it
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Latest Post Section */}
-      <section className="bg-white px-[75px] py-[120px]">
+      {/* Latest Post Section - Exact from Figma */}
+      <section className="bg-white" style={{ padding: "120px 75px" }}>
         <div className="mx-auto max-w-[1440px]">
-          {/* Section Heading */}
-          <h2 className="mb-[80px] font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.2] text-black">
+          {/* Section Heading - Exact from Figma */}
+          <h2
+            className="font-['TASA_Orbiter'] text-black mb-[80px]"
+            style={{
+              fontSize: "24px",
+              fontWeight: 700,
+              lineHeight: "1.167",
+            }}
+          >
             Latest Post
           </h2>
 
@@ -105,59 +146,117 @@ export default function BlogPage() {
             {blogPosts.map((post) => (
               <article
                 key={post.id}
-                className="group flex h-[528px] w-full flex-col gap-6 rounded-[18px] border border-gray-300 p-6 transition-all hover:border-red-primary hover:shadow-lg"
+                className="group flex w-full flex-col items-center gap-4 rounded-[12px] border border-[#E8E8EA] bg-white p-4 transition-all hover:border-red-primary hover:shadow-lg"
+                style={{
+                  width: "392px",
+                  minHeight: "fit-content",
+                }}
               >
-                {/* Blog Image */}
-                <div className="relative h-[280px] w-full overflow-hidden rounded-[18px]">
+                {/* Blog Image - Exact from Figma: 360x240px, borderRadius: 6px */}
+                <div
+                  className="relative overflow-hidden"
+                  style={{
+                    width: "360px",
+                    height: "240px",
+                    borderRadius: "6px",
+                  }}
+                >
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="360px"
                   />
                 </div>
 
-                  <span className="rounded-full w-[113px] h-[28px] bg-red-primary/10 px-4 py-1 font-['Manrope'] text-[14px] font-semibold text-red-primary">
-                    {post.category}
-                  </span>
-                  
-            
+                {/* Content Container */}
+                <div className="flex w-full flex-1 flex-col gap-5" style={{ alignSelf: "stretch", padding: "8px" }}>
+                  {/* Badge and Title */}
+                  <div className="flex flex-col gap-4">
+                    {/* Badge - Exact from Figma */}
+                    <span
+                      className="inline-flex w-fit items-center justify-center rounded-[6px] px-[10px] py-1"
+                      style={{
+                        backgroundColor: "rgba(75, 107, 251, 0.05)",
+                        height: "28px",
+                      }}
+                    >
+                      <span
+                        className="font-['Work_Sans'] text-[#E11E24]"
+                        style={{
+                          fontSize: "14px",
+                          fontWeight: 500,
+                          lineHeight: "1.429",
+                        }}
+                      >
+                        {post.category}
+                      </span>
+                    </span>
 
-                {/* Blog Title */}
-                <h3 className="font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.3] text-black transition-colors group-hover:text-red-primary">
-                  {post.title}
-                </h3>
-                <div className="flex items-center gap-4">
-                  <span className="font-['Manrope'] text-[14px] text-gray-a4">
-                    {post.Author}
-                  </span>
-                  <span className="font-['Manrope'] text-[14px] text-gray-a4">
-                    {post.date}
-                  </span>
-                  
+                    {/* Blog Title - Exact from Figma */}
+                    <h3
+                      className="font-['Manrope'] text-[#181A2A]"
+                      style={{
+                        fontSize: "24px",
+                        fontWeight: 600,
+                        lineHeight: "1.167",
+                      }}
+                    >
+                      {post.title}
+                    </h3>
+                  </div>
+
+                  {/* Author and Date - Exact from Figma */}
+                  <div className="flex items-center gap-5">
+                    <span
+                      className="font-['Manrope'] text-[#97989F]"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: 500,
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      {post.Author}
+                    </span>
+                    <span
+                      className="font-['Manrope'] text-[#97989F]"
+                      style={{
+                        fontSize: "16px",
+                        fontWeight: 500,
+                        lineHeight: "1.5",
+                      }}
+                    >
+                      {post.date}
+                    </span>
+                  </div>
+
+                  {/* Read More Button - Exact from Figma */}
+                  <div className="mt-auto">
+                    <Link
+                      href={`/blog/${post.id}`}
+                      className="relative inline-flex items-center justify-center overflow-hidden bg-black transition-all hover:bg-black/90"
+                      style={{
+                        width: "111px",
+                        height: "32px",
+                        borderRadius: "75px",
+                        outline: "1px rgba(255, 255, 255, 0.30) solid",
+                        outlineOffset: "-1px",
+                      }}
+                    >
+                      <span
+                        className="font-['Manrope'] text-white"
+                        style={{
+                          fontSize: "12px",
+                          fontWeight: "600",
+                          letterSpacing: "0.24px",
+                        }}
+                      >
+                        Read More
+                      </span>
+                    </Link>
+                  </div>
                 </div>
-
-                {/* Read More Link */}
-                <Link
-                  href={`/blog/${post.id}`}
-                  className="inline-flex items-center gap-2 font-['Manrope'] text-[14px] font-semibold uppercase tracking-[0.02em] text-red-primary transition-all group-hover:gap-4"
-                >
-                  Read More
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    className="transition-transform group-hover:translate-x-1"
-                  >
-                    <path
-                      d="M10 0L10 20M10 20L20 10M10 20L0 10"
-                      stroke="#E11E24"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </Link>
               </article>
             ))}
           </div>

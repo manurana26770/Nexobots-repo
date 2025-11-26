@@ -253,7 +253,7 @@ export default function IndustriesPage() {
           />
         </div>
         {/* Blur overlay */}
-        <div 
+        <div
           className="absolute bg-black"
           style={{
             width: "1883px",
@@ -281,7 +281,7 @@ export default function IndustriesPage() {
               Empowering Every Industry with Smart, Secure, and Scalable Technology
             </h1>
             <Link
-              href="/contact"
+              href="#contact"
               className="inline-flex h-[67px] w-[253px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
               style={{
                 padding: "20px 29px",
@@ -335,38 +335,38 @@ export default function IndustriesPage() {
       </section>
 
       {/* Corporate & Enterprise Featured Section - Exact from Figma */}
-      <section
+        <section
         className="bg-[#F8F8F8]"
-        style={{
-          minHeight: "1333px",
+          style={{
+            minHeight: "1333px",
           padding: "120px 0",
-        }}
-      >
+          }}
+        >
         <div className="mx-auto w-full max-w-[1440px] px-[72px]">
-          {/* Industry Header */}
+            {/* Industry Header */}
           <div style={{ marginBottom: "109px" }}>
-            <h2
+              <h2
               className="font-['TASA_Orbiter'] text-black"
-              style={{
+                style={{
                 fontSize: "64px",
-                fontWeight: 600,
-                lineHeight: "1.22",
-                maxWidth: "788px",
+                  fontWeight: 600,
+                  lineHeight: "1.22",
+                  maxWidth: "788px",
                 marginBottom: "9px",
-              }}
-            >
+                }}
+              >
               Corporate & Enterprise
-            </h2>
-            <p
+              </h2>
+              <p
               className="font-['TASA_Orbiter'] text-black"
-              style={{
+                style={{
                 fontSize: "24px",
-                fontWeight: 600,
-                lineHeight: "1.08",
-                maxWidth: "919px",
+                  fontWeight: 600,
+                  lineHeight: "1.08",
+                  maxWidth: "919px",
                 marginBottom: "28px",
-              }}
-            >
+                }}
+              >
               Empowering enterprises with secure, scalable, and future-ready IT infrastructure.
             </p>
             {/* What We Deliver text - right after subtitle */}
@@ -381,39 +381,39 @@ export default function IndustriesPage() {
               }}
             >
               We help businesses build reliable, high-performance IT environments that connect teams, secure data, and support long-term growth. Our expertise spans structured cabling, networking, surveillance, and managed IT services — designed to keep enterprise operations running efficiently and securely.
-            </p>
-          </div>
+              </p>
+            </div>
 
           {/* Image + Content Layout - Exact from Figma */}
           <div className="relative mb-[45px]">
             {/* Top Row: Image + How We Support You */}
             <div className="flex items-start gap-[33px] mb-[28px]">
               {/* Image */}
-              <div
+                <div
                 className="relative overflow-hidden rounded-[13px] flex-shrink-0"
-                style={{
+                  style={{
                   width: "992px",
-                  height: "474px",
+                    height: "474px",
                   marginLeft: "-98px",
-                }}
-              >
-                <Image
+                  }}
+                >
+                  <Image
                   src="/industry-corporate-featured.png"
                   alt="Corporate & Enterprise"
-                  fill
-                  className="object-cover"
+                    fill
+                    className="object-cover"
                   sizes="992px"
-                />
-              </div>
+                  />
+                </div>
 
               {/* How We Support You - Right side */}
               <div className="flex-shrink-0" style={{ width: "442px" }}>
-                <h3
+                  <h3
                   className="font-['TASA_Orbiter'] text-black mb-[51px]"
-                  style={{
+                    style={{
                     fontSize: "32px",
-                    fontWeight: 600,
-                    lineHeight: "1.08",
+                      fontWeight: 600,
+                      lineHeight: "1.08",
                   }}
                 >
                   How We Support You
@@ -496,7 +496,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="/contact"
+                  href="#contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "339px",
@@ -536,10 +536,10 @@ export default function IndustriesPage() {
               color: "#000000",
               marginTop: "85px",
               marginBottom: "28px",
-            }}
-          >
-            What We Deliver
-          </h3>
+                    }}
+                  >
+                    What We Deliver
+                  </h3>
 
           {/* Features Grid - Exact from Figma */}
           <div
@@ -608,7 +608,7 @@ export default function IndustriesPage() {
                 {/* Description */}
                 <p
                   className="font-['TASA_Orbiter']"
-                  style={{
+                    style={{
                     fontSize: "15px",
                     fontWeight: 500,
                     lineHeight: "1.08",
@@ -664,15 +664,15 @@ export default function IndustriesPage() {
               className="font-['TASA_Orbiter'] text-black"
               style={{
                 fontSize: "22px",
-                fontWeight: 600,
-                lineHeight: "0.98",
-                maxWidth: "923px",
+                      fontWeight: 600,
+                      lineHeight: "0.98",
+                      maxWidth: "923px",
                 marginLeft: "2px",
-              }}
-            >
+                    }}
+                  >
               We help institutions modernize their campuses with smart infrastructure that enhances collaboration, security, and digital learning. From classroom Wi-Fi to secure access, Nexobots delivers connected experiences for students, faculty, and researchers.
-            </p>
-          </div>
+                  </p>
+                </div>
 
           {/* Image + Content Layout - Exact from Figma */}
           <div className="relative mb-[45px]">
@@ -786,7 +786,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="/contact"
+                  href="#contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "286px",
@@ -863,7 +863,7 @@ export default function IndustriesPage() {
               },
             ].map((feature, i) => (
               <article
-                key={i}
+                        key={i}
                 className="flex flex-col rounded-[9px] bg-white flex-shrink-0"
                 style={{
                   width: "309.66px",
@@ -885,11 +885,11 @@ export default function IndustriesPage() {
                 
                 {/* Title */}
                 <h4
-                  className="font-['TASA_Orbiter'] text-black"
-                  style={{
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
                     fontSize: "16px",
-                    fontWeight: 600,
-                    lineHeight: "1.08",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
                   }}
                 >
                   {feature.title}
@@ -933,8 +933,8 @@ export default function IndustriesPage() {
                 lineHeight: "1.22",
                 maxWidth: "788px",
                 marginBottom: "9px",
-              }}
-            >
+                        }}
+                      >
               Healthcare & Pharma
             </h2>
             <p
@@ -1076,7 +1076,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="/contact"
+                  href="#contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "262px",
@@ -1103,8 +1103,8 @@ export default function IndustriesPage() {
                   />
                 </Link>
               </div>
+              </div>
             </div>
-          </div>
 
           {/* What We Deliver Heading - Above Features Grid */}
           <h3
@@ -1122,14 +1122,14 @@ export default function IndustriesPage() {
           </h3>
 
           {/* Features Grid - Exact from Figma */}
-          <div
+            <div 
             className="flex items-start"
-            style={{
+              style={{
               gap: "18px",
               width: "1300px",
               marginLeft: "68px",
-            }}
-          >
+              }}
+            >
             {[
               {
                 icon: "wifi",
@@ -1152,57 +1152,57 @@ export default function IndustriesPage() {
                 description: "Infrastructure for EMR, telemedicine, and research data management.",
               },
             ].map((feature, i) => (
-              <article
-                key={i}
+                <article
+                  key={i}
                 className="flex flex-col rounded-[9px] bg-white flex-shrink-0"
-                style={{
+                  style={{
                   width: "309.66px",
                   padding: "21px 24px",
-                  gap: "20px",
-                }}
-              >
-                {/* Icon Container */}
-                <div
-                  className="flex items-center justify-center rounded-[6px]"
-                  style={{
-                    width: "31px",
-                    height: "31px",
-                    backgroundColor: "#F8F8F8",
+                    gap: "20px",
                   }}
                 >
-                  {getIconComponent(feature.icon)}
-                </div>
+                {/* Icon Container */}
+                  <div
+                    className="flex items-center justify-center rounded-[6px]"
+                    style={{
+                      width: "31px",
+                      height: "31px",
+                      backgroundColor: "#F8F8F8",
+                    }}
+                  >
+                    {getIconComponent(feature.icon)}
+                  </div>
                 
                 {/* Title */}
-                <h4
-                  className="font-['TASA_Orbiter'] text-black"
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    lineHeight: "1.08",
-                  }}
-                >
-                  {feature.title}
-                </h4>
+                  <h4
+                    className="font-['TASA_Orbiter'] text-black"
+                    style={{
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      lineHeight: "1.08",
+                    }}
+                  >
+                    {feature.title}
+                  </h4>
                 
                 {/* Description */}
-                <p
-                  className="font-['TASA_Orbiter']"
-                  style={{
-                    fontSize: "15px",
-                    fontWeight: 500,
-                    lineHeight: "1.08",
-                    color: "#A4A4A4",
+                  <p
+                    className="font-['TASA_Orbiter']"
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: 500,
+                      lineHeight: "1.08",
+                      color: "#A4A4A4",
                     height: "53px",
-                  }}
-                >
-                  {feature.description}
-                </p>
-              </article>
-            ))}
+                    }}
+                  >
+                    {feature.description}
+                  </p>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* Retail & Hospitality Section - Exact from Figma */}
       <section
@@ -1366,7 +1366,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="/contact"
+                  href="#contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "267px",
@@ -1656,7 +1656,7 @@ export default function IndustriesPage() {
 
                 {/* CTA Button */}
                 <Link
-                  href="/contact"
+                  href="#contact"
                   className="inline-flex h-[45px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                   style={{
                     width: "262px",
@@ -1824,7 +1824,7 @@ export default function IndustriesPage() {
             Let&apos;s collaborate to design technology solutions that empower your business and industry to thrive in the digital era.
           </p>
           <Link
-            href="/contact"
+            href="#contact"
             className="mx-auto inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-black/30 bg-black transition-all hover:bg-black/90"
             style={{
               padding: "12px 25px",

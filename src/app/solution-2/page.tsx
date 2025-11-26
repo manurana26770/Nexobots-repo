@@ -5,858 +5,342 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Partners from "@/components/Partners";
+
+const benefitCards = [
+  {
+    title: "Strategic Design. Operational Excellence.",
+    description:
+      "We combine consulting-driven design with hands-on management for full lifecycle value.",
+  },
+  {
+    title: "Certified OEM Partnerships",
+    description:
+      "Strong alliances with Cisco, D-Link, Fortinet, Palo Alto, and Aruba deliver best-in-class reliability.",
+  },
+  {
+    title: "Proactive & Predictive Management",
+    description:
+      "Real-time monitoring, analytics, and preventive maintenance minimize downtime.",
+  },
+  {
+    title: "SLA-Backed Service Reliability",
+    description:
+      "Defined response, resolution, and uptime commitments — guaranteed.",
+  },
+  {
+    title: "Security-First, Performance-Driven",
+    description:
+      "Our architectures embed cybersecurity and speed at every level of your network.",
+  },
+] as const;
+
+const networkInfrastructureServices = [
+  "LAN/WAN architecture design & rollout",
+  "Structured cabling (CAT6, CAT7 & Fiber)",
+  "Wi-Fi coverage & access point deployment",
+  "Routing & switching configuration",
+  "Network certification & performance validation",
+] as const;
+
+const firewallSecurityServices = [
+  "Next-Generation Firewall (NGFW) setup",
+  "VPN & multi-site secure access",
+  "Unified threat management (UTM) integration",
+  "Policy enforcement & application control",
+  "Real-time monitoring & analytics",
+] as const;
+
+const nocMonitoringServices = [
+  "Continuous network & server monitoring",
+  "Event correlation & alert response",
+  "Incident diagnosis & root-cause analysis",
+  "SLA-based escalation workflows",
+  "Performance trend analytics",
+] as const;
+
+const managedITServices = [
+  "IT asset lifecycle management",
+  "Patch, update & backup management",
+  "Helpdesk & on-site support (L1–L3)",
+  "Preventive maintenance scheduling",
+  "Infrastructure performance audits",
+] as const;
+
+const optimizationServices = [
+  "Bandwidth and throughput optimization",
+  "Load balancing & QoS configuration",
+  "Latency analysis & fault resolution",
+  "Capacity planning & scaling strategy",
+  "Detailed performance reporting",
+] as const;
+
+const multiVendorServices = [
+  "Multi-OEM network component integration",
+  "Hardware & software lifecycle management",
+  "Vendor coordination & warranty handling",
+  "Firmware upgrades & standardization",
+  "Multi-location deployment support",
+] as const;
+
+const faqs = [
+  {
+    question: "What's included in Nexobots' IT Network Infrastructure & Managed Services Solution?",
+    answer:
+      "It includes complete network design, implementation, management, and optimization — combining hardware, security, and support under a unified framework.",
+  },
+  {
+    question: "Can you integrate existing infrastructure with new solutions?",
+    answer:
+      "Absolutely. Our multi-vendor expertise enables seamless integration with your current setup — minimizing disruption and maximizing ROI.",
+  },
+  {
+    question: "How do you ensure data security across the network?",
+    answer:
+      "We implement multi-layered security with next-gen firewalls, encryption, access control, and real-time threat intelligence.",
+  },
+  {
+    question: "Are your managed services customizable?",
+    answer:
+      "Yes. We offer modular service models to match your business size, infrastructure complexity, and performance goals.",
+  },
+  {
+    question: "Do you provide support across multiple locations?",
+    answer:
+      "Yes. With a nationwide footprint in 180+ cities, Nexobots ensures consistent on-site and remote support.",
+  },
+  {
+    question: "Do you offer real-time network monitoring?",
+    answer:
+      "Yes. Our 24/7 NOC provides continuous visibility, proactive alerts, and immediate escalation handling.",
+  },
+  {
+    question: "Do you provide end-to-end project execution?",
+    answer: "",
+  },
+] as const;
 
 export default function Solution2Page() {
   return (
-    <div className="bg-white text-black">
+    <div className="bg-[#F8F8F8] text-black">
       <Navbar />
 
-      {/* Hero Section - Section 2 */}
-      <section className="relative h-[935px] w-full bg-black">
+      {/* Hero Section - Exact from Figma */}
+      <section className="relative h-[935px] w-full overflow-hidden">
         {/* Background Image */}
-        <Image
-          src="/solution-1-hero-355263.png"
-          alt="Network Infrastructure and Managed Services"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
+        <div className="absolute inset-0">
+          <Image
+            src="/solution-2-hero-bg.png"
+            alt="IT Network Infrastructure & Managed Services Hero"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        {/* Dark Overlay */}
+        <div
+          className="absolute inset-0"
           style={{
-            objectPosition: 'center top',
+            backgroundColor: "rgba(0, 0, 0, 0.52)",
           }}
         />
-        
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/52" />
-
         {/* Content */}
         <div className="relative z-10 h-full">
           {/* Title - Position: left 142px, top 169px */}
-          <div className="absolute" style={{ left: '142px', top: '169px' }}>
-            <h1 className="w-[1172px] h-[197px] font-['TASA_Orbiter'] text-[62px] font-semibold leading-[1.32] text-white">
-            Empower Connectivity. Simplify Management. Accelerate Performance.
+          <div className="absolute" style={{ left: "142px", top: "169px" }}>
+            <h1
+              className="font-['TASA_Orbiter'] text-white"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.32",
+                maxWidth: "1172px",
+              }}
+            >
+              Empower Connectivity. Simplify Management. Accelerate Performance.
             </h1>
           </div>
 
           {/* Description - Position: left 142px, top 366px */}
-          <div className="absolute" style={{ left: '142px', top: '366px' }}>
-            <p className="w-[812px] h-[70px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.44] text-white">
-            Unlock business agility and reliability with Nexobots’ IT Network Infrastructure & Managed Services.
+          <div className="absolute" style={{ left: "142px", top: "366px" }}>
+            <p
+              className="font-['TASA_Orbiter'] text-white"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.44",
+                maxWidth: "812px",
+              }}
+            >
+              Unlock business agility and reliability with Nexobots' IT Network
+              Infrastructure & Managed Services.
             </p>
           </div>
 
           {/* CTA Button - Position: left 142px, top 489px */}
-          <div className="absolute" style={{ left: '142px', top: '489px' }}>
+          <div className="absolute" style={{ left: "142px", top: "489px" }}>
             <Link
-              href="/contact"
-              className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-[20px] font-['Manrope'] text-[20px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
+              href="#contact"
+              className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
+              style={{
+                padding: "20px 29px",
+              }}
             >
-              Talk to an Expert
-              <svg
-                width="41"
-                height="41"
-                viewBox="0 0 41 41"
-                fill="none"
+              <span
+                className="font-['Manrope'] text-black"
+                style={{
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Talk to an Expert
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
                 className="h-[41px] w-[41px]"
-                aria-hidden="true"
-              >
-                <path
-                  d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                  stroke="#E11E24"
-                  strokeWidth="2"
-                />
-              </svg>
+              />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Introductory Text & Image Grid */}
-      <section className="relative h-[1066px] w-full bg-black">
-        <div className="relative h-full w-full">
-          {/* Main Heading - Position: left 166px, top 120px */}
-          <div className="absolute" style={{ left: '166px', top: '120px' }}>
-            <h2 className="w-[1108px] text-center font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.17] text-white">
-              In the digital-first era, a high-performing, secure, and agile network is essential for every enterprise.
-              <br />
-              Yet, managing distributed systems, growing endpoints, and increasing data demands can quickly overwhelm internal IT teams.
-            </h2>
-          </div>
-
-          {/* Subheading - Position: left 261px, top 239px */}
-          <div className="absolute" style={{ left: '261px', top: '239px' }}>
-            <p className="w-[918px] text-center font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.17] text-[#727272]">
-            Nexobots Technologies delivers IT Network Infrastructure & Managed Services Solutions that combine robust network architecture with proactive management.We help organizations design, implement, and maintain intelligent, future-ready IT ecosystems — ensuring seamless connectivity, optimal uptime, and strategic scalability.            
-            </p>
-          </div>
-
-          {/* CTA Button - Position: left 643px, top 399px */}
-          <div className="absolute" style={{ left: '643px', top: '399px' }}>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Get In Touch
-            </Link>
-          </div>
-
-          {/* Image Grid - Position: left 120px, top 511px */}
-          <div className="absolute" style={{ left: '120px', top: '511px' }}>
-            <div className="flex gap-[17px]">
-              {/* Left Large Image */}
-              <div className="relative h-[435px] w-[549px] overflow-hidden rounded-[18px]">
-                <Image
-                  src="/solution-1-section3-1-6536ac.png"
-                  alt="Surveillance Infrastructure"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              
-              {/* Right Column - Two Images */}
-              <div className="flex flex-col gap-[19px]">
-                {/* Top Right Image */}
-                <div className="relative h-[218px] w-[635px] overflow-hidden rounded-[18px]">
-                  <Image
-                    src="/solution-1-section3-2.png"
-                    alt="Intelligent Surveillance"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-                
-                {/* Bottom Right Image */}
-                <div className="relative h-[198px] w-[635px] overflow-hidden rounded-[18px]">
-                  <Image
-                    src="/solution-1-section3-3.png"
-                    alt="Security Solutions"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 4: Why Intelligent Surveillance Matters */}
-      <section className="relative h-[687px] w-full bg-[#D9D9D9]">
-        <div className="relative h-full w-full">
-          {/* Main Heading - Position: left 119px, top 120px */}
-          <div className="absolute" style={{ left: '119px', top: '120px' }}>
-            <h2 className="w-[973px] h-[72px]font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.4937] text-black">
-              Why IT Network Infrastructure & Managed Services Matter
-            </h2>
-          </div>
-
-          {/* Left Paragraph - Position: left 119px, top 241px */}
-          <div className="absolute" style={{ left: '119px', top: '241px' }}>
-            <p className="w-[576px] h-[250px] mt-[30px] font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
-              Enterprises today depend on uninterrupted data flow, secure access, and predictable performance.
-              <br />
-              However, siloed infrastructure and reactive support models can limit operational efficiency and growth.
-              <br />
-              Nexobots bridges this gap through an integrated network and management framework — built to enhance visibility, reduce downtime, and align IT performance with business outcomes.
-            </p>
-          </div>
-
-          {/* Right Paragraph - Position: left 754px, top 241px */}
-          <div className="absolute" style={{ left: '754px', top: '241px' }}>
-            <p className="w-[573px] h-[174px] mt-[30px] font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
-            Whether it’s network deployment, security integration, or 24/7 monitoring, our solutions ensure your IT foundation stays strong, scalable, and secure.
-            </p>
-          </div>
-
-          {/* CTA Button - Position: left 120px, top 522px */}
-          <div className="absolute" style={{ left: '120px', top: '522px' }}>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[155px] mt-[30px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Get In Touch
-            </Link>
-          </div>
-        </div>
-      </section>
-
-       {/* Placeholder for future sections */}
-       <section className="bg-[#F8F8F8] py-20 text-center">
-        <h2 className="font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.4937] text-black">
-          Our Core Offerings
-        </h2>
-        </section>
-
-        <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className=" max-w-[1172px] h-[200px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          Network Infrastructure Design & Implementation
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] h-[90px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            We design, deploy, and optimize network infrastructure to support growth, security, and operational efficiency.
-            <br />
-            Our solutions ensure seamless connectivity, high-performance networks, and scalable architecture — designed to meet current and future needs.
+      {/* Closing CTA Section - Exact from Figma (node-id=37-2654) */}
+      <section
+        className="bg-black"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          {/* First Text */}
+          <p
+            className="font-['TASA_Orbiter'] text-white mx-auto text-center mb-[60px]"
+            style={{
+              fontSize: "24px",
+              fontWeight: 600,
+              lineHeight: "1.17",
+              maxWidth: "1108px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            In the digital-first era, a high-performing, secure, and agile network
+            is essential for every enterprise. Yet, managing distributed systems,
+            growing endpoints, and increasing data demands can quickly overwhelm
+            internal IT teams.
           </p>
 
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
+          {/* Second Text */}
+          <p
+            className="font-['TASA_Orbiter'] text-[#727272] mx-auto text-center mb-[60px]"
+            style={{
+              fontSize: "20px",
+              fontWeight: 600,
+              lineHeight: "1.17",
+              maxWidth: "918px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            Nexobots Technologies delivers IT Network Infrastructure & Managed
+            Services Solutions that combine robust network architecture with
+            proactive management. We help organizations design, implement, and
+            maintain intelligent, future-ready IT ecosystems — ensuring seamless
+            connectivity, optimal uptime, and strategic scalability.
+          </p>
+
+          {/* Get In Touch Button */}
+          <div className="flex justify-center mb-[80px]">
+            <Link
+              href="#contact"
+              className="relative inline-flex items-center justify-center rounded-[75px] border border-white/30 transition-all hover:bg-black/90"
+              style={{
+                width: "155px",
+                height: "45px",
+                background: "black",
+                outline: "1px rgba(255, 255, 255, 0.30) solid",
+                outlineOffset: "-1px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-white"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  letterSpacing: "0.30px",
+                }}
+              >
+                Get In Touch
+              </span>
+            </Link>
+          </div>
+
+          {/* Three Image Cards */}
+          <div
+            className="mx-auto flex gap-[17px]"
+            style={{
+              width: "1201px",
+              height: "630px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            {/* Left Large Image */}
+            <div
+              className="relative rounded-[18px] overflow-hidden flex-shrink-0"
+              style={{
+                width: "549px",
+                height: "630px",
+              }}
+            >
               <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
+                src="/solution-2-cta-1.png"
+                alt="Network Infrastructure"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                sizes="549px"
               />
             </div>
 
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  LAN/WAN architecture design & rollout
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Structured cabling (CAT6, CAT7 & Fiber)
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Wi-Fi coverage & access point deployment
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Routing & switching configuration
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Network certification & performance validation
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Strong, scalable, and high-performance network backbone for growing digital demands.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          Firewall & Network Security Integration
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-          Safeguard your enterprise from evolving cyber threats.
-            <br />
-            Our intelligent firewall and network security solutions combine performance and protection — securing every endpoint, gateway, and data stream.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Next-Generation Firewall (NGFW) setup
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  VPN & multi-site secure access
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Unified threat management (UTM) integration
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Policy enforcement & application control
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Real-time monitoring & analytics
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Hardened security, zero-trust connectivity, and complete compliance assurance.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          Network Operations Center (NOC) & Continuous Monitoring
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-           Experience uninterrupted network visibility and proactive performance management.
-           <br></br>
-           Our 24/7 NOC delivers real-time oversight, ensuring maximum uptime and incident-free operations.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  SLA-based escalation workflows
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Incident diagnosis & root-cause analysis
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Event correlation & alert response
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Continuous network & server monitoring
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Performance trend analytics
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Proactive issue resolution, improved uptime, and data-driven network optimization.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          Managed IT & Lifecycle Services
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-          Optimize your IT operations with a dedicated, expert-managed framework.
-            <br />
-            We deliver complete IT lifecycle support — from configuration and backup to ongoing maintenance and optimization.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  IT asset lifecycle management
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Patch, update & backup management
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                   Helpdesk & on-site support (L1–L3)
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Preventive maintenance scheduling
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Infrastructure performance audits
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Operational continuity, predictable costs, and simplified IT management.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-          Network Optimization & Performance Enhancement
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Ensure your infrastructure performs at its peak.
-            <br />
-            Through continuous assessment and analytics, we fine-tune configurations and remove performance bottlenecks.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Bandwidth and throughput optimization
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Load balancing & QoS configuration
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Latency analysis & fault resolution
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Capacity planning & scaling strategy
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Detailed performance reporting
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Higher network efficiency, faster response, and maximum user satisfaction.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-           Multi-Vendor Integration & Support
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-          Leverage flexibility without complexity.
-            <br />
-            Our engineers are certified across major OEMs — enabling seamless integration, cross-platform functionality, and consistent support.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Multi-OEM network component integration
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Hardware & software lifecycle management
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Vendor coordination & warranty handling
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Firmware upgrades & standardization
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                  Multi-location deployment support
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-            Interoperable, stable, and future-proof infrastructure built for business continuity.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 7: Why Choose Nexobots - Exact from Figma */}
-      <section className="relative h-[1342px] w-full bg-[#F8F8F8]">
-        <div className="relative h-full w-full">
-          {/* Heading - Position: x 122, y 120 */}
-          <div className="absolute" style={{ left: '122px', top: '120px', width: '1148px' }}>
-            <h2 className="text-center font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.4937] text-black">
-            Why Choose Nexobots for IT Network
-            <br />
-            Infrastructure & Managed Services
-            </h2>
-          </div>
-
-          {/* 5 Cards Horizontally - Position: x 69, y 256 */}
-          <div className="absolute" style={{ left: '69px', top: '256px', width: '1301px' }}>
-            <div className="flex gap-[24px]">
-              {/* Card 1: Expert Cloud Architects */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                Strategic Design. Operational Excellence.
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                We combine consulting-driven design with hands-on management for full lifecycle value.
-                </p>
-              </div>
-
-              {/* Card 2: End-to-End Support */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                Certified OEM Partnerships
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Strong alliances with Cisco, D-Link, Fortinet, Palo Alto, and Aruba deliver best-in-class reliability.
-
-                </p>
-              </div>
-
-              {/* Card 3: Security-Driven Framework */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                Proactive & Predictive Management
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Real-time monitoring, analytics, and preventive maintenance minimize downtime.
-                </p>
-              </div>
-
-              {/* Card 4: SLA-Based Performance Assurance */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                SLA-Backed Service Reliability
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Defined response, resolution, and uptime commitments — guaranteed.
-                </p>
-              </div>
-
-              {/* Card 5: Proven Multi-Platform Expertise */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                Security-First, Performance-Driven
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                Our architectures embed cybersecurity and speed at every level of your network.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* 3 Images - Position: x 120, y 589 */}
-          <div className="absolute" style={{ left: '120px', top: '589px', width: '1199px', height: '632.66px' }}>
-            <div className="relative h-full w-full">
-              {/* Left Large Image */}
-              <div className="absolute left-0 top-0 h-[632.66px] w-[546.74px] overflow-hidden rounded-[18px]">
-                <Image
-                  src="/about-advantage-1-3df8a1.png"
-                  alt="Cloud Support Benefit 1"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-
+            {/* Right Two Images Stacked */}
+            <div className="flex flex-col gap-[26.17px] flex-shrink-0">
               {/* Top Right Image */}
-              <div className="absolute left-[575.52px] top-0 h-[261.07px] w-[623.48px] overflow-hidden rounded-[18px]">
+              <div
+                className="relative rounded-[18px] overflow-hidden"
+                style={{
+                  width: "635px",
+                  height: "315.72px",
+                }}
+              >
                 <Image
-                  src="/about-advantage-2.png"
-                  alt="Cloud Support Benefit 2"
+                  src="/solution-2-cta-2.png"
+                  alt="Managed Services"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="635px"
                 />
               </div>
 
               {/* Bottom Right Image */}
-              <div className="absolute left-[575.52px] top-[293.46px] h-[339.2px] w-[623.48px] overflow-hidden rounded-[18px]">
+              <div
+                className="relative rounded-[18px] overflow-hidden"
+                style={{
+                  width: "635px",
+                  height: "286.76px",
+                }}
+              >
                 <Image
-                  src="/about-advantage-3.png"
-                  alt="Cloud Support Benefit 3"
+                  src="/solution-2-cta-3.png"
+                  alt="Network Performance"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="635px"
                 />
               </div>
             </div>
@@ -864,320 +348,1438 @@ export default function Solution2Page() {
         </div>
       </section>
 
-      {/* Section 8: Our Partners - Exact from Figma */}
-      <section className="relative h-[558px] w-full bg-white">
-        <div className="relative h-full w-full">
-          {/* Content Container - Position: left 149px, top 120px */}
-          <div className="absolute" style={{ left: '149px', top: '120px', width: '1143px' }}>
-            {/* Partner Ecosystem Label - Centered */}
-            <div className="mb-4 flex items-center justify-center">
-              <p className="font-['Manrope'] text-[18px] font-medium leading-[1.366] text-black">
-                Partner Ecosystem
-              </p>
-            </div>
+      {/* Why IT Network Infrastructure & Managed Services Matter Section - Exact from Figma (node-id=1-2524) */}
+      <section
+        className="bg-[#D9D9D9]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          {/* Heading */}
+          <h2
+            className="font-['TASA_Orbiter'] text-black mb-[40px]"
+            style={{
+              fontSize: "48px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "973px",
+            }}
+          >
+            Why IT Network Infrastructure & Managed Services Matter
+          </h2>
 
-            {/* Heading - Centered, width 1125px */}
-            <div className="flex justify-center">
-              <h2 className="w-[1125px] text-center font-['TASA_Orbiter'] text-[32px] font-bold leading-[1.375] text-black">
-              We work with industry-leading OEMs to deliver enterprise-grade solutions that meet the highest standards of quality, performance, and security.
-              </h2>
-            </div>
+          {/* Two Column Text Layout */}
+          <div className="grid grid-cols-2 gap-[60px] mb-[60px]">
+            <p
+              className="font-['TASA_Orbiter'] text-black"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "576px",
+              }}
+            >
+              Enterprises today depend on uninterrupted data flow, secure access,
+              and predictable performance. However, siloed infrastructure and
+              reactive support models can limit operational efficiency and growth.
+              Nexobots bridges this gap through an integrated network and
+              management framework — built to enhance visibility, reduce downtime,
+              and align IT performance with business outcomes.
+            </p>
+            <p
+              className="font-['TASA_Orbiter'] text-black"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "573px",
+              }}
+            >
+              Whether it's network deployment, security integration, or 24/7
+              monitoring, our solutions ensure your IT foundation stays strong,
+              scalable, and secure.
+            </p>
           </div>
 
-          {/* Logo Stripe - Position: y 329px, horizontal scrolling strip */}
-          <div className="absolute" style={{ top: '329px', left: '0', right: '0' }}>
-            <div className="relative h-[129px] w-full overflow-hidden bg-[#D9D9D9]">
-              <div className="flex items-center justify-center gap-[80px] px-[100px] py-[40px]">
-                {/* Cisco Logo Placeholder */}
-                <div className="relative h-[61px] w-[118px]">
-                  <Image
-                    src="/partner-cisco.svg"
-                    alt="Cisco"
-                    width={118}
-                    height={61}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Fortinet Logo Placeholder */}
-                <div className="relative h-[48px] w-[385px]">
-                  <Image
-                    src="/partner-fortinet.svg"
-                    alt="Fortinet"
-                    width={385}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* D-Link Logo Placeholder */}
-                <div className="relative h-[48px] w-[192px]">
-                  <Image
-                    src="/partner-dlink.svg"
-                    alt="D-Link"
-                    width={192}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Palo Alto Logo Placeholder */}
-                <div className="relative h-[48px] w-[242px]">
-                  <Image
-                    src="/partner-paloalto.svg"
-                    alt="Palo Alto Networks"
-                    width={242}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Microsoft Logo Placeholder */}
-                <div className="relative h-[48px] w-[227px]">
-                  <Image
-                    src="/partner-microsoft.svg"
-                    alt="Microsoft"
-                    width={227}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Dell Logo Placeholder */}
-                <div className="relative h-[48px] w-[239px]">
-                  <Image
-                    src="/partner-dell.svg"
-                    alt="Dell"
-                    width={239}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* HP Logo Placeholder */}
-                <div className="relative h-[53px] w-[286px]">
-                  <Image
-                    src="/partner-hp.svg"
-                    alt="HP"
-                    width={286}
-                    height={53}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Hikvision Logo Placeholder */}
-                <div className="relative h-[93px] w-[202px]">
-                  <Image
-                    src="/partner-hikvision.svg"
-                    alt="Hikvision"
-                    width={202}
-                    height={93}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-              </div>
-            </div>
+          {/* Get In Touch Button - Left aligned below text */}
+          <div>
+            <Link
+              href="#contact"
+              className="inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+              style={{
+                padding: "12px 25px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-white"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Get In Touch
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={12}
+                height={12}
+                className="h-3 w-3"
+              />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Section 9: FAQs - Exact from Figma */}
-      <section className="relative h-[1118px] w-full bg-white">
-        <div className="relative h-full w-full">
-          {/* Heading - Position: x 126, y 120 */}
-          <div className="absolute" style={{ left: '126px', top: '120px', width: '1148px' }}>
-            <h2 className="text-center font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.4937] text-black">
-            FAQs – CCTV & Intelligent 
-            <br />
-            Surveillance Solutions
+      {/* Our Core Offerings Heading - Exact from Figma */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "678px",
+            }}
+          >
+            Our Core Offerings
+          </h2>
+        </div>
+      </section>
+
+      {/* Network Infrastructure Design & Implementation Section - Exact from Figma (node-id=1-2532) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1172px",
+              }}
+            >
+              Network Infrastructure Design & Implementation
             </h2>
-          </div>
 
-          {/* FAQ Cards Container - Position: x 107, y 294 */}
-          <div className="absolute" style={{ left: '107px', top: '294px', width: '1225px' }}>
-            {/* Card 1 - Height: 120px */}
-            <div className="mb-5 h-[120px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[3px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                What’s included in Nexobots’ IT Network Infrastructure & Managed Services Solution?
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.26",
+                maxWidth: "1284px",
+              }}
+            >
+              Build robust, scalable network foundations that support your
+              business growth. From LAN/WAN architecture to structured cabling
+              and Wi-Fi deployment, we design and implement network
+              infrastructures that deliver reliability, performance, and
+              scalability.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/solution-2-network-infrastructure-section.png"
+                  alt="Network Infrastructure Design & Implementation"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[40px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
                 </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                It includes complete network design, implementation, management, and optimization — combining hardware, security, and support under a unified framework.
-                </p>
-                {/* Icon - Position: right 27px, top 31px */}
-                <div className="absolute right-[27px] top-[11px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
                   >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                    {networkInfrastructureServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Card 6 - Height: 64px, Position: y 140px from container top */}
-            <div className="mb-5 h-[64px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative flex items-center justify-between">
-                <h3 className="font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                Can you integrate existing infrastructure with new solutions?
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1223px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[30px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[14px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
                 </h3>
-                {/* Icon */}
-                <div className="h-6 w-6 flex-shrink-0">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 10.91L12 15.27L16.36 10.91"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 - Height: 105px, Position: y 224px */}
-            <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[15px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                 Do you offer real-time network monitoring?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                Yes. Our 24/7 NOC provides continuous visibility, proactive alerts, and immediate escalation handling.
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1223px",
+                  }}
+                >
+                  Strong, scalable, and high-performance network backbone for
+                  growing digital demands.
                 </p>
-                {/* Icon */}
-                <div className="absolute right-[27px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
               </div>
-            </div>
-
-            {/* Card 5 - Height: 105px, Position: y 349px */}
-            <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[14px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                How do you ensure data security across the network?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-medium leading-[1] text-[#333333]">
-                We implement multi-layered security with next-gen firewalls, encryption, access control, and real-time threat intelligence.
-                </p>
-                {/* Icon */}
-                <div className="absolute right-[25px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 - Height: 105px, Position: y 474px */}
-            <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[16px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                Are your managed services customizable?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                Yes. We offer modular service models to match your business size, infrastructure complexity, and performance goals.
-                </p>
-                {/* Icon */}
-                <div className="absolute right-[24px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 - Height: 105px, Position: y 599px */}
-            <div className="h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[13px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                Do you provide support across multiple locations?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                Yes. With a nationwide footprint in 180+ cities, Nexobots ensures consistent on-site and remote support.
-                </p>
-                {/* Icon */}
-                <div className="absolute right-[24px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <ContactForm />
+      {/* Firewall & Network Security Integration Section - Exact from Figma (node-id=1-2557) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "953px",
+              }}
+            >
+              Firewall & Network Security Integration
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.26",
+                maxWidth: "1151px",
+              }}
+            >
+              Safeguard your enterprise from evolving cyber threats. Our intelligent
+              firewall and network security solutions combine performance and
+              protection — securing every endpoint, gateway, and data stream.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/solution-2-firewall-security-section.png"
+                  alt="Firewall & Network Security Integration"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[40px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
+                </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {firewallSecurityServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1222px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[30px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[14px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.27",
+                    maxWidth: "1222px",
+                  }}
+                >
+                  Hardened security, zero-trust connectivity, and complete
+                  compliance assurance.
+                </p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Network Operations Center (NOC) & Continuous Monitoring Section - Exact from Figma (node-id=1-2581) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              Network Operations Center (NOC) & Continuous Monitoring
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.26",
+                maxWidth: "1151px",
+              }}
+            >
+              Experience uninterrupted network visibility and proactive performance
+              management. Our 24/7 NOC delivers real-time oversight, ensuring
+              maximum uptime and incident-free operations.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/solution-2-noc-monitoring-section.png"
+                  alt="Network Operations Center & Continuous Monitoring"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[40px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
+                </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {nocMonitoringServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1151px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[30px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[14px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.27",
+                    maxWidth: "1151px",
+                  }}
+                >
+                  Proactive issue resolution, improved uptime, and data-driven
+                  network optimization.
+                </p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Managed IT & Lifecycle Services Section - Exact from Figma (node-id=1-2605) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              Managed IT & Lifecycle Services
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.26",
+                maxWidth: "1151px",
+              }}
+            >
+              Optimize your IT operations with a dedicated, expert-managed
+              framework. We deliver complete IT lifecycle support — from
+              configuration and backup to ongoing maintenance and optimization.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/solution-2-managed-it-section.png"
+                  alt="Managed IT & Lifecycle Services"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[40px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
+                </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {managedITServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1216px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[30px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[14px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.27",
+                    maxWidth: "1216px",
+                  }}
+                >
+                  Operational continuity, predictable costs, and simplified IT
+                  management.
+                </p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Network Optimization & Performance Enhancement Section - Exact from Figma (node-id=1-2629) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              Network Optimization & Performance Enhancement
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.26",
+                maxWidth: "1151px",
+              }}
+            >
+              Ensure your infrastructure performs at its peak. Through continuous
+              assessment and analytics, we fine-tune configurations and remove
+              performance bottlenecks.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/solution-2-optimization-section.png"
+                  alt="Network Optimization & Performance Enhancement"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[40px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
+                </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {optimizationServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1216px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[30px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[14px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.27",
+                    maxWidth: "1216px",
+                  }}
+                >
+                  Higher network efficiency, faster response, and maximum user
+                  satisfaction.
+                </p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Multi-Vendor Integration & Support Section - Exact from Figma (node-id=1-2653) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              Multi-Vendor Integration & Support
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.26",
+                maxWidth: "1151px",
+              }}
+            >
+              Leverage flexibility without complexity. Our engineers are certified
+              across major OEMs — enabling seamless integration, cross-platform
+              functionality, and consistent support.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/solution-2-multi-vendor-section.png"
+                  alt="Multi-Vendor Integration & Support"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[40px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
+                </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {multiVendorServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1216px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[30px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[14px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.27",
+                    maxWidth: "1216px",
+                  }}
+                >
+                  Interoperable, stable, and future-proof infrastructure built for
+                  business continuity.
+                </p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Nexobots Section - Exact from Figma (node-id=1-2677) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black text-center"
+            style={{
+              fontSize: "40px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "860px",
+              margin: "0 auto 80px",
+            }}
+          >
+            Why Choose Nexobots for IT Network Infrastructure & Managed Services
+          </h2>
+
+          {/* Benefit Cards Grid - 5 cards in a row - Exact from Figma */}
+          <div
+            className="flex items-start justify-center"
+            style={{
+              gap: "24px",
+            }}
+          >
+            {benefitCards.map((card, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-[21px]"
+                style={{
+                  width: "241px",
+                  height: "243px",
+                  padding: index === 0 ? "20px 16px" : "20px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                }}
+              >
+                {/* Icon - Exact from Figma */}
+                <div
+                  className="flex-shrink-0"
+                  style={{
+                    width: "51px",
+                    height: "51px",
+                  }}
+                >
+                  <svg
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="2.01"
+                      y="2.01"
+                      width="46.97"
+                      height="46.97"
+                      rx="23.485"
+                      stroke="#E9E9E9"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      cx="25.5"
+                      cy="25.5"
+                      r="10.625"
+                      stroke="#E11E24"
+                      strokeWidth="1"
+                    />
+                    <circle cx="25.5" cy="25.5" r="4.25" fill="#E11E24" />
+                  </svg>
+                </div>
+                <h3
+                  className="font-['Manrope'] text-black"
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    lineHeight: "1.25",
+                  }}
+                >
+                  {card.title}
+                </h3>
+                <p
+                  className="font-['Manrope'] text-[#A4A4A4]"
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    lineHeight: "1.462",
+                    width: index === 0 ? "206px" : index === 1 ? "209px" : "209px",
+                  }}
+                >
+                  {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section - Exact from Figma */}
+      <section
+        className="bg-white"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black text-center mb-[80px]"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "1058px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            FAQs – IT Network Infrastructure & Managed Services
+          </h2>
+
+          <div className="space-y-[40px]">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-[#EFEFEF] rounded-[15px]"
+                style={{
+                  width: "1225px",
+                  height: faq.answer ? "120px" : "64px",
+                  padding: "20px",
+                }}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3
+                      className="font-['Manrope'] text-[#333333] mb-[16px]"
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: 500,
+                        lineHeight: "1.2",
+                      }}
+                    >
+                      {faq.question}
+                    </h3>
+                    {faq.answer && (
+                      <p
+                        className="font-['Manrope'] text-[#333333]"
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: 400,
+                          lineHeight: "1.4375",
+                        }}
+                      >
+                        {faq.answer}
+                      </p>
+                    )}
+                  </div>
+                  <button
+                    className="flex-shrink-0 ml-4"
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                    }}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.64 8.73L12 13.09L16.36 8.73"
+                        stroke="#333333"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Partners Section */}
+      <Partners />
+
+      {/* Contact Form */}
+      <div id="contact">
+        <ContactForm />
+      </div>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
 }
-

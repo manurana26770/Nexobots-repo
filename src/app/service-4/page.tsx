@@ -5,138 +5,319 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Partners from "@/components/Partners";
+
+const benefitCards = [
+  {
+    title: "Expert Cloud Architects",
+    description:
+      "Certified professionals ensure seamless deployment, migration, and management across multi-cloud and virtual environments.",
+  },
+  {
+    title: "End-to-End Support",
+    description:
+      "From strategy and design to maintenance and optimization — we manage your cloud lifecycle completely.",
+  },
+  {
+    title: "Security-Driven Framework",
+    description:
+      "We embed enterprise-grade encryption, access control, and compliance measures into every solution.",
+  },
+  {
+    title: "SLA-Based Performance Assurance",
+    description:
+      "Defined uptime guarantees, quick incident response, and predictable performance metrics.",
+  },
+  {
+    title: "Proven Multi-Platform Expertise",
+    description:
+      "Experience across VMware, Hyper-V, Azure, AWS, Citrix, and OpenStack ensures flexibility and interoperability.",
+  },
+] as const;
+
+const cloudInfrastructureServices = [
+  "Cloud architecture design & migration planning",
+  "Hybrid & multi-cloud implementation",
+  "Cloud monitoring & performance optimization",
+  "Data backup, replication & disaster recovery",
+  "Security & compliance management",
+] as const;
+
+const virtualizationServices = [
+  "Server & desktop virtualization setup",
+  "Virtual machine provisioning & monitoring",
+  "Storage & network virtualization",
+  "Capacity planning & resource optimization",
+  "Backup & failover configuration",
+] as const;
+
+const backupDraasServices = [
+  "Continuous data replication & version control",
+  "Automated failover & recovery testing",
+  "Backup policy configuration",
+  "Compliance & retention management",
+  "24/7 monitoring & support",
+] as const;
+
+const faqs = [
+  {
+    question: "What's the difference between cloud computing and virtualization?",
+    answer:
+      "Virtualization creates multiple virtual systems within a single physical environment, while cloud computing delivers those virtualized resources as a service — accessible anywhere, anytime.",
+  },
+  {
+    question: "Can you migrate legacy applications to the cloud?",
+    answer:
+      "Yes. Our experts assess compatibility, refactor workloads where needed, and perform seamless migration with zero data loss",
+  },
+  {
+    question: "Is cloud backup more secure than on-premise solutions?",
+    answer:
+      "Yes — cloud backups include encryption, redundancy, and geographic failover, ensuring stronger data protection and compliance",
+  },
+  {
+    question: "Do you provide Disaster Recovery services?",
+    answer:
+      "Yes, our DRaaS offering ensures minimal downtime and quick recovery for mission-critical workloads in case of system or network failures.",
+  },
+  {
+    question: "Do you provide ongoing cloud management and support?",
+    answer:
+      "Absolutely. Nexobots provides 24/7 monitoring, performance optimization, patch management, and cost governance for cloud workloads.",
+  },
+  {
+    question: "Which cloud platforms does Nexobots support?",
+    answer: "",
+  },
+] as const;
 
 export default function Service4Page() {
   return (
     <div className="bg-[#F8F8F8] text-black">
       <Navbar />
 
-      {/* Section 1: Hero - Exact from Figma */}
-      <section className="relative h-[935px] w-full bg-black">
+      {/* Hero Section - Exact from Figma */}
+      <section className="relative h-[935px] w-full overflow-hidden">
         {/* Background Image */}
-        <Image
-          src="/hero-service-4-355263.png"
-          alt="Cloud & Virtualization Support"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/52" />
-        
-        {/* Content */}
-        <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col px-[142px]">
-          {/* Heading - Position: x 142, y 169 */}
-          <h1
-            className="max-w-[722px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.32] text-white"
-            style={{ marginTop: '169px' }}
-          >
-            Empower Agility. Optimize Performance. Scale Without Limits.
-          </h1>
-
-          {/* Description - Position: x 142, y 442 (273px from heading) */}
-          <p
-            className="max-w-[812px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.44] text-white"
-            style={{ marginTop: '76px' }}
-          >
-            Build a resilient, scalable, and secure digital foundation — with
-            nexobots&apos; Cloud & Virtualization Support.
-          </p>
-
-          {/* CTA Button - Position: x 142, y 556 (114px from description) */}
-          <Link
-            href="/contact"
-            className="mt-[44px] inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-transparent px-[29px] py-[20px] font-['Manrope'] text-[20px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-white/10"
-          >
-            Talk to an Expert
-            <svg
-              width="41"
-              height="41"
-              viewBox="0 0 41 41"
-              fill="none"
-              className="h-[41px] w-[41px]"
-              aria-hidden="true"
-            >
-              <path
-                d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                stroke="#E11E24"
-                strokeWidth="2"
-              />
-            </svg>
-          </Link>
+        <div className="absolute inset-0">
+          <Image
+            src="/service-4-hero-bg-44eb7d.png"
+            alt="Cloud & Virtualization Support Hero"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
         </div>
-      </section>
+        {/* Dark Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.62)",
+          }}
+        />
+        {/* Content */}
+        <div className="relative z-10 h-full">
+          {/* Title - Position: left 142px, top 169px */}
+          <div className="absolute" style={{ left: "142px", top: "169px" }}>
+            <h1
+              className="font-['TASA_Orbiter'] text-white"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.32",
+                maxWidth: "722px",
+              }}
+            >
+              Empower Agility. Optimize Performance. Scale Without Limits.
+            </h1>
+          </div>
 
-      {/* Section 2: Introductory Text & Images - Exact from Figma */}
-      <section className="relative h-[1078px] w-full bg-[#F8F8F8]">
-        <div className="relative h-full w-full">
-          {/* Secondary Text - Position: x 166, y 100 */}
-          <div className="absolute" style={{ left: '166px', top: '100px', width: '1108px' }}>
-            <p className="text-center font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.17] text-black">
-              In today&apos;s fast-evolving business landscape, agility and uptime
-              define competitive advantage.
-              <br />
-              Yet, managing on-premise systems or fragmented cloud environments
-              can lead to inefficiencies, high costs, and complex maintenance
-              challenges
+          {/* Description - Position: left 142px, top 442px */}
+          <div className="absolute" style={{ left: "142px", top: "442px" }}>
+            <p
+              className="font-['TASA_Orbiter'] text-white"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.44",
+                maxWidth: "812px",
+              }}
+            >
+              Build a resilient, scalable, and secure digital foundation — with
+              nexobots' Cloud & Virtualization Support.
             </p>
           </div>
 
-          {/* Main Heading - Position: x 286, y 219 */}
-          <div className="absolute" style={{ left: '286px', top: '219px', width: '869px' }}>
-            <h2 className="text-center font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.17] text-[#4B4B4B]">
-              Nexobots Technologies delivers comprehensive Cloud & Virtualization
-              Support designed to help enterprises modernize their IT
-              infrastructure — enabling seamless scalability, optimal resource
-              utilization, and secure workload management across hybrid, private,
-              or public cloud environments.
-            </h2>
-          </div>
-
-          {/* Get In Touch Button - Position: x 643, y 334 */}
-          <div className="absolute" style={{ left: '643px', top: '334px' }}>
+          {/* CTA Button - Position: left 142px, top 556px */}
+          <div className="absolute" style={{ left: "142px", top: "556px" }}>
             <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
+              href="#contact"
+              className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
+              style={{
+                padding: "20px 29px",
+              }}
             >
-              Get In Touch
+              <span
+                className="font-['Manrope'] text-black"
+                style={{
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Talk to an Expert
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
+                className="h-[41px] w-[41px]"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Closing CTA Section - Exact from Figma (node-id=37-2657) */}
+      <section
+        className="bg-white"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          {/* Second Text - First in order */}
+          <p
+            className="font-['TASA_Orbiter'] text-black mx-auto text-center"
+            style={{
+              fontSize: "24px",
+              fontWeight: 600,
+              lineHeight: "1.17",
+              maxWidth: "1108px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: "60px",
+            }}
+          >
+            In today's fast-evolving business landscape, agility and uptime
+            define competitive advantage. Yet, managing on-premise systems or
+            fragmented cloud environments can lead to inefficiencies, high costs,
+            and complex maintenance challenges
+          </p>
+
+          {/* First Text - Second in order */}
+          <p
+            className="font-['TASA_Orbiter'] text-[#4B4B4B] mx-auto text-center"
+            style={{
+              fontSize: "20px",
+              fontWeight: 600,
+              lineHeight: "1.17",
+              maxWidth: "869px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: "80px",
+            }}
+          >
+            Nexobots Technologies delivers comprehensive Cloud & Virtualization
+            Support designed to help enterprises modernize their IT
+            infrastructure — enabling seamless scalability, optimal resource
+            utilization, and secure workload management across hybrid, private,
+            or public cloud environments.
+          </p>
+
+          {/* Get In Touch Button - Above images */}
+          <div className="flex justify-center mb-[80px]">
+            <Link
+              href="#contact"
+              className="inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+              style={{
+                padding: "12px 25px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-white"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Get In Touch
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={12}
+                height={12}
+                className="h-3 w-3"
+              />
             </Link>
           </div>
 
-          {/* Images Group - Position: x 120, y 499 */}
-          <div className="absolute" style={{ left: '120px', top: '499px', width: '1201px', height: '435px' }}>
-            <div className="relative h-full w-full">
-              {/* Left Large Image - Position: x 0, y 0 */}
-              <div className="absolute left-0 top-0 h-[435px] w-[549px] overflow-hidden rounded-[18px]">
-                <Image
-                  src="/service-4-intro-1-6536ac.png"
-                  alt="Cloud Infrastructure"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+          {/* Three Image Cards - Below button */}
+          <div
+            className="mx-auto flex gap-[17px]"
+            style={{
+              width: "1201px",
+              height: "644px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            {/* Left Large Image */}
+            <div
+              className="relative rounded-[18px] overflow-hidden flex-shrink-0"
+              style={{
+                width: "549px",
+                height: "644px",
+              }}
+            >
+              <Image
+                src="/service-4-cta-1.png"
+                alt="Cloud Infrastructure"
+                fill
+                className="object-cover"
+                sizes="549px"
+              />
+            </div>
 
-              {/* Top Right Image - Position: x 566, y 0 */}
-              <div className="absolute left-[566px] top-0 h-[218px] w-[635px] overflow-hidden rounded-[18px]">
+            {/* Right Two Images Stacked */}
+            <div className="flex flex-col gap-[28.13px] flex-shrink-0">
+              {/* Top Right Image */}
+              <div
+                className="relative rounded-[18px] overflow-hidden"
+                style={{
+                  width: "635px",
+                  height: "322.74px",
+                }}
+              >
                 <Image
-                  src="/about-advantage-2.png"
+                  src="/service-4-cta-2.png"
                   alt="Virtualization Services"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="635px"
                 />
               </div>
 
-              {/* Bottom Right Image - Position: x 566, y 237 */}
-              <div className="absolute left-[566px] top-[237px] h-[198px] w-[635px] overflow-hidden rounded-[18px]">
+              {/* Bottom Right Image */}
+              <div
+                className="relative rounded-[18px] overflow-hidden"
+                style={{
+                  width: "635px",
+                  height: "293.13px",
+                }}
+              >
                 <Image
-                  src="/about-advantage-3.png"
-                  alt="Cloud Management"
+                  src="/service-4-cta-3.png"
+                  alt="Cloud Backup & DRaaS"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes="635px"
                 />
               </div>
             </div>
@@ -144,803 +325,879 @@ export default function Service4Page() {
         </div>
       </section>
 
-      {/* Section 3: Why Cloud & Virtualization Matter - Exact from Figma */}
-      <section className="relative h-[639px] w-full bg-[#F8F8F8]">
-        <div className="relative h-full w-full">
-          {/* Heading - Position: x 119, y 120 */}
-          <div className="absolute" style={{ left: '119px', top: '120px', width: '973px' }}>
-            <h2 className="font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.4937] text-black">
-              Why Cloud & Virtualization Matter
-            </h2>
-          </div>
+      {/* Why Cloud & Virtualization Matter Section - Exact from Figma (node-id=1-1970) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          {/* Heading */}
+          <h2
+            className="font-['TASA_Orbiter'] text-black mb-[60px]"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.22",
+              maxWidth: "973px",
+            }}
+          >
+            Why Cloud & Virtualization Matter
+          </h2>
 
-          {/* Left Paragraph - Position: x 119, y 241 */}
-          <div className="absolute" style={{ left: '119px', top: '241px', width: '576px' }}>
-            <p className="font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
+          {/* Two Column Text Layout */}
+          <div className="grid grid-cols-2 gap-[60px]">
+            <p
+              className="font-['TASA_Orbiter'] text-black"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "576px",
+              }}
+            >
               As digital transformation accelerates, enterprises must balance
-              performance, flexibility, and cost efficiency.
-              <br />
-              Cloud and virtualization solutions eliminate hardware dependencies,
-              enhance operational agility, and ensure business continuity — all
-              while simplifying IT management.
+              performance, flexibility, and cost efficiency. Cloud and
+              virtualization solutions eliminate hardware dependencies, enhance
+              operational agility, and ensure business continuity — all while
+              simplifying IT management.
             </p>
-          </div>
-
-          {/* Right Paragraph - Position: x 754, y 241 */}
-          <div className="absolute" style={{ left: '754px', top: '241px', width: '573px' }}>
-            <p className="font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
-              With Nexobots, you gain a trusted technology partner that helps you
-              plan, deploy, and manage virtualized environments and cloud
+            <p
+              className="font-['TASA_Orbiter'] text-black"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "573px",
+              }}
+            >
+              With Nexobots, you gain a trusted technology partner that helps
+              you plan, deploy, and manage virtualized environments and cloud
               infrastructures efficiently. From workload migration to backup and
               DR orchestration, we ensure your IT environment runs smarter,
               faster, and safer.
             </p>
           </div>
 
-          {/* Get In Touch Button - Position: x 120, y 497 */}
-          <div className="absolute" style={{ left: '120px', top: '497px' }}>
+          {/* Get In Touch Button - Left aligned below text */}
+          <div className="mt-[60px]">
             <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[155px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
+              href="#contact"
+              className="inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+              style={{
+                padding: "12px 25px",
+              }}
             >
-              Get In Touch
-            </Link>
-          </div>
-        </div>
-      </section>
-       {/* Placeholder for future sections */}
-       <section className="py-20 text-center">
-        <h2 className="font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.4937] text-black">
-          Our Core Offerings
-        </h2>
-        </section>
-
-      {/* Section 4: Cloud Infrastructure Deployment & Management - Exact from Figma */}
-      <section className="bg-[#F8F8F8] px-[78px] py-[118px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1172px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            Cloud Infrastructure Deployment & Management
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1284px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Streamline your journey to the cloud with secure, scalable, and
-            high-performing infrastructure.
-            <br />
-            We help design, deploy, and manage cloud environments across AWS,
-            Microsoft Azure, Google Cloud, and private data centers.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-blue-100 to-purple-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Infrastructure Deployment"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Cloud architecture design & migration planning
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Hybrid & multi-cloud implementation
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Cloud monitoring & performance optimization
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Data backup, replication & disaster recovery
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Security & compliance management
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1223px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-              Improved scalability, lower infrastructure costs, and
-              enterprise-grade security.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
+              <span
+                className="font-['Manrope'] text-white"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
               >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5: Virtualization Services - Exact from Figma */}
-      <section className="bg-[#F8F8F8] px-[78px] py-[120px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[953px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            Virtualization Services
-          </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1151px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Maximize resource efficiency and operational continuity with robust
-            virtualization solutions.
-            <br />
-            Our experts deliver end-to-end support for server, desktop, and
-            storage virtualization, leveraging platforms like VMware, Hyper-V,
-            and Citrix.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-purple-100 to-pink-100">
+                Get In Touch
+              </span>
               <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Virtualization Services"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Server & desktop virtualization setup
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Virtual machine provisioning & monitoring
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Storage & network virtualization
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Capacity planning & resource optimization
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Backup & failover configuration
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1222px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-              Higher system availability, faster provisioning, and reduced
-              hardware footprint.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={12}
+                height={12}
                 className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
+              />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Section 6: Cloud Backup & Disaster Recovery (DRaaS) - Exact from Figma */}
-      <section className="bg-[#F8F8F8] px-[78px] py-[120px]">
-        <div className="mx-auto max-w-[1392.5px]">
-          {/* Title */}
-          <h2 className="mb-[21px] max-w-[1151px] font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-            Cloud Backup & Disaster Recovery (DRaaS)
+      {/* Our Core Offerings Heading - Exact from Figma */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "678px",
+            }}
+          >
+            Our Core Offerings
           </h2>
-
-          {/* Description */}
-          <p className="mb-[53px] max-w-[1151px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-            Ensure uninterrupted operations with a resilient cloud-based backup
-            and recovery framework.
-            <br />
-            We design Disaster Recovery as a Service (DRaaS) models that
-            safeguard critical workloads and ensure rapid recovery during
-            outages.
-          </p>
-
-          <div className="grid grid-cols-1 gap-[33.5px] lg:grid-cols-2">
-            {/* Image Placeholder */}
-            <div className="relative h-[457px] w-[640px] overflow-hidden rounded-[13px] bg-gradient-to-br from-indigo-100 to-blue-100">
-              <Image
-                src="/service-4-intro-1-6536ac.png"
-                alt="Cloud Backup & Disaster Recovery"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </div>
-
-            {/* Key Services */}
-            <div>
-              <h3 className="mb-[51px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                Key Services
-              </h3>
-              <div className="relative">
-                {/* Decorative lines */}
-                <div className="absolute left-0 top-0 h-[365px] w-[9px] rounded-[55px] bg-[#D9D9D9]" />
-                <div className="absolute left-0 top-0 h-[77.31px] w-[8.6px] rounded-[55px] bg-[#E11E24]" />
-
-                {/* Services List */}
-                <div className="space-y-[54px] pl-[52px]">
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Continuous data replication & version control
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Automated failover & recovery testing
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Backup policy configuration
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    Compliance & retention management
-                  </p>
-                  <p className="max-w-[596px] font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">
-                    24/7 monitoring & support
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Outcome Section */}
-          <div className="mt-[85px] flex flex-col">
-            <h3 className="mb-[61px] font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-              Outcome
-            </h3>
-            <p className="mb-[61px] max-w-[1003px] font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-              Minimal downtime, faster recovery, and assured data protection.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-[25px] py-[12px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-gray-800"
-            >
-              Let&apos;s Discuss Needs
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                className="h-3 w-3"
-                aria-hidden="true"
-              >
-                <path
-                  d="M6 0L6 12M6 12L12 6M6 12L0 6"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-              </svg>
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Section 7: Why Choose Nexobots - Exact from Figma */}
-      <section className="relative h-[1342px] w-full bg-[#F8F8F8]">
-        <div className="relative h-full w-full">
-          {/* Heading - Position: x 122, y 120 */}
-          <div className="absolute" style={{ left: '122px', top: '120px', width: '1148px' }}>
-            <h2 className="text-center font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.4937] text-black">
-              Why Choose Nexobots for Cloud & Virtualization Support
+      {/* Cloud Infrastructure Deployment & Management Section - Exact from Figma (node-id=1-1978) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1172px",
+              }}
+            >
+              Cloud Infrastructure Deployment & Management
             </h2>
-          </div>
 
-          {/* 5 Cards Horizontally - Position: x 69, y 256 */}
-          <div className="absolute" style={{ left: '69px', top: '256px', width: '1301px' }}>
-            <div className="flex gap-[24px]">
-              {/* Card 1: Expert Cloud Architects */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                  Expert Cloud Architects
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                  Certified professionals ensure seamless deployment, migration,
-                  and management across multi-cloud and virtual environments.
-                </p>
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "1284px",
+              }}
+            >
+              Streamline your journey to the cloud with secure, scalable, and
+              high-performing infrastructure. We help design, deploy, and manage
+              cloud environments across AWS, Microsoft Azure, Google Cloud, and
+              private data centers.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/service-4-cloud-infrastructure.png"
+                  alt="Cloud Infrastructure Deployment & Management"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
               </div>
 
-              {/* Card 2: End-to-End Support */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                  End-to-End Support
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[50px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
                 </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                  From strategy and design to maintenance and optimization — we
-                  manage your cloud lifecycle completely.
-                </p>
-              </div>
 
-              {/* Card 3: Security-Driven Framework */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {cloudInfrastructureServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
                   </div>
                 </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                  Security-Driven Framework
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                  We embed enterprise-grade encryption, access control, and
-                  compliance measures into every solution.
-                </p>
-              </div>
-
-              {/* Card 4: SLA-Based Performance Assurance */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                  SLA-Based Performance Assurance
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                  Defined uptime guarantees, quick incident response, and
-                  predictable performance metrics.
-                </p>
-              </div>
-
-              {/* Card 5: Proven Multi-Platform Expertise */}
-              <div className="h-[242px] w-[241px] rounded-[21px] bg-white p-5">
-                <div className="mb-5 flex h-[51px] w-[51px] items-center justify-center rounded-full border border-[#E9E9E9]">
-                  <div className="h-[21.25px] w-[21.25px] rounded-sm border border-[#E11E24]">
-                    <div className="h-[8.5px] w-[8.5px] translate-x-[12.75px] translate-y-[12.75px] bg-[#E11E24]" />
-                  </div>
-                </div>
-                <h3 className="mb-5 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                  Proven Multi-Platform Expertise
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                  Experience across VMware, Hyper-V, Azure, AWS, Citrix, and
-                  OpenStack ensures flexibility and interoperability.
-                </p>
               </div>
             </div>
-          </div>
 
-          {/* 3 Images - Position: x 120, y 589 */}
-          <div className="absolute" style={{ left: '120px', top: '589px', width: '1199px', height: '632.66px' }}>
-            <div className="relative h-full w-full">
-              {/* Left Large Image */}
-              <div className="absolute left-0 top-0 h-[632.66px] w-[546.74px] overflow-hidden rounded-[18px]">
-                <Image
-                  src="/about-advantage-1-3df8a1.png"
-                  alt="Cloud Support Benefit 1"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1223px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[40px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[20px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1223px",
+                  }}
+                >
+                  Improved scalability, lower infrastructure costs, and
+                  enterprise-grade security.
+                </p>
               </div>
-
-              {/* Top Right Image */}
-              <div className="absolute left-[575.52px] top-0 h-[261.07px] w-[623.48px] overflow-hidden rounded-[18px]">
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
                 <Image
-                  src="/about-advantage-2.png"
-                  alt="Cloud Support Benefit 2"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
                 />
-              </div>
-
-              {/* Bottom Right Image */}
-              <div className="absolute left-[575.52px] top-[293.46px] h-[339.2px] w-[623.48px] overflow-hidden rounded-[18px]">
-                <Image
-                  src="/about-advantage-3.png"
-                  alt="Cloud Support Benefit 3"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 8: Our Partners - Exact from Figma */}
-      <section className="relative h-[558px] w-full bg-white">
-        <div className="relative h-full w-full">
-          {/* Content Container - Position: left 149px, top 120px */}
-          <div className="absolute" style={{ left: '149px', top: '120px', width: '1143px' }}>
-            {/* Partner Ecosystem Label - Centered */}
-            <div className="mb-4 flex items-center justify-center">
-              <p className="font-['Manrope'] text-[18px] font-medium leading-[1.366] text-black">
-                Partner Ecosystem
-              </p>
-            </div>
-
-            {/* Heading - Centered, width 1125px */}
-            <div className="flex justify-center">
-              <h2 className="w-[1125px] text-center font-['TASA_Orbiter'] text-[32px] font-bold leading-[1.375] text-black">
-                We work with industry-leading OEMs to deliver enterprise-grade
-                solutions that meet the highest standards of quality,
-                performance, and security.
-              </h2>
-            </div>
-          </div>
-
-          {/* Logo Stripe - Position: y 329px, horizontal scrolling strip */}
-          <div className="absolute" style={{ top: '329px', left: '0', right: '0' }}>
-            <div className="relative h-[129px] w-full overflow-hidden bg-[#D9D9D9]">
-              <div className="flex items-center justify-center gap-[80px] px-[100px] py-[40px]">
-                {/* Cisco Logo Placeholder */}
-                <div className="relative h-[61px] w-[118px]">
-                  <Image
-                    src="/partner-cisco.svg"
-                    alt="Cisco"
-                    width={118}
-                    height={61}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Fortinet Logo Placeholder */}
-                <div className="relative h-[48px] w-[385px]">
-                  <Image
-                    src="/partner-fortinet.svg"
-                    alt="Fortinet"
-                    width={385}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* D-Link Logo Placeholder */}
-                <div className="relative h-[48px] w-[192px]">
-                  <Image
-                    src="/partner-dlink.svg"
-                    alt="D-Link"
-                    width={192}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Palo Alto Logo Placeholder */}
-                <div className="relative h-[48px] w-[242px]">
-                  <Image
-                    src="/partner-paloalto.svg"
-                    alt="Palo Alto Networks"
-                    width={242}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Microsoft Logo Placeholder */}
-                <div className="relative h-[48px] w-[227px]">
-                  <Image
-                    src="/partner-microsoft.svg"
-                    alt="Microsoft"
-                    width={227}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Dell Logo Placeholder */}
-                <div className="relative h-[48px] w-[239px]">
-                  <Image
-                    src="/partner-dell.svg"
-                    alt="Dell"
-                    width={239}
-                    height={48}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* HP Logo Placeholder */}
-                <div className="relative h-[53px] w-[286px]">
-                  <Image
-                    src="/partner-hp.svg"
-                    alt="HP"
-                    width={286}
-                    height={53}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-
-                {/* Hikvision Logo Placeholder */}
-                <div className="relative h-[93px] w-[202px]">
-                  <Image
-                    src="/partner-hikvision.svg"
-                    alt="Hikvision"
-                    width={202}
-                    height={93}
-                    className="h-full w-full object-contain"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 9: FAQs - Exact from Figma */}
-      <section className="relative h-[1118px] w-full bg-white">
-        <div className="relative h-full w-full">
-          {/* Heading - Position: x 126, y 120 */}
-          <div className="absolute" style={{ left: '126px', top: '120px', width: '1148px' }}>
-            <h2 className="text-center font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.4937] text-black">
-              FAQs – Cloud & Virtualization Support
+      {/* Virtualization Services Section - Exact from Figma (node-id=1-2003) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "953px",
+              }}
+            >
+              Virtualization Services
             </h2>
-          </div>
 
-          {/* FAQ Cards Container - Position: x 107, y 294 */}
-          <div className="absolute" style={{ left: '107px', top: '294px', width: '1225px' }}>
-            {/* Card 1 - Height: 120px */}
-            <div className="mb-5 h-[120px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[3px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  What&apos;s the difference between cloud computing and
-                  virtualization?
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "1151px",
+              }}
+            >
+              Maximize resource efficiency and operational continuity with
+              robust virtualization solutions. Our experts deliver end-to-end
+              support for server, desktop, and storage virtualization, leveraging
+              platforms like VMware, Hyper-V, and Citrix.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/service-4-virtualization.png"
+                  alt="Virtualization Services"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[50px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
                 </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                  Virtualization creates multiple virtual systems within a single
-                  physical environment, while cloud computing delivers those
-                  virtualized resources as a service — accessible anywhere,
-                  anytime.
-                </p>
-                {/* Icon - Position: right 27px, top 31px */}
-                <div className="absolute right-[27px] top-[11px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
                   >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                    {virtualizationServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Card 6 - Height: 64px, Position: y 140px from container top */}
-            <div className="mb-5 h-[64px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative flex items-center justify-between">
-                <h3 className="font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  Which cloud platforms does Nexobots support?
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1222px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[40px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[20px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
                 </h3>
-                {/* Icon */}
-                <div className="h-6 w-6 flex-shrink-0">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 10.91L12 15.27L16.36 10.91"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 2 - Height: 105px, Position: y 224px */}
-            <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[15px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  Can you migrate legacy applications to the cloud?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                  Yes. Our experts assess compatibility, refactor workloads where
-                  needed, and perform seamless migration with zero data loss
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1222px",
+                  }}
+                >
+                  Higher system availability, faster provisioning, and reduced
+                  hardware footprint.
                 </p>
-                {/* Icon */}
-                <div className="absolute right-[27px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
               </div>
-            </div>
-
-            {/* Card 5 - Height: 105px, Position: y 349px */}
-            <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[14px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  Do you provide ongoing cloud management and support?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-medium leading-[1] text-[#333333]">
-                  Absolutely. Nexobots provides 24/7 monitoring, performance
-                  optimization, patch management, and cost governance for cloud
-                  workloads.
-                </p>
-                {/* Icon */}
-                <div className="absolute right-[25px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 3 - Height: 105px, Position: y 474px */}
-            <div className="mb-5 h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[16px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  Is cloud backup more secure than on-premise solutions?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                  Yes — cloud backups include encryption, redundancy, and
-                  geographic failover, ensuring stronger data protection and
-                  compliance
-                </p>
-                {/* Icon */}
-                <div className="absolute right-[24px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Card 4 - Height: 105px, Position: y 599px */}
-            <div className="h-[105px] w-full rounded-[15px] bg-[#EFEFEF] px-5 py-5">
-              <div className="relative">
-                <h3 className="mb-[13px] font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
-                  Do you provide Disaster Recovery services?
-                </h3>
-                <p className="pr-12 font-['Manrope'] text-[16px] font-normal leading-[1] text-[#333333]">
-                  Yes, our DRaaS offering ensures minimal downtime and quick
-                  recovery for mission-critical workloads in case of system or
-                  network failures.
-                </p>
-                {/* Icon */}
-                <div className="absolute right-[24px] top-[4px] h-6 w-6">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M7.64 8.73L12 13.09L16.36 8.73"
-                      stroke="#333333"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Cloud Backup & Disaster Recovery (DRaaS) Section - Exact from Figma (node-id=1-2027) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              Cloud Backup & Disaster Recovery (DRaaS)
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "1151px",
+              }}
+            >
+              Ensure uninterrupted operations with a resilient cloud-based
+              backup and recovery framework. We design Disaster Recovery as a
+              Service (DRaaS) models that safeguard critical workloads and
+              ensure rapid recovery during outages.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "457px",
+                }}
+              >
+                <Image
+                  src="/service-4-backup-draas.png"
+                  alt="Cloud Backup & Disaster Recovery"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[50px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Key Services
+                </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {backupDraasServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1003px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[40px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[20px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1003px",
+                  }}
+                >
+                  Minimal downtime, faster recovery, and assured data
+                  protection.
+                </p>
+              </div>
+              <Link
+                href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Nexobots Section - Exact from Figma (node-id=1-1928) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black text-center"
+            style={{
+              fontSize: "40px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "1148px",
+              margin: "0 auto 80px",
+            }}
+          >
+            Why Choose Nexobots for Cloud & Virtualization Support
+          </h2>
+
+          {/* Benefit Cards Grid - 5 cards in a row - Exact from Figma */}
+          <div
+            className="flex items-start justify-center"
+            style={{
+              gap: "24px",
+            }}
+          >
+            {benefitCards.map((card, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-[21px]"
+                style={{
+                  width: "241px",
+                  height: "242px",
+                  padding: index === 0 ? "20px 16px" : "20px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                }}
+              >
+                {/* Icon - Exact from Figma */}
+                <div
+                  className="flex-shrink-0"
+                  style={{
+                    width: "51px",
+                    height: "51px",
+                  }}
+                >
+                  <svg
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="2.01"
+                      y="2.01"
+                      width="46.97"
+                      height="46.97"
+                      rx="23.485"
+                      stroke="#E9E9E9"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      cx="25.5"
+                      cy="25.5"
+                      r="10.625"
+                      stroke="#E11E24"
+                      strokeWidth="1"
+                    />
+                    <circle cx="25.5" cy="25.5" r="4.25" fill="#E11E24" />
+                  </svg>
+                </div>
+                <h3
+                  className="font-['Manrope'] text-black"
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    lineHeight: "1.25",
+                  }}
+                >
+                  {card.title}
+                </h3>
+                <p
+                  className="font-['Manrope'] text-[#A4A4A4]"
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    lineHeight: "1.462",
+                    width: index === 0 ? "206px" : "209px",
+                  }}
+                >
+                  {card.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section - Exact from Figma */}
+      <section
+        className="bg-white"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black text-center mb-[80px]"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "1148px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            FAQs – Cloud & Virtualization Support
+          </h2>
+
+          <div className="space-y-[40px]">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-[#D7D7D7] rounded-[15px]"
+                style={{
+                  width: "1225px",
+                  height: faq.answer ? "120px" : "64px",
+                  padding: "20px",
+                }}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3
+                      className="font-['Manrope'] text-[#333333] mb-[16px]"
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: "1.2",
+                      }}
+                    >
+                      {faq.question}
+                    </h3>
+                    {faq.answer && (
+                      <p
+                        className="font-['Manrope'] text-[#333333]"
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: 400,
+                          lineHeight: "1.4375",
+                        }}
+                      >
+                        {faq.answer}
+                      </p>
+                    )}
+                  </div>
+                  <button
+                    className="flex-shrink-0 ml-4"
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                    }}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.64 8.73L12 13.09L16.36 8.73"
+                        stroke="#333333"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Our Partners Section */}
+      <Partners />
 
       {/* Contact Form */}
-      <ContactForm />
-      
+      <div id="contact">
+        <ContactForm />
+      </div>
+
       {/* Footer */}
       <Footer />
     </div>
   );
 }
-

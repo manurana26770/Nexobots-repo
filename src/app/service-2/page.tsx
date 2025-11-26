@@ -1,10 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import Partners from "@/components/Partners";
 
-const benefits = [
+const benefitCards = [
   {
     title: "Proactive, Not Reactive",
     description:
@@ -58,7 +61,7 @@ const optimizationServices = [
 
 const faqs = [
   {
-    question: "What’s included in IT Support Services?",
+    question: "What's included in IT Support Services?",
     answer:
       "It includes helpdesk support, on-site troubleshooting, preventive maintenance, patch updates, and incident resolution — tailored to your operational needs.",
   },
@@ -84,391 +87,1114 @@ const faqs = [
   },
   {
     question: "Do you provide 24/7 monitoring?",
-    answer: null, // No answer provided in Figma for this one in the list, but checking design... actually the last item seems to be just a question "Do you provide 24/7 monitoring?" without an answer block visible in the text dump, but I'll check if I can infer it or if it's just a header. Looking at the dump, it has "Button -> How does it work?" and "Button -> SVG". I'll assume it's an FAQ item.
+    answer: "",
   },
-];
+] as const;
 
 export default function Service2Page() {
   return (
     <div className="bg-[#F8F8F8] text-black">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative bg-white px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="relative overflow-hidden rounded-[15px] bg-white">
-             <div className="absolute right-0 top-0 h-full w-1/2 bg-gray-100 opacity-50" /> {/* Placeholder for hero BG images */}
-            <div className="relative z-10 max-w-[838px] py-12">
-              <h1 className="mb-8 font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.32] text-black md:text-[56px] lg:text-[64px]">
+      {/* Hero Section - Exact from Figma */}
+      <section className="relative h-[935px] w-full overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/service-2-hero-bg-437369.png"
+            alt="IT Support, Monitoring & Optimization Hero"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        {/* Dark Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.52)",
+          }}
+        />
+        {/* Content */}
+        <div className="relative z-10 h-full">
+          {/* Title - Position: left 142px, top 169px */}
+          <div className="absolute" style={{ left: "142px", top: "169px" }}>
+            <h1
+              className="font-['TASA_Orbiter'] text-white"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.32",
+                maxWidth: "838px",
+              }}
+            >
                 Monitor Smarter. Respond Faster. Perform Better.
               </h1>
-              <p className="mb-12 font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.44] text-black md:text-[24px]">
+          </div>
+
+          {/* Description - Position: left 142px, top 366px */}
+          <div className="absolute" style={{ left: "142px", top: "366px" }}>
+            <p
+              className="font-['TASA_Orbiter'] text-white"
+              style={{
+                fontSize: "24px",
+                fontWeight: 600,
+                lineHeight: "1.44",
+                maxWidth: "812px",
+              }}
+            >
                 Ensure uninterrupted operations and peak performance with
-                Nexobots’ IT Support, Monitoring & Optimization Services.
+              Nexobots' IT Support, Monitoring & Optimization Services.
               </p>
+          </div>
+
+          {/* CTA Button - Position: left 142px, top 468px */}
+          <div className="absolute" style={{ left: "142px", top: "468px" }}>
               <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-5 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
+                href="#contact"
+              className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
+              style={{
+                padding: "20px 29px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-black"
+                style={{
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
               >
                 Talk to an Expert
-                <svg
-                  width="41"
-                  height="41"
-                  viewBox="0 0 41 41"
-                  fill="none"
-                  className="h-[20px] w-[20px]"
-                >
-                  <path
-                    d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                    stroke="black"
-                    strokeWidth="2"
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
+                className="h-[41px] w-[41px]"
                   />
-                </svg>
               </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Overview */}
-      <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-            <div className="mb-16 grid grid-cols-1 gap-12 lg:grid-cols-2">
-                 <div className="space-y-8">
-                    <p className="font-['TASA_Orbiter'] text-[20px] font-semibold leading-[1.17] text-[#4B4B4B] text-center lg:text-left">
-                    Nexobots Technologies delivers comprehensive IT Support, Monitoring & Optimization Services that keep your infrastructure secure, efficient, and always-on.<br/>
-                    From real-time network monitoring to proactive performance tuning, we ensure your IT ecosystem runs seamlessly — so your teams can focus on innovation, not interruptions.
+      {/* Closing CTA Section - Exact from Figma (node-id=37-2658) */}
+      <section
+        className="bg-white"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          {/* Second Text - First in order */}
+          <p
+            className="font-['TASA_Orbiter'] text-black mx-auto text-center"
+            style={{
+              fontSize: "24px",
+              fontWeight: 600,
+              lineHeight: "1.32",
+              maxWidth: "977px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: "60px",
+            }}
+          >
+            In a world where business runs 24/7, IT performance directly
+            impacts productivity, customer experience, and profitability. Yet,
+            unmonitored systems, slow response to incidents, and reactive
+            maintenance can lead to costly downtimes and security risks.
                     </p>
-                     <p className="font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.17] text-black text-center lg:text-left">
-                    In a world where business runs 24/7, IT performance directly impacts productivity, customer experience, and profitability. Yet, unmonitored systems, slow response to incidents, and reactive maintenance can lead to costly downtimes and security risks.
-                    </p>
-                 </div>
-                 <div className="grid grid-cols-2 gap-4">
-                     <div className="h-[218px] w-full rounded-[18px] bg-gray-200" /> {/* Placeholder 1 */}
-                     <div className="space-y-4">
-                         <div className="h-[100px] w-full rounded-[18px] bg-gray-300" /> {/* Placeholder 2 */}
-                         <div className="h-[100px] w-full rounded-[18px] bg-gray-400" /> {/* Placeholder 3 */}
-                     </div>
-                 </div>
-            </div>
-             <div className="flex justify-center">
+
+          {/* First Text - Second in order */}
+          <p
+            className="font-['TASA_Orbiter'] text-[#4B4B4B] mx-auto text-center"
+            style={{
+              fontSize: "20px",
+              fontWeight: 600,
+              lineHeight: "1.17",
+              maxWidth: "869px",
+              marginLeft: "auto",
+              marginRight: "auto",
+              marginBottom: "80px",
+            }}
+          >
+            Nexobots Technologies delivers comprehensive IT Support, Monitoring
+            & Optimization Services that keep your infrastructure secure,
+            efficient, and always-on. From real-time network monitoring to
+            proactive performance tuning, we ensure your IT ecosystem runs
+            seamlessly — so your teams can focus on innovation, not
+            interruptions.
+          </p>
+
+          {/* Get In Touch Button - Above images */}
+          <div className="flex justify-center mb-[80px]">
                 <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
+                    href="#contact"
+              className="inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+              style={{
+                padding: "12px 25px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-white"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
                 >
                     Get In Touch
-                    <svg
-                    width="41"
-                    height="41"
-                    viewBox="0 0 41 41"
-                    fill="none"
-                    className="h-[20px] w-[20px]"
-                    >
-                    <path
-                        d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                        stroke="white"
-                        strokeWidth="2"
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={12}
+                height={12}
+                className="h-3 w-3"
                     />
-                    </svg>
                 </Link>
              </div>
+
+          {/* Three Image Cards - Below button */}
+          <div
+            className="mx-auto flex gap-[17px]"
+            style={{
+              width: "1201px",
+              height: "588px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            {/* Left Large Image */}
+            <div
+              className="relative rounded-[18px] overflow-hidden flex-shrink-0"
+              style={{
+                width: "549px",
+                height: "588px",
+              }}
+            >
+              <Image
+                src="/service-2-cta-1.png"
+                alt="IT Support Services"
+                fill
+                className="object-cover"
+                sizes="549px"
+              />
+        </div>
+
+            {/* Right Two Images Stacked */}
+            <div className="flex flex-col gap-[26.17px] flex-shrink-0">
+              {/* Top Right Image */}
+              <div
+                className="relative rounded-[18px] overflow-hidden"
+                style={{
+                  width: "635px",
+                  height: "294.68px",
+                }}
+              >
+                <Image
+                  src="/service-2-cta-2.png"
+                  alt="Network Monitoring"
+                  fill
+                  className="object-cover"
+                  sizes="635px"
+                />
+        </div>
+
+              {/* Bottom Right Image */}
+              <div
+                className="relative rounded-[18px] overflow-hidden"
+                style={{
+                  width: "635px",
+                  height: "267.64px",
+                }}
+              >
+                <Image
+                  src="/service-2-cta-3.png"
+                  alt="Performance Optimization"
+                  fill
+                  className="object-cover"
+                  sizes="635px"
+                />
+              </div>
+             </div>
+          </div>
         </div>
       </section>
 
-      {/* Our Core Offerings Title */}
-      <section className="bg-[#F8F8F8] px-6 py-12 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-          <h2 className="font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.49] text-black">
+      {/* Why IT Support, Monitoring & Optimization Matters Section - Exact from Figma (node-id=1-4308) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          {/* Heading */}
+          <h2
+            className="font-['TASA_Orbiter'] text-black mb-[60px]"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.22",
+              maxWidth: "1139px",
+            }}
+          >
+            Why IT Support, Monitoring & Optimization Matter
+          </h2>
+
+          {/* Two Column Text Layout */}
+          <div className="grid grid-cols-2 gap-[60px]">
+            <p
+              className="font-['TASA_Orbiter'] text-black"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "576px",
+              }}
+            >
+              As digital systems become more interconnected, visibility and
+              responsiveness are critical. Proactive monitoring helps detect
+              anomalies early, while structured support frameworks ensure fast
+              resolution and consistent uptime. Optimization takes it further —
+              ensuring systems deliver maximum output with minimal resource
+              usage.
+            </p>
+            <p
+              className="font-['TASA_Orbiter'] text-black"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "573px",
+              }}
+            >
+              With Nexobots, you gain a trusted partner offering 24/7 Network
+              Operations Center (NOC) monitoring, multi-tier IT support, and
+              ongoing optimization that aligns technology with business
+              performance goals.
+            </p>
+          </div>
+
+          {/* Get In Touch Button - Left aligned below text */}
+          <div className="mt-[60px]">
+            <Link
+              href="#contact"
+              className="inline-flex h-[45px] w-[155px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+              style={{
+                padding: "12px 25px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-white"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
+                }}
+              >
+                Get In Touch
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={12}
+                height={12}
+                className="h-3 w-3"
+              />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Core Offerings Heading - Exact from Figma */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "678px",
+            }}
+          >
             Our Core Offerings
           </h2>
         </div>
       </section>
 
-      {/* Why Choose Nexobots */}
-      <section className="bg-[#F8F8F8] px-6 py-12 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-          <h2 className="mb-16 text-center font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.49] text-black">
+      {/* IT Support Services Section - Exact from Figma (node-id=1-4316) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1172px",
+              }}
+            >
+              IT Support Services
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "1152px",
+              }}
+            >
+              Comprehensive on-site and remote support designed to keep your
+              systems operational and secure — anytime, anywhere. Our certified
+              engineers handle everything from troubleshooting to preventive
+              maintenance with SLA-backed response times.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "465px",
+                }}
+              >
+                <Image
+                  src="/service-2-it-support.png"
+                  alt="IT Support Services"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[50px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                        Key Services
+                    </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {itSupportServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: i === 2 ? "613px" : "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                        ))}
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1169px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[40px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[20px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1169px",
+                  }}
+                >
+                  Faster issue resolution, minimal downtime, and predictable IT
+                  operations.
+                     </p>
+              </div>
+                      <Link
+                        href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                    >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                        />
+                    </Link>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* Network & Infrastructure Monitoring Section - Exact from Figma (node-id=1-4340) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              Network & Infrastructure Monitoring
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "1029px",
+              }}
+            >
+              Stay ahead of outages and bottlenecks with continuous, AI-driven
+              network monitoring. We deliver complete visibility into your
+              infrastructure through centralized dashboards and real-time
+              alerts.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "476px",
+                }}
+              >
+                <Image
+                  src="/service-2-monitoring.png"
+                  alt="Network & Infrastructure Monitoring"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[50px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                        Key Services
+                    </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[54px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {monitoringServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                        ))}
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1222px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[40px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[20px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1222px",
+                  }}
+                >
+                  Early issue detection, improved uptime, and data-driven
+                  infrastructure insights.
+                     </p>
+              </div>
+                      <Link
+                        href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                    >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                        />
+                    </Link>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* IT Performance Optimization Section - Exact from Figma (node-id=1-4364) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "60px 78px",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px]">
+          <div
+            className="bg-white rounded-[21px]"
+            style={{
+              padding: "60px 78px",
+            }}
+          >
+            {/* Title */}
+            <h2
+              className="font-['TASA_Orbiter'] text-black mb-[40px]"
+              style={{
+                fontSize: "64px",
+                fontWeight: 600,
+                lineHeight: "1.22",
+                maxWidth: "1151px",
+              }}
+            >
+              IT Performance Optimization
+            </h2>
+
+            {/* Description */}
+            <p
+              className="font-['TASA_Orbiter'] text-black mb-[50px]"
+              style={{
+                fontSize: "24px",
+                fontWeight: 500,
+                lineHeight: "1.32",
+                maxWidth: "1151px",
+              }}
+            >
+              Transform your IT systems into performance powerhouses through
+              strategic optimization. We analyze workloads, configurations, and
+              network flows to enhance speed, stability, and cost efficiency.
+            </p>
+
+            {/* Image and Key Services Row */}
+            <div className="relative mb-[50px]">
+              {/* Image */}
+              <div
+                className="relative rounded-[13px] overflow-hidden inline-block"
+                style={{
+                  width: "640px",
+                  height: "471px",
+                }}
+              >
+                <Image
+                  src="/service-2-optimization.png"
+                  alt="IT Performance Optimization"
+                  fill
+                  className="object-cover"
+                  sizes="640px"
+                />
+              </div>
+
+              {/* Key Services with Progress Bar - Right side */}
+              <div
+                className="absolute top-0"
+                style={{
+                  left: "673.5px",
+                  width: "719px",
+                }}
+              >
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[50px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                        Key Services
+                    </h3>
+
+                <div className="relative" style={{ width: "719px", height: "365px" }}>
+                  {/* Background line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "9px",
+                      height: "365px",
+                      borderRadius: "55px",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  />
+                  {/* Red progress line */}
+                  <div
+                    className="absolute left-0 top-0"
+                    style={{
+                      width: "8.6px",
+                      height: "77.31px",
+                      borderRadius: "55px",
+                      backgroundColor: "#E11E24",
+                    }}
+                  />
+                  {/* Services */}
+                  <div
+                    className="space-y-[55px]"
+                    style={{ paddingLeft: "52px", paddingTop: "10px" }}
+                  >
+                    {optimizationServices.map((service, i) => (
+                      <p
+                        key={i}
+                        className="font-['TASA_Orbiter'] text-black"
+                        style={{
+                          fontSize: "24px",
+                          fontWeight: 600,
+                          lineHeight: "1.08",
+                          width: "596px",
+                        }}
+                      >
+                        {service}
+                      </p>
+                        ))}
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Outcome */}
+            <div
+              style={{
+                width: "1003px",
+                marginTop: "50px",
+              }}
+            >
+              <div className="mb-[40px]">
+                <h3
+                  className="font-['TASA_Orbiter'] text-black mb-[20px]"
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: 600,
+                    lineHeight: "1.08",
+                  }}
+                >
+                  Outcome
+                </h3>
+                <p
+                  className="font-['TASA_Orbiter'] text-black"
+                  style={{
+                    fontSize: "32px",
+                    fontWeight: 600,
+                    lineHeight: "1.38",
+                    maxWidth: "1003px",
+                  }}
+                >
+                  Higher system efficiency, lower operational costs, and
+                  enhanced user experience.
+                     </p>
+              </div>
+                      <Link
+                        href="#contact"
+                className="inline-flex h-[45px] w-[225px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+                style={{
+                  padding: "12px 25px",
+                }}
+              >
+                <span
+                  className="font-['Manrope'] text-white"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    lineHeight: "1.366",
+                    letterSpacing: "0.02em",
+                  }}
+                    >
+                  Let's Discuss Needs
+                </span>
+                <Image
+                  src="/find-out-more-arrow.svg"
+                  alt=""
+                  width={12}
+                  height={12}
+                  className="h-3 w-3"
+                        />
+                    </Link>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      {/* Why Choose Nexobots Section - Exact from Figma (node-id=1-4266) */}
+      <section
+        className="bg-[#F8F8F8]"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black text-center"
+            style={{
+              fontSize: "40px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "860px",
+              margin: "0 auto 80px",
+            }}
+          >
             Why Choose Nexobots for IT Support, Monitoring & Optimization
           </h2>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {benefits.map((benefit, index) => (
+          {/* Benefit Cards Grid - 5 cards in a row - Exact from Figma */}
+          <div
+            className="flex items-start justify-center"
+            style={{
+              gap: "24px",
+            }}
+          >
+            {benefitCards.map((card, index) => (
               <div
                 key={index}
-                className="rounded-[21px] bg-white p-8 shadow-sm transition hover:shadow-md"
+                className="bg-white rounded-[21px]"
+                style={{
+                  width: "241px",
+                  height: "242px",
+                  padding: index === 0 ? "20px 16px" : "20px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                }}
               >
-                <div className="mb-6 flex h-[51px] w-[51px] items-center justify-center rounded-full bg-black/5">
-                   {/* Placeholder Icon */}
-                   <div className="h-6 w-6 bg-black rounded-full" />
+                {/* Icon - Exact from Figma */}
+                <div
+                  className="flex-shrink-0"
+                  style={{
+                    width: "51px",
+                    height: "51px",
+                  }}
+                >
+                  <svg
+                    width="51"
+                    height="51"
+                    viewBox="0 0 51 51"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="2.01"
+                      y="2.01"
+                      width="46.97"
+                      height="46.97"
+                      rx="23.485"
+                      stroke="#E9E9E9"
+                      strokeWidth="1"
+                    />
+                    <circle
+                      cx="25.5"
+                      cy="25.5"
+                      r="10.625"
+                      stroke="#E11E24"
+                      strokeWidth="1"
+                    />
+                    <circle cx="25.5" cy="25.5" r="4.25" fill="#E11E24" />
+                  </svg>
                 </div>
-                <h3 className="mb-4 font-['Manrope'] text-[16px] font-bold leading-[1.25] text-black">
-                  {benefit.title}
-                </h3>
-                <p className="font-['Manrope'] text-[13px] font-bold leading-[1.46] text-[#A4A4A4]">
-                  {benefit.description}
+                <h3
+                  className="font-['Manrope'] text-black"
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 700,
+                    lineHeight: "1.25",
+                  }}
+                >
+                  {card.title}
+            </h3>
+                <p
+                  className="font-['Manrope'] text-[#A4A4A4]"
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    lineHeight: "1.462",
+                    width: index === 0 ? "206px" : index === 1 ? "209px" : "209px",
+                  }}
+                >
+                  {card.description}
                 </p>
               </div>
             ))}
-             <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:col-span-3 lg:grid-cols-3">
-                 {/* Decorative images */}
-                <div className="h-[150px] rounded-[18px] bg-[#K87688] bg-gray-200" />
-                <div className="h-[150px] rounded-[18px] bg-[#YYIC4N] bg-gray-300" />
-                <div className="h-[150px] rounded-[18px] bg-[#UCNU6N] bg-gray-400" />
-             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Why It Matters */}
-      <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1200px] text-center">
-             <Link
-                href="/contact"
-                className="mb-12 inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
-              >
-                Get In Touch
-                <svg
-                  width="41"
-                  height="41"
-                  viewBox="0 0 41 41"
-                  fill="none"
-                  className="h-[20px] w-[20px]"
-                >
-                  <path
-                    d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                    stroke="white"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </Link>
-          <h2 className="mb-8 font-['TASA_Orbiter'] text-[48px] font-semibold leading-[1.49] text-black">
-            Why IT Support, Monitoring & Optimization Matter
-          </h2>
-          <div className="space-y-6 font-['TASA_Orbiter'] text-[24px] font-medium leading-[1.32] text-black">
-            <p>
-              As digital systems become more interconnected, visibility and responsiveness are critical.
-              Proactive monitoring helps detect anomalies early, while structured support frameworks ensure fast resolution and consistent uptime.
-              Optimization takes it further — ensuring systems deliver maximum output with minimal resource usage.
-            </p>
-            <p>
-              With Nexobots, you gain a trusted partner offering 24/7 Network Operations Center (NOC) monitoring, multi-tier IT support, and ongoing optimization that aligns technology with business performance goals.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Service 1: IT Support Services */}
-      <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-            <h2 className="mb-6 font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-              IT Support Services
-            </h2>
-            <p className="mb-12 font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-              Comprehensive on-site and remote support designed to keep your systems operational and secure — anytime, anywhere. Our certified engineers handle everything from troubleshooting to preventive maintenance with SLA-backed response times.
-            </p>
-
-            <div className="mb-12 h-[465px] w-full rounded-[13px] bg-gray-200" /> {/* Placeholder */}
-
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                <div>
-                     <h3 className="mb-6 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                        Key Services
-                    </h3>
-                    <div className="space-y-4">
-                        {itSupportServices.map((service, index) => (
-                        <div key={index} className="flex items-center gap-4 rounded-[55px] border border-[#E9E9E9] bg-white px-8 py-4">
-                             <div className="h-2 w-2 rounded-full bg-[#E11E24]" />
-                            <p className="font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">{service}</p>
-                        </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="flex flex-col justify-center rounded-[21px] bg-white p-8">
-                     <p className="mb-2 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">Outcome</p>
-                     <p className="mb-8 font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.38] text-black">
-                        Faster issue resolution, minimal downtime, and predictable IT operations.
-                     </p>
-                      <Link
-                        href="/contact"
-                        className="inline-flex w-fit items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
-                    >
-                        Let&apos;s Discuss Needs
-                        <svg
-                        width="41"
-                        height="41"
-                        viewBox="0 0 41 41"
-                        fill="none"
-                        className="h-[20px] w-[20px]"
-                        >
-                        <path
-                            d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                            stroke="black"
-                            strokeWidth="2"
-                        />
-                        </svg>
-                    </Link>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      {/* Service 2: Network & Infrastructure Monitoring */}
-      <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-            <h2 className="mb-6 font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-              Network & Infrastructure Monitoring
-            </h2>
-            <p className="mb-12 font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-              Stay ahead of outages and bottlenecks with continuous, AI-driven network monitoring.<br/>
-              We deliver complete visibility into your infrastructure through centralized dashboards and real-time alerts
-            </p>
-
-            <div className="mb-12 h-[476px] w-full rounded-[13px] bg-gray-200" /> {/* Placeholder */}
-
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                <div>
-                     <h3 className="mb-6 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                        Key Services
-                    </h3>
-                    <div className="space-y-4">
-                        {monitoringServices.map((service, index) => (
-                        <div key={index} className="flex items-center gap-4 rounded-[55px] border border-[#E9E9E9] bg-white px-8 py-4">
-                             <div className="h-2 w-2 rounded-full bg-[#E11E24]" />
-                            <p className="font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">{service}</p>
-                        </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="flex flex-col justify-center rounded-[21px] bg-white p-8">
-                     <p className="mb-2 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">Outcome</p>
-                     <p className="mb-8 font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-                        Early issue detection, improved uptime, and data-driven infrastructure insights.
-                     </p>
-                      <Link
-                        href="/contact"
-                        className="inline-flex w-fit items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
-                    >
-                        Let&apos;s Discuss Needs
-                        <svg
-                        width="41"
-                        height="41"
-                        viewBox="0 0 41 41"
-                        fill="none"
-                        className="h-[20px] w-[20px]"
-                        >
-                        <path
-                            d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                            stroke="black"
-                            strokeWidth="2"
-                        />
-                        </svg>
-                    </Link>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      {/* Service 3: IT Performance Optimization */}
-      <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1440px]">
-            <h2 className="mb-6 font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.22] text-black">
-              IT Performance Optimization
-            </h2>
-            <p className="mb-12 font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.26] text-black">
-              Transform your IT systems into performance powerhouses through strategic optimization.<br/>
-              We analyze workloads, configurations, and network flows to enhance speed, stability, and cost efficiency.
-            </p>
-
-            <div className="mb-12 h-[471px] w-full rounded-[13px] bg-gray-200" /> {/* Placeholder */}
-
-            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-                <div>
-                     <h3 className="mb-6 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">
-                        Key Services
-                    </h3>
-                    <div className="space-y-4">
-                        {optimizationServices.map((service, index) => (
-                        <div key={index} className="flex items-center gap-4 rounded-[55px] border border-[#E9E9E9] bg-white px-8 py-4">
-                             <div className="h-2 w-2 rounded-full bg-[#E11E24]" />
-                            <p className="font-['TASA_Orbiter'] text-[24px] font-semibold leading-[1.08] text-black">{service}</p>
-                        </div>
-                        ))}
-                    </div>
-                </div>
-                <div className="flex flex-col justify-center rounded-[21px] bg-white p-8">
-                     <p className="mb-2 font-['TASA_Orbiter'] text-[40px] font-semibold leading-[1.08] text-black">Outcome</p>
-                     <p className="mb-8 font-['TASA_Orbiter'] text-[32px] font-semibold leading-[1.27] text-black">
-                        Higher system efficiency, lower operational costs, and enhanced user experience.
-                     </p>
-                      <Link
-                        href="/contact"
-                        className="inline-flex w-fit items-center gap-3 rounded-[75px] border border-black/30 bg-white px-[29px] py-4 text-[15px] font-semibold uppercase tracking-[0.02em] text-black transition hover:bg-gray-100"
-                    >
-                        Let&apos;s Discuss Needs
-                        <svg
-                        width="41"
-                        height="41"
-                        viewBox="0 0 41 41"
-                        fill="none"
-                        className="h-[20px] w-[20px]"
-                        >
-                        <path
-                            d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                            stroke="black"
-                            strokeWidth="2"
-                        />
-                        </svg>
-                    </Link>
-                </div>
-            </div>
-        </div>
-      </section>
-
-      {/* Partners Section */}
-      <section className="bg-[#F8F8F8] px-6 py-12 md:px-12 lg:px-[72px]">
-         <div className="mx-auto max-w-[1440px] text-center">
-            <h3 className="mb-4 font-['Manrope'] text-[18px] font-medium leading-[1.36] uppercase text-black">
-                Partner Ecosystem
-            </h3>
-            <p className="mx-auto max-w-[1125px] font-['TASA_Orbiter'] text-[32px] font-bold leading-[1.375] text-black">
-                We work with industry-leading OEMs to deliver enterprise-grade solutions that meet the highest standards of quality, performance, and security.
-            </p>
-            {/* Partner Logos Placeholder */}
-            <div className="mt-12 h-[130px] w-full bg-gray-200 opacity-50" />
          </div>
       </section>
 
-       {/* FAQs Section */}
-       <section className="bg-[#F8F8F8] px-6 py-24 md:px-12 lg:px-[72px]">
-        <div className="mx-auto max-w-[1225px]">
-             <h2 className="mb-16 text-center font-['TASA_Orbiter'] text-[64px] font-semibold leading-[1.49] text-black">
+      {/* FAQs Section - Exact from Figma */}
+      <section
+        className="bg-white"
+        style={{
+          padding: "120px 0",
+        }}
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-[78px]">
+          <h2
+            className="font-['TASA_Orbiter'] text-black text-center mb-[80px]"
+            style={{
+              fontSize: "64px",
+              fontWeight: 600,
+              lineHeight: "1.494",
+              maxWidth: "1148px",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
                 FAQs – IT Support, Monitoring & Optimization Services
              </h2>
-             <div className="space-y-4">
+
+          <div className="space-y-[40px]">
                 {faqs.map((faq, index) => (
-                    <div key={index} className="rounded-[15px] bg-[#EFEFEF] p-6">
-                        <div className="flex items-center justify-between">
-                            <p className="font-['Manrope'] text-[20px] font-medium leading-[1.2] text-[#333333]">
+              <div
+                key={index}
+                className="bg-[#D7D7D7] rounded-[15px]"
+                style={{
+                  width: "1225px",
+                  height: faq.answer ? "120px" : "64px",
+                  padding: "20px",
+                }}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3
+                      className="font-['Manrope'] text-[#333333] mb-[16px]"
+                      style={{
+                        fontSize: "20px",
+                        fontWeight: 600,
+                        lineHeight: "1.2",
+                      }}
+                    >
                                 {faq.question}
-                            </p>
-                            <div className="h-6 w-6 rounded-full border border-black flex items-center justify-center text-xl">
-                                +
-                            </div>
-                        </div>
+                    </h3>
                         {faq.answer && (
-                            <p className="mt-4 font-['Manrope'] text-[16px] font-normal leading-[1.43] text-[#333333]">
+                      <p
+                        className="font-['Manrope'] text-[#333333]"
+                        style={{
+                          fontSize: "16px",
+                          fontWeight: 400,
+                          lineHeight: "1.4375",
+                        }}
+                      >
                                 {faq.answer}
                             </p>
                         )}
+                  </div>
+                  <button
+                    className="flex-shrink-0 ml-4"
+                    style={{
+                      width: "24px",
+                      height: "24px",
+                    }}
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M7.64 8.73L12 13.09L16.36 8.73"
+                        stroke="#333333"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
                     </div>
                 ))}
              </div>
         </div>
        </section>
 
+      {/* Our Partners Section */}
+      <Partners />
 
       {/* Contact Form */}
+      <div id="contact">
       <ContactForm />
+      </div>
 
       {/* Footer */}
       <Footer />
