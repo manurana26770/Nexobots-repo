@@ -625,12 +625,11 @@ export default function Home() {
                     <p className="mt-[31px] flex-1 font-['Manrope'] text-[15px] font-normal leading-[1.366] text-[#454545]">
                       {blog.excerpt}
                     </p>
-                    <Link
-                      href="/blog"
-                      className="mt-[45px] inline-flex h-[45px] w-[148px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white transition hover:bg-black/80"
+                    <div
+                      className="mt-[45px] inline-flex h-[45px] w-[148px] items-center justify-center rounded-[75px] border border-white/30 bg-black px-[25px] font-['Manrope'] text-[15px] font-semibold leading-[1.366] tracking-[0.02em] text-white"
                     >
                       Read More
-                    </Link>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -668,9 +667,8 @@ export default function Home() {
             </div>
 
             {/* Find Out More Button - positioned at x: 636, y: 299 */}
-            <Link
-              href="/industries"
-              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+            <div
+              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black"
               style={{
                 width: "253px",
                 height: "67px",
@@ -678,7 +676,6 @@ export default function Home() {
                 top: 299,
                 position: 'absolute',
                 padding: "20px 29px",
-                textDecoration: 'none'
               }}
             >
               <span
@@ -699,7 +696,7 @@ export default function Home() {
                 height={41}
                 className="h-[41px] w-[41px]"
               />
-            </Link>
+            </div>
 
             {/* Industry Cards Grid - positioned at x: 72, y: 394, gap: 36px */}
             <div 
