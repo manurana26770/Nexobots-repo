@@ -19,11 +19,11 @@ export function Navbar() {
   const handleNavigate = () => setIsMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[#E5E5E5] bg-white/95 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between px-6 py-6 md:px-12 lg:px-[72px]">
+    <header className="sticky top-0 z-50 bg-white mb-[13px]">
+      <div className="mx-auto relative flex h-[115px] max-w-[1440px] w-full items-center justify-between px-[72px] py-[36px]">
         <Link
           href="/"
-          className="flex items-center"
+          className="flex items-center flex-shrink-0 m-0"
           aria-label="Nexobots home"
           onClick={handleNavigate}
         >
@@ -36,16 +36,16 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-[24px] lg:flex absolute left-1/2 -translate-x-1/2" aria-label="Primary navigation">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
               onClick={handleNavigate}
-              className={`font-display text-[18px] font-semibold uppercase tracking-[0.08em] transition-colors duration-200 ${
+              className={`p-[10px] font-display text-[18px] font-bold capitalize break-words transition-colors duration-200 ${
                 link.isHighlighted
                   ? "text-[#333333]"
-                  : "text-[#1C1C1C]/80 hover:text-[#1C1C1C]"
+                  : "text-black opacity-80 hover:opacity-100"
               }`}
             >
               {link.label}
@@ -53,11 +53,11 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <Link
             href="/contact"
             onClick={handleNavigate}
-            className="hidden rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 font-display text-[14px] font-semibold uppercase tracking-[0.32em] text-[#E11E24] transition hover:bg-[#F7F7F7] lg:inline-flex"
+            className="hidden rounded-[10px] border border-[#C4C4C4] bg-white px-[26px] py-[12px] font-sans text-[14px] font-semibold text-[rgba(228,29,40,0.79)] break-words transition hover:bg-[#F7F7F7] lg:inline-flex items-center justify-center gap-[10px]"
           >
             Get a Free Quote
           </Link>
@@ -102,9 +102,7 @@ export function Navbar() {
                 key={link.label}
                 href={link.href}
                 onClick={handleNavigate}
-                className={`font-display text-base font-semibold uppercase tracking-[0.08em] transition ${
-                  link.isHighlighted ? "text-[#333333]" : "text-[#1C1C1C]"
-                }`}
+                className="font-display text-[#333333] text-[18px] font-bold capitalize break-words transition"
               >
                 {link.label}
               </Link>
@@ -112,7 +110,7 @@ export function Navbar() {
             <Link
               href="/contact"
               onClick={handleNavigate}
-              className="rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 text-[14px] font-semibold text-[rgba(228,29,40,0.79)]"
+              className="rounded-[10px] border border-[#C4C4C4] px-[26px] py-3 font-sans text-[14px] font-semibold text-[rgba(228,29,40,0.79)] break-words"
             >
               Get a Free Quote
             </Link>

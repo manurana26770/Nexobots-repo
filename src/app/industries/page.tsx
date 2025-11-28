@@ -267,7 +267,7 @@ export default function IndustriesPage() {
         />
         {/* Content */}
         <div className="relative z-10 flex h-full items-center">
-          <div className="mx-auto w-full max-w-[1440px] px-[117px]">
+          <div className="mx-auto w-full max-w-[1440px] px-[72px]">
             <h1
               className="font-['TASA_Orbiter'] text-white"
               style={{
@@ -319,7 +319,7 @@ export default function IndustriesPage() {
           padding: "71px 0",
         }}
       >
-        <div className="mx-auto w-full max-w-[1440px] px-[92px]">
+        <div className="mx-auto w-full max-w-[1440px] px-[72px]">
           <p
             className="font-['TASA_Orbiter'] text-left text-black"
             style={{
@@ -394,7 +394,6 @@ export default function IndustriesPage() {
                   style={{
                   width: "992px",
                     height: "474px",
-                  marginLeft: "-98px",
                   }}
                 >
                   <Image
@@ -546,8 +545,6 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
-              width: "1300px",
-              marginLeft: "68px",
             }}
           >
             {[
@@ -684,7 +681,6 @@ export default function IndustriesPage() {
                 style={{
                   width: "893px",
                   height: "474px",
-                  marginLeft: "-98px",
                 }}
               >
                 <Image
@@ -836,8 +832,6 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
-              width: "1300px",
-              marginLeft: "68px",
             }}
           >
             {[
@@ -1416,8 +1410,6 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
-              width: "1300px",
-              marginLeft: "68px",
             }}
           >
             {[
@@ -1706,8 +1698,6 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
-              width: "1300px",
-              marginLeft: "68px",
             }}
           >
             {[
@@ -1795,7 +1785,7 @@ export default function IndustriesPage() {
           backgroundColor: "#FFFFFF",
         }}
       >
-        <div className="mx-auto w-full max-w-[1440px] px-[146px] py-[112px] text-center">
+        <div className="mx-auto w-full max-w-[1440px] px-[72px] py-[112px] text-center">
           <h2
             className="font-['TASA_Orbiter'] text-black mx-auto mb-[37px]"
             style={{

@@ -95,11 +95,14 @@ export default function SolutionsPage() {
             {/* Left Column - Title */}
             <div>
               <h1
-                className="font-['TASA_Orbiter'] text-black text-[36px] md:text-[44px] lg:text-[50px]"
+                className="font-display text-black"
                 style={{
-                  fontWeight: 600,
-                  lineHeight: "1.32",
-                  maxWidth: "784px",
+                  fontSize: 36,
+                  fontWeight: 700,
+                  lineHeight: "1.2222222222222223em",
+                  maxWidth: "821px",
+                  textAlign: "left",
+                  fontFamily: "TASA Orbiter"
                 }}
               >
                 Comprehensive IT & Security Solutions for a Connected,
@@ -110,11 +113,14 @@ export default function SolutionsPage() {
             {/* Right Column - Description + CTA */}
             <div className="flex flex-col justify-center space-y-8">
               <p
-                className="font-['Manrope'] text-black text-[16px] md:text-[18px] lg:text-[20px]"
+                className="font-sans text-black"
                 style={{
-                  fontWeight: 600,
-                  lineHeight: "1.32",
-                  maxWidth: "646px",
+                  fontSize: 16,
+                  fontWeight: 400,
+                  lineHeight: "1.875em",
+                  maxWidth: "526px",
+                  textAlign: "left",
+                  fontFamily: "Manrope"
                 }}
               >
                 At Nexobots Technologies, we deliver end-to-end IT and security
@@ -194,20 +200,23 @@ export default function SolutionsPage() {
                   solution.imagePosition === "right" ? "lg:order-2" : ""
                 }`}
                 style={{
-                  width: "100%",
-                  maxWidth: "630px",
-                  height: "504px",
+                  width: "636px",
+                  height: "513px",
                 }}
               >
                 <Image
                   src={solution.image}
                   alt={solution.title}
                   fill
-                  className="rounded-[15px] object-cover"
+                  className="object-cover"
+                  style={{
+                    borderRadius: "20px"
+                  }}
                 />
                 <div
-                  className="absolute inset-0 rounded-[15px]"
+                  className="absolute inset-0"
                   style={{
+                    borderRadius: "20px",
                     background:
                       solution.id === "cctv-surveillance"
                         ? "rgba(0, 0, 0, 0.65)"
@@ -217,9 +226,9 @@ export default function SolutionsPage() {
                   }}
                 />
                 {/* Description Text Over Image */}
-                <div className="absolute bottom-6 left-6 right-6">
+                <div className="absolute bottom-0 left-0 right-0 p-6" style={{ borderRadius: "20px" }}>
                   <p
-                    className="font-['Manrope'] text-white whitespace-pre-line"
+                    className="font-['Manrope'] text-white whitespace-pre-line text-left"
                     style={{
                       fontSize: "24px",
                       fontWeight: 700,
@@ -284,7 +293,7 @@ export default function SolutionsPage() {
                 {/* Button */}
                 <Link
                   href={solution.id === "cctv-surveillance" ? "/solution-1" : solution.id === "it-infrastructure" ? "/solution-2" : solution.id === "biometric-access" ? "/solution-3" : solution.id === "smart-network" ? "/solution-4" : "#"}
-                  className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 transition-all hover:bg-gray-900"
+                  className="flex items-center justify-between rounded-[75px] border border-white/30 bg-black px-[25px] py-3 transition-all hover:bg-gray-900"
                   style={{
                     width: "348px",
                     height: "45px",
@@ -301,6 +310,14 @@ export default function SolutionsPage() {
                   >
                     {solution.buttonText}
                   </span>
+                  <Image
+                    src="/solution-button-arrow.svg"
+                    alt=""
+                    width={5}
+                    height={8}
+                    className="h-[8px] w-[5px]"
+                    aria-hidden="true"
+                  />
                 </Link>
               </div>
             </div>

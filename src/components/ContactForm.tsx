@@ -73,28 +73,27 @@ export function ContactForm() {
                 <div className="flex items-center gap-3 rounded-[6px] border border-[#CECECE] bg-[#F2F2F2] px-4 py-4">
                   <button
                     type="button"
-                    className="flex items-center gap-2 rounded-[7px] border border-[#CECECE] bg-white px-3 py-2 text-[14px] font-medium text-[#4C4C4C]"
+                    className="flex items-center gap-[4px] rounded-[7px] border border-[#CECECE] bg-[#F2F2F2] px-[12px] py-[10px] text-[14px] font-medium text-[#4C4C4C]"
                     aria-label="Country code selector"
                   >
                     <Image
-                      src="/globe.svg"
-                      alt=""
-                      width={16}
-                      height={16}
-                      className="h-4 w-4"
+                      src="/indian-flag.png"
+                      alt="Indian flag"
+                      width={21}
+                      height={21}
+                      className="h-[21px] w-[21px] object-cover rounded"
                       aria-hidden="true"
                     />
-                    +91
                     <svg
                       viewBox="0 0 12 7"
-                      className="h-2 w-3 text-[#4C4C4C]"
+                      className="h-[5px] w-[10px] text-[#4C4C4C]"
                       fill="none"
                       aria-hidden="true"
                     >
                       <path
                         d="M1 1L6 6L11 1"
                         stroke="currentColor"
-                        strokeWidth="1.5"
+                        strokeWidth="1"
                         strokeLinecap="round"
                         strokeLinejoin="round"
                       />

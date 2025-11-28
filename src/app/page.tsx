@@ -221,15 +221,17 @@ export default function Home() {
         id="hero"
         className="relative isolate overflow-hidden border-b border-border/60"
       >
-        <div className="absolute inset-0">
-          <Image
-            src="/hero-bg.png"
-            alt="Enterprise IT professionals reviewing infrastructure architecture"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+          >
+            <source src="/Homepage_light.mp4" type="video/mp4" />
+          </video>
         </div>
         <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
         <div
@@ -246,13 +248,13 @@ export default function Home() {
           style={{ gap: "24px" }}
         >
           <h1 
-            className="font-['TASA_Orbiter'] text-[40px] font-bold leading-[1.8] tracking-[0.02em] text-white uppercase"
+            className="font-['TASA_Orbiter'] text-[40px] font-bold leading-[1.8] tracking-[0.02em] text-white"
             style={{ 
               width: "1120px",
               maxWidth: "1120px"
             }}
           >
-            Empowering enterprises with end-to-end IT solutions
+            Empowering Enterprises With End-To-End IT Solutions
           </h1>
           <p 
             className="font-['Manrope'] text-[15px] font-normal leading-[1.366] tracking-[0.02em] text-white"
@@ -271,10 +273,10 @@ export default function Home() {
         <section id="solutions" className="bg-white px-6 py-[120px]">
           <div className="mx-auto w-full max-w-[1440px] space-y-[88px] text-black">
             <div className="space-y-4 text-center">
-              <p className="font-['TASA_Orbiter'] text-[18px] font-medium text-[#050505]">
+              <p className="font-['TASA_Orbiter'] text-[18px] font-medium text-[#050505] text-center">
                 Our Solutions
               </p>
-              <h2 className="font-display text-[36px] font-bold leading-[1.22] text-ink">
+              <h2 className="font-display text-[36px] font-bold leading-[1.22] text-ink text-center mx-auto" style={{ maxWidth: "1003px" }}>
                 Comprehensive IT and security infrastructure solutions designed for
                 performance, reliability, and scalability.
               </h2>
@@ -303,15 +305,15 @@ export default function Home() {
                       sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/55 to-black/95" />
-                    <div className="relative z-10 flex h-full flex-col justify-end p-8 text-left">
-                      {solution.blurb ? (
-                        <p className="mb-4 text-[15px] font-medium leading-[1.4] text-white/80">
-                          {solution.blurb}
-                        </p>
-                      ) : null}
+                    <div className="relative z-10 flex h-full flex-col justify-start p-8 text-left">
                       <h3 className="font-display text-[24px] font-bold uppercase tracking-[0.08em] text-white">
                         {solution.title}
                       </h3>
+                      {solution.blurb ? (
+                        <p className="mt-4 text-[15px] font-medium leading-[1.4] text-white/80">
+                          {solution.blurb}
+                        </p>
+                      ) : null}
                     </div>
                   </article>
                     </Link>
@@ -345,7 +347,16 @@ export default function Home() {
         <section id="about" className="bg-white px-6 py-[120px]">
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[64px] text-[#050505]">
             <div className="mx-auto max-w-[821px] text-center">
-              <p className="font-['TASA_Orbiter'] text-[18px] font-medium uppercase tracking-[0.45em] text-[#050505]">
+              <p 
+                style={{
+                  textAlign: 'center',
+                  color: 'black',
+                  fontSize: 18,
+                  fontFamily: 'TASA Orbiter',
+                  fontWeight: '500',
+                  wordWrap: 'break-word'
+                }}
+              >
                 Who We Are
               </p>
               <h2 className="mt-4 font-['TASA_Orbiter'] text-[36px] font-semibold leading-[1.35]">
@@ -355,7 +366,7 @@ export default function Home() {
             <div className="grid gap-6 lg:grid-cols-2">
               <div className="relative h-[513px] overflow-hidden rounded-[20px]">
                 <Image
-                  src="/about-hero.png"
+                  src="/about-hero-1eb271.png"
                   alt="Nexobots team collaboration"
                   fill
                   className="object-cover"
@@ -402,7 +413,16 @@ export default function Home() {
         >
           <div className="mx-auto w-full max-w-[1296px] space-y-[64px]">
             <div className="mx-auto max-w-[825px] space-y-4 text-center">
-              <p className="font-['TASA_Orbiter'] text-[18px] font-medium uppercase tracking-[0.45em] text-white">
+              <p 
+                style={{
+                  textAlign: 'center',
+                  color: 'white',
+                  fontSize: 18,
+                  fontFamily: 'TASA Orbiter',
+                  fontWeight: '500',
+                  wordWrap: 'break-word'
+                }}
+              >
                 Our Services
               </p>
               <h2 className="font-['TASA_Orbiter'] text-[36px] font-bold leading-[1.22] text-white">
@@ -428,25 +448,17 @@ export default function Home() {
                         </div>
                         <button
                           onClick={() => toggleService(service.id)}
-                          className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#434343] bg-white transition hover:bg-white/90 flex-shrink-0"
+                          className="flex h-[46px] w-[46px] items-center justify-center transition hover:opacity-90 flex-shrink-0"
                           aria-label={`Collapse ${service.title}`}
                           style={{ minWidth: "46px", minHeight: "46px" }}
                         >
-                          <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                            className="text-black"
-                            style={{ display: "block" }}
-                          >
-                            <path
-                              d="M0 7H14"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                            />
-                          </svg>
+                          <Image
+                            src="/collapse-icon.svg"
+                            alt=""
+                            width={47}
+                            height={47}
+                            className="h-[47px] w-[47px]"
+                          />
                         </button>
                       </div>
                         <div className="flex flex-col items-end gap-[12px] pb-6">
@@ -492,25 +504,17 @@ export default function Home() {
                         </div>
                         <button
                           onClick={() => toggleService(service.id)}
-                          className="flex h-[46px] w-[46px] items-center justify-center rounded-full border border-[#434343] bg-white transition hover:bg-white/90 flex-shrink-0"
+                          className="flex h-[46px] w-[46px] items-center justify-center transition hover:opacity-90 flex-shrink-0"
                           aria-label={`Expand ${service.title}`}
                           style={{ minWidth: "46px", minHeight: "46px" }}
                         >
-                          <svg
-                            width="14"
-                            height="14"
-                            viewBox="0 0 14 14"
-                            fill="none"
-                            className="text-black"
-                            style={{ display: "block" }}
-                          >
-                            <path
-                              d="M7 0V14M7 14L14 7M7 14L0 7"
-                              stroke="currentColor"
-                              strokeWidth="2"
-                              strokeLinecap="round"
-                            />
-                          </svg>
+                          <Image
+                            src="/expand-icon.svg"
+                            alt=""
+                            width={47}
+                            height={47}
+                            className="h-[47px] w-[47px]"
+                          />
                         </button>
                       </div>
                     )}
@@ -530,12 +534,23 @@ export default function Home() {
         {/* Partners Section */}
         <Partners />
 
-        <section id="blogs" className="bg-white py-[120px]" style={{ width: '100%', minHeight: '927px' }}>
+        <section id="blogs" className="bg-white pt-[40px] pb-[120px]" style={{ width: '100%', minHeight: '927px' }}>
           <style>{`
             .blog-scroll::-webkit-scrollbar {
               display: none;
+              width: 0;
+              height: 0;
             }
             .blog-scroll {
+              -ms-overflow-style: none;
+              scrollbar-width: none;
+            }
+            .blog-container::-webkit-scrollbar {
+              display: none;
+              width: 0;
+              height: 0;
+            }
+            .blog-container {
               -ms-overflow-style: none;
               scrollbar-width: none;
             }
@@ -563,11 +578,12 @@ export default function Home() {
 
             {/* Blog Cards - Horizontal Scroll - positioned at x: 75, y: 280, gap: 30px */}
             <div 
-              className="absolute overflow-x-auto overflow-y-visible"
+              className="absolute blog-container overflow-x-auto overflow-y-visible"
               style={{ 
                 left: "75px",
-                top: "300px",
-                right: "75px"
+                top: "280px",
+                width: "calc(674px * 2 + 30px)",
+                maxWidth: "calc(674px * 2 + 30px)"
               }}
             >
               <div 

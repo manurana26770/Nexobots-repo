@@ -20,7 +20,7 @@ export default function Partners() {
       `}</style>
       <section
         id="partners"
-        className="relative bg-white py-[120px]"
+        className="relative bg-white pt-[120px] pb-0"
         style={{ minHeight: "558px" }}
       >
         <div className="mx-auto w-full max-w-[1440px] px-6">
