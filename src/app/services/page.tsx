@@ -69,79 +69,105 @@ export default function ServicesPage() {
 
       {/* Hero Section */}
       <section
-        className="flex items-center justify-center px-6 md:px-12"
+        className="relative flex items-center justify-center px-6"
         style={{
-          minHeight: "723px",
+          minHeight: "721px",
           backgroundColor: "#F8F8F8",
         }}
       >
-        <div className="mx-auto w-full max-w-[1440px] py-16 md:py-24">
-          <div className="grid gap-12 lg:grid-cols-[784px_1fr]">
-            {/* Left Column - Title */}
-            <div>
-              <h1
-                className="font-['TASA_Orbiter'] text-black text-[36px] md:text-[44px] lg:text-[50px]"
-                style={{
-                  fontWeight: 600,
-                  lineHeight: "1.32",
-                  maxWidth: "784px",
-                }}
-              >
-                End-to-End IT Services That Power Connectivity, Security, and
-                Scalability
-              </h1>
-            </div>
+        <div 
+          className="relative mx-auto w-full max-w-[1440px]"
+          style={{
+            minHeight: "721px",
+          }}
+        >
+          {/* Title Text - Large Font Size (50px) - Separate Div */}
+          <div
+            className="absolute left-6 md:left-[99px] top-[79px]"
+            style={{
+              width: "calc(100% - 48px)",
+              maxWidth: "784px",
+            }}
+          >
+            <h1
+              className="font-display text-black"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontSize: "clamp(32px, 3.5vw, 50px)",
+                fontWeight: 600,
+                lineHeight: "1.32em",
+                textAlign: "left",
+                color: "#000000",
+              }}
+            >
+              End-to-End IT Services That Power Connectivity, Security, and
+              Scalability
+            </h1>
+          </div>
 
-            {/* Right Column - Description + CTA */}
-            <div className="flex flex-col justify-center space-y-8">
-              <p
-                className="font-['Manrope'] text-black text-[16px] md:text-[18px] lg:text-[20px]"
-                style={{
-                  fontWeight: 600,
-                  lineHeight: "1.32",
-                  maxWidth: "646px",
-                }}
-              >
-                At Nexobots Technologies, we deliver a complete suite of IT
-                services designed to help enterprises stay connected, secure, and
-                future-ready.
-                <br />
-                <br />
-                From infrastructure consulting and system integration to proactive
-                maintenance and cloud management, our expert-driven services ensure
-                that your technology investments deliver lasting value and
-                performance.
-              </p>
+          {/* Description Text - Smaller Font Size (20px) - Separate Div */}
+          <div
+            className="absolute left-6 md:left-[694px] top-[355px]"
+            style={{
+              width: "calc(100% - 48px)",
+              maxWidth: "646px",
+            }}
+          >
+            <p
+              className="font-display text-black whitespace-pre-line"
+              style={{
+                fontFamily: "TASA Orbiter",
+                fontSize: "clamp(16px, 1.4vw, 20px)",
+                fontWeight: 600,
+                lineHeight: "1.32em",
+                textAlign: "left",
+                color: "#000000",
+              }}
+            >
+              At Nexobots Technologies, we deliver a complete suite of IT
+              services designed to help enterprises stay connected, secure, and
+              future-ready.
 
-              <Link
-                href="/contact"
-                className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
+              From infrastructure consulting and system integration to proactive
+              maintenance and cloud management, our expert-driven services ensure
+              that your technology investments deliver lasting value and
+              performance.
+            </p>
+          </div>
+
+          {/* Button */}
+          <div
+            className="absolute left-6 md:left-[694px] top-[575px]"
+          >
+            <Link
+              href="/contact"
+              className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-900"
+              style={{
+                width: "253px",
+                height: "67px",
+                borderColor: "rgba(255, 255, 255, 0.3)",
+                borderWidth: "1px",
+              }}
+            >
+              <span
+                className="font-['Manrope'] text-white whitespace-nowrap"
                 style={{
-                  width: "253px",
-                  height: "67px",
-                  padding: "20px 29px",
+                  fontSize: "20px",
+                  fontWeight: 600,
+                  lineHeight: "1.366em",
+                  letterSpacing: "0.02em",
                 }}
               >
-                <span
-                  className="font-['Manrope'] text-white whitespace-nowrap"
-                  style={{
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    lineHeight: "1.366",
-                    letterSpacing: "0.02em",
-                  }}
-                >
-                  Talk to an Expert
-                </span>
-                <Image
-                  src="/find-out-more-arrow.svg"
-                  alt=""
-                  width={41}
-                  height={41}
-                  className="h-[41px] w-[41px]"
-                />
-              </Link>
-            </div>
+                Talk to an Expert
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
+                className="h-[41px] w-[41px]"
+              />
+            </Link>
           </div>
         </div>
       </section>
