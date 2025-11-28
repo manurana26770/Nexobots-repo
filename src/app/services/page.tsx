@@ -115,14 +115,15 @@ export default function ServicesPage() {
 
               <Link
                 href="/contact"
-                className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black px-8 py-4 transition-all hover:bg-gray-900"
+                className="flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
                 style={{
                   width: "253px",
                   height: "67px",
+                  padding: "20px 29px",
                 }}
               >
                 <span
-                  className="font-['Manrope'] text-white"
+                  className="font-['Manrope'] text-white whitespace-nowrap"
                   style={{
                     fontSize: "20px",
                     fontWeight: 600,

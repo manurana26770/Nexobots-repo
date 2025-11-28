@@ -143,7 +143,7 @@ export default function SolutionsPage() {
                 }}
               >
                 <span
-                  className="font-['Manrope'] text-white"
+                  className="font-['Manrope'] text-white whitespace-nowrap"
                   style={{
                     fontSize: "20px",
                     fontWeight: 600,

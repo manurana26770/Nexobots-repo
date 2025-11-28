@@ -671,47 +671,35 @@ export default function Home() {
             {/* Find Out More Button - positioned at x: 636, y: 299 */}
             <Link
               href="/industries"
+              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
               style={{
-                width: 168,
-                height: 45,
+                width: "253px",
+                height: "67px",
                 left: 636,
                 top: 299,
                 position: 'absolute',
-                background: 'black',
-                overflow: 'hidden',
-                borderRadius: 75,
-                border: '1px rgba(255, 255, 255, 0.30) solid',
-                cursor: 'pointer',
+                padding: "20px 29px",
                 textDecoration: 'none'
               }}
             >
-              <div
+              <span
+                className="font-['Manrope'] text-white whitespace-nowrap"
                 style={{
-                  width: 196,
-                  height: 22,
-                  left: 25,
-                  top: 12,
-                  position: 'absolute',
-                  color: 'white',
-                  fontSize: 15,
-                  fontFamily: 'Manrope',
+                  fontSize: "20px",
                   fontWeight: 600,
-                  letterSpacing: '0.3px',
-                  wordWrap: 'break-word',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px'
+                  lineHeight: "1.366",
+                  letterSpacing: "0.02em",
                 }}
               >
                 Find Out More
-                <Image
-                  src="/find-out-more-arrow.svg"
-                  alt=""
-                  width={20}
-                  height={20}
-                  className="h-5 w-5"
-                />
-              </div>
+              </span>
+              <Image
+                src="/find-out-more-arrow.svg"
+                alt=""
+                width={41}
+                height={41}
+                className="h-[41px] w-[41px]"
+              />
             </Link>
 
             {/* Industry Cards Grid - positioned at x: 72, y: 394, gap: 36px */}

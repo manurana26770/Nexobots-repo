@@ -70,18 +70,21 @@ export function ContactForm() {
                 <label htmlFor="phone" className={labelClasses}>
                   Phone Number
                 </label>
-                <div className="flex items-center gap-3 rounded-[6px] border border-[#CECECE] bg-[#F2F2F2] px-4 py-4">
+                <div className="flex items-center gap-3">
                   <button
                     type="button"
-                    className="flex items-center gap-[4px] rounded-[7px] border border-[#CECECE] bg-[#F2F2F2] px-[12px] py-[10px] text-[14px] font-medium text-[#4C4C4C]"
+                    className="flex items-center gap-[4px] rounded-[7px] border border-[#CECECE] bg-[#F2F2F2] px-[12px] py-[10px]"
                     aria-label="Country code selector"
+                    style={{
+                      height: "100%",
+                    }}
                   >
                     <Image
                       src="/indian-flag.png"
                       alt="Indian flag"
                       width={21}
                       height={21}
-                      className="h-[21px] w-[21px] object-cover rounded"
+                      className="h-[21px] w-[21px] object-cover rounded-full"
                       aria-hidden="true"
                     />
                     <svg
@@ -103,7 +106,7 @@ export function ContactForm() {
                     id="phone"
                     type="tel"
                     placeholder="Enter Phone Number"
-                    className="flex-1 border-none bg-transparent text-[14px] font-medium text-[#4C4C4C] placeholder:text-[#4C4C4C] focus:outline-none"
+                    className="flex-1 rounded-[6px] border border-[#CECECE] bg-[#F2F2F2] px-4 py-4 text-[14px] font-medium text-[#4C4C4C] placeholder:text-[#4C4C4C] focus:border-[#E11E24] focus:outline-none"
                   />
                 </div>
               </div>
@@ -136,23 +139,34 @@ export function ContactForm() {
 
               <button
                 type="submit"
-                className="inline-flex items-center gap-3 rounded-[75px] border border-[rgba(70,70,70,0.3)] bg-black px-6 py-[13px] text-[20px] font-light uppercase tracking-[0.02em] text-white transition hover:bg-gray-800"
+                className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-[rgba(70,70,70,0.3)] bg-black text-white transition hover:bg-black/90"
+                style={{
+                  width: "143px",
+                  height: "45px",
+                  padding: "13px 24px",
+                }}
               >
-                Submit
-                <svg
-                  width="41"
-                  height="41"
-                  viewBox="0 0 41 41"
-                  fill="none"
-                  className="h-[20px] w-[20px]"
-                  aria-hidden="true"
+                <span
+                  className="whitespace-nowrap"
+                  style={{
+                    fontFamily: "Manrope",
+                    fontSize: "20px",
+                    fontWeight: 300,
+                    lineHeight: "0.78em",
+                    letterSpacing: "0.02em",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  <path
-                    d="M20.5 0L20.5 41M20.5 41L41 20.5M20.5 41L0 20.5"
-                    stroke="white"
-                    strokeWidth="1.5"
-                  />
-                </svg>
+                  Submit
+                </span>
+                <Image
+                  src="/solution-button-arrow.svg"
+                  alt=""
+                  width={5}
+                  height={8}
+                  className="h-[8px] w-[5px]"
+                  aria-hidden="true"
+                />
               </button>
             </div>
           </form>

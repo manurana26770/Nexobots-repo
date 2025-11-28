@@ -190,15 +190,15 @@ export default function AboutPage() {
             </h1>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-white/10"
+              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
               style={{
-                width: "261px",
+                width: "253px",
                 height: "67px",
                 padding: "20px 29px",
               }}
             >
               <span
-                className="text-white"
+                className="text-white whitespace-nowrap"
                 style={{
                   fontFamily: "Manrope",
                   fontSize: "20px",
@@ -280,15 +280,15 @@ export default function AboutPage() {
           </div>
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-800"
+            className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
             style={{
-              width: "209px",
+              width: "253px",
               height: "67px",
               padding: "20px 29px",
             }}
           >
             <span
-              className="text-white"
+              className="text-white whitespace-nowrap"
               style={{
                 fontFamily: "Manrope",
                 fontSize: "20px",
@@ -597,18 +597,18 @@ export default function AboutPage() {
           <div className="text-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-gray-800"
+              className="inline-flex items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
               style={{
-                width: "155px",
-                height: "45px",
-                padding: "12px 24px",
+                width: "253px",
+                height: "67px",
+                padding: "20px 29px",
               }}
             >
               <span
-                className="text-white"
+                className="text-white whitespace-nowrap"
                 style={{
                   fontFamily: "Manrope",
-                  fontSize: "15px",
+                  fontSize: "20px",
                   fontWeight: 600,
                   lineHeight: "1.366",
                   letterSpacing: "0.02em",
@@ -621,7 +621,7 @@ export default function AboutPage() {
                 alt=""
                 width={41}
                 height={41}
-                className="h-[20px] w-[20px]"
+                className="h-[41px] w-[41px]"
               />
             </Link>
           </div>
