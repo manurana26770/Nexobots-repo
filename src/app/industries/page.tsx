@@ -241,7 +241,7 @@ export default function IndustriesPage() {
       <Navbar />
 
       {/* Hero Section - Exact from Figma */}
-      <section className="relative h-[804px] w-full overflow-hidden">
+      <Link href="#contact" className="block relative h-[804px] w-full overflow-hidden cursor-pointer">
         <div className="absolute inset-0">
           <Image
             src="/industries-hero-bg.png"
@@ -280,8 +280,7 @@ export default function IndustriesPage() {
             >
               Empowering Every Industry with Smart, Secure, and Scalable Technology
             </h1>
-            <Link
-              href="#contact"
+            <div
               className="inline-flex h-[67px] w-[253px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-black transition-all hover:bg-black/90"
               style={{
                 padding: "20px 29px",
@@ -305,10 +304,10 @@ export default function IndustriesPage() {
                 height={41}
                 className="h-[41px] w-[41px]"
               />
-            </Link>
+            </div>
           </div>
         </div>
-      </section>
+      </Link>
 
       {/* Below Hero Section - Left Aligned */}
       <section
@@ -394,6 +393,7 @@ export default function IndustriesPage() {
                   style={{
                   width: "992px",
                     height: "474px",
+                    marginLeft: "-98px",
                   }}
                 >
                   <Image
@@ -406,7 +406,7 @@ export default function IndustriesPage() {
                 </div>
 
               {/* How We Support You - Right side */}
-              <div className="flex-shrink-0" style={{ width: "442px" }}>
+              <div className="flex-shrink-0" style={{ width: "418px" }}>
                   <h3
                   className="font-['TASA_Orbiter'] text-black mb-[51px]"
                     style={{
@@ -419,12 +419,12 @@ export default function IndustriesPage() {
                 </h3>
 
                 {/* Services List with Progress Bar */}
-                <div className="relative mb-[45px]" style={{ width: "442px", height: "288px" }}>
+                <div className="relative mb-[45px]" style={{ width: "418px", height: "288px" }}>
                   {/* Background line */}
                   <div
                     className="absolute left-0 top-0"
                     style={{
-                      width: "5.29px",
+                      width: "5px",
                       height: "288px",
                       borderRadius: "55px",
                       backgroundColor: "#D9D9D9",
@@ -434,21 +434,21 @@ export default function IndustriesPage() {
                   <div
                     className="absolute left-0 top-0"
                     style={{
-                      width: "5.29px",
+                      width: "5px",
                       height: "61px",
                       borderRadius: "55px",
                       backgroundColor: "#E11E24",
                     }}
                   />
                   {/* Services */}
-                  <div className="space-y-[8px]" style={{ paddingLeft: "31.72px", paddingTop: "7.65px" }}>
+                  <div className="space-y-[8px]" style={{ paddingLeft: "30px", paddingTop: "7.65px" }}>
                     <p
                       className="font-['TASA_Orbiter'] text-black"
                       style={{
                         fontSize: "20px",
                         fontWeight: 600,
                         lineHeight: "1.08",
-                        width: "410.28px",
+                        width: "388px",
                         height: "80px",
                       }}
                     >
@@ -460,7 +460,7 @@ export default function IndustriesPage() {
                         fontSize: "16px",
                         fontWeight: 600,
                         lineHeight: "1.08",
-                        width: "410.28px",
+                        width: "388px",
                         height: "73px",
                       }}
                     >
@@ -472,7 +472,7 @@ export default function IndustriesPage() {
                         fontSize: "16px",
                         fontWeight: 600,
                         lineHeight: "1.08",
-                        width: "410.28px",
+                        width: "388px",
                         height: "73px",
                       }}
                     >
@@ -484,7 +484,7 @@ export default function IndustriesPage() {
                         fontSize: "16px",
                         fontWeight: 600,
                         lineHeight: "1.08",
-                        width: "410.28px",
+                        width: "388px",
                         height: "39px",
                       }}
                     >
@@ -535,16 +535,19 @@ export default function IndustriesPage() {
               color: "#000000",
               marginTop: "85px",
               marginBottom: "28px",
-                    }}
-                  >
-                    What We Deliver
-                  </h3>
+              marginLeft: "68px",
+            }}
+          >
+            What We Deliver
+          </h3>
 
           {/* Features Grid - Exact from Figma */}
           <div
             className="flex items-start"
             style={{
               gap: "18px",
+              marginLeft: "68px",
+              width: "1300px",
             }}
           >
             {[
@@ -679,8 +682,9 @@ export default function IndustriesPage() {
               <div
                 className="relative overflow-hidden rounded-[13px] flex-shrink-0"
                 style={{
-                  width: "893px",
+                  width: "992px",
                   height: "474px",
+                  marginLeft: "-98px",
                 }}
               >
                 <Image
@@ -688,7 +692,7 @@ export default function IndustriesPage() {
                   alt="Education & Research"
                   fill
                   className="object-cover"
-                  sizes="893px"
+                  sizes="992px"
                 />
               </div>
 
@@ -822,6 +826,7 @@ export default function IndustriesPage() {
               color: "#000000",
               marginTop: "85px",
               marginBottom: "28px",
+              marginLeft: "68px",
             }}
           >
             What We Deliver
@@ -832,6 +837,8 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
+              marginLeft: "68px",
+              width: "1300px",
             }}
           >
             {[
@@ -1110,20 +1117,21 @@ export default function IndustriesPage() {
               color: "#000000",
               marginTop: "85px",
               marginBottom: "28px",
+              marginLeft: "68px",
             }}
           >
             What We Deliver
           </h3>
 
           {/* Features Grid - Exact from Figma */}
-            <div 
+          <div
             className="flex items-start"
-              style={{
+            style={{
               gap: "18px",
-              width: "1300px",
               marginLeft: "68px",
-              }}
-            >
+              width: "1300px",
+            }}
+          >
             {[
               {
                 icon: "wifi",
@@ -1400,6 +1408,7 @@ export default function IndustriesPage() {
               color: "#000000",
               marginTop: "85px",
               marginBottom: "28px",
+              marginLeft: "68px",
             }}
           >
             What We Deliver
@@ -1410,6 +1419,8 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
+              marginLeft: "68px",
+              width: "1300px",
             }}
           >
             {[
@@ -1688,6 +1699,7 @@ export default function IndustriesPage() {
               color: "#000000",
               marginTop: "85px",
               marginBottom: "28px",
+              marginLeft: "68px",
             }}
           >
             What We Deliver
@@ -1698,6 +1710,8 @@ export default function IndustriesPage() {
             className="flex items-start"
             style={{
               gap: "18px",
+              marginLeft: "68px",
+              width: "1300px",
             }}
           >
             {[

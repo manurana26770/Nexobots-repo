@@ -344,7 +344,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="bg-white px-6 py-[120px]">
+        <Link href="/about" className="block bg-white px-6 py-[120px] cursor-pointer">
           <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[64px] text-[#050505]">
             <div className="mx-auto max-w-[821px] text-center">
               <p 
@@ -401,7 +401,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </Link>
 
         <section
           id="services"
@@ -534,7 +534,7 @@ export default function Home() {
         {/* Partners Section */}
         <Partners />
 
-        <section id="blogs" className="bg-white pt-[40px] pb-[120px]" style={{ width: '100%', minHeight: '927px' }}>
+        <Link href="/blog" id="blogs" className="block bg-white pt-[40px] pb-[120px] cursor-pointer" style={{ width: '100%', minHeight: '927px' }}>
           <style>{`
             .blog-scroll::-webkit-scrollbar {
               display: none;
@@ -635,10 +635,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </Link>
 
         {/* Our Industries Section */}
-        <section id="industries" className="relative bg-[#F8F8F8]" style={{ width: '100%', minHeight: '987px', overflow: 'hidden' }}>
+        <Link href="/industries" id="industries" className="block relative bg-[#F8F8F8] cursor-pointer" style={{ width: '100%', minHeight: '987px', overflow: 'hidden' }}>
           <div className="relative mx-auto w-full max-w-[1440px]" style={{ height: '987px' }}>
             {/* Heading Section - positioned at x: 337, y: 120 */}
             <div 
@@ -899,7 +899,7 @@ export default function Home() {
               })}
             </div>
           </div>
-        </section>
+        </Link>
 
         {/* <div className="mx-auto flex w-full max-w-[1296px] flex-col gap-24 px-6">
           <section

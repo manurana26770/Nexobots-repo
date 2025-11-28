@@ -79,7 +79,7 @@ From data centers and cloud solutions to backup and disaster recovery, we ensure
 
 export default function SolutionsPage() {
   return (
-    <div className="bg-shell text-ink">
+    <div className="bg-[#F8F8F8] text-black">
       <Navbar />
 
       {/* Hero Section */}
@@ -167,7 +167,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Solutions Sections */}
-      <div className="mx-auto max-w-[1440px] space-y-12 bg-white px-6 py-12 md:px-12">
+      <div className="mx-auto max-w-[1440px] space-y-12 px-6 py-12 md:px-12">
         {solutions.map((solution, index) => (
           <section
             key={solution.id}
