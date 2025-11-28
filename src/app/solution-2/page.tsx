@@ -182,7 +182,7 @@ export default function Solution2Page() {
           <div className="absolute" style={{ left: "142px", top: "489px" }}>
             <Link
               href="#contact"
-              className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
+              className="inline-flex h-[67px] w-[261px] items-center justify-between rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
               style={{
                 padding: "20px 29px",
               }}
@@ -199,11 +199,11 @@ export default function Solution2Page() {
                 Talk to an Expert
               </span>
               <Image
-                src="/find-out-more-arrow.svg"
+                src="/talk-to-expert-arrow.svg"
                 alt=""
-                width={41}
-                height={41}
-                className="h-[41px] w-[41px]"
+                width={9}
+                height={15}
+                className="h-[15px] w-[9px] flex-shrink-0"
               />
             </Link>
           </div>
@@ -436,7 +436,7 @@ export default function Solution2Page() {
 
       {/* Our Core Offerings Heading - Exact from Figma */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "120px 0",
         }}
@@ -458,7 +458,7 @@ export default function Solution2Page() {
 
       {/* Network Infrastructure Design & Implementation Section - Exact from Figma (node-id=1-2532) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -647,7 +647,7 @@ export default function Solution2Page() {
 
       {/* Firewall & Network Security Integration Section - Exact from Figma (node-id=1-2557) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -834,7 +834,7 @@ export default function Solution2Page() {
 
       {/* Network Operations Center (NOC) & Continuous Monitoring Section - Exact from Figma (node-id=1-2581) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -1021,7 +1021,7 @@ export default function Solution2Page() {
 
       {/* Managed IT & Lifecycle Services Section - Exact from Figma (node-id=1-2605) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -1208,7 +1208,7 @@ export default function Solution2Page() {
 
       {/* Network Optimization & Performance Enhancement Section - Exact from Figma (node-id=1-2629) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -1395,7 +1395,7 @@ export default function Solution2Page() {
 
       {/* Multi-Vendor Integration & Support Section - Exact from Figma (node-id=1-2653) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}

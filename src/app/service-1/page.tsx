@@ -153,7 +153,7 @@ export default function Service1Page() {
           <div className="absolute" style={{ left: "142px", top: "468px" }}>
               <Link
                 href="#contact"
-              className="inline-flex h-[67px] w-[261px] items-center justify-center gap-3 rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
+              className="inline-flex h-[67px] w-[261px] items-center justify-between rounded-[75px] border border-white/30 bg-white transition-all hover:bg-gray-100"
               style={{
                 padding: "20px 29px",
               }}
@@ -170,11 +170,11 @@ export default function Service1Page() {
                 Talk to an Expert
               </span>
               <Image
-                src="/find-out-more-arrow.svg"
+                src="/talk-to-expert-arrow.svg"
                 alt=""
-                width={41}
-                height={41}
-                className="h-[41px] w-[41px]"
+                width={9}
+                height={15}
+                className="h-[15px] w-[9px] flex-shrink-0"
                   />
               </Link>
           </div>
@@ -327,7 +327,7 @@ export default function Service1Page() {
 
       {/* Why IT Infrastructure Consulting & System Integration Matters Section - Exact from Figma (node-id=1-4501) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "120px 0",
         }}
@@ -415,7 +415,7 @@ export default function Service1Page() {
 
       {/* Our Core Offerings Heading - Exact from Figma */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "120px 0",
         }}
@@ -437,7 +437,7 @@ export default function Service1Page() {
 
       {/* IT Infrastructure Consulting Section - Exact from Figma (node-id=1-4509) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -625,7 +625,7 @@ export default function Service1Page() {
 
       {/* System Integration Services Section - Exact from Figma (node-id=1-4533) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -813,7 +813,7 @@ export default function Service1Page() {
 
       {/* Infrastructure Deployment & Modernization Section - Exact from Figma (node-id=1-4557) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "60px 78px",
         }}
@@ -1001,7 +1001,7 @@ export default function Service1Page() {
 
       {/* Why Choose Nexobots Section - Exact from Figma (node-id=1-4459) */}
       <section
-        className="bg-[#F8F8F8]"
+        className="bg-white"
         style={{
           padding: "120px 0",
         }}
@@ -1021,82 +1021,10 @@ export default function Service1Page() {
             Integration
           </h2>
 
-          {/* Benefit Cards Grid - 5 cards in a row - Exact from Figma */}
-          <div
-            className="flex items-start justify-center"
-            style={{
-              gap: "24px",
-            }}
-          >
+          {/* Benefit Cards Grid - Hidden */}
+          <div className="hidden">
             {benefitCards.map((card, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-[21px]"
-                style={{
-                  width: "241px",
-                  height: "242px",
-                  padding: index === 0 ? "20px 16px" : "20px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "20px",
-                }}
-              >
-                {/* Icon - Exact from Figma */}
-                <div
-                  className="flex-shrink-0"
-                  style={{
-                    width: "51px",
-                    height: "51px",
-                  }}
-                >
-                  <svg
-                    width="51"
-                    height="51"
-                    viewBox="0 0 51 51"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="2.01"
-                      y="2.01"
-                      width="46.97"
-                      height="46.97"
-                      rx="23.485"
-                      stroke="#E9E9E9"
-                      strokeWidth="1"
-                    />
-                    <circle
-                      cx="25.5"
-                      cy="25.5"
-                      r="10.625"
-                      stroke="#E11E24"
-                      strokeWidth="1"
-                    />
-                    <circle cx="25.5" cy="25.5" r="4.25" fill="#E11E24" />
-                  </svg>
-                </div>
-                <h3
-                  className="font-['Manrope'] text-black"
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: 700,
-                    lineHeight: "1.25",
-                  }}
-                >
-                  {card.title}
-                </h3>
-                <p
-                  className="font-['Manrope'] text-[#A4A4A4]"
-                  style={{
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    lineHeight: "1.462",
-                    width: index === 0 ? "206px" : index === 1 ? "209px" : "209px",
-                  }}
-                >
-                  {card.description}
-                </p>
-              </div>
+              <div key={index}></div>
             ))}
           </div>
         </div>
