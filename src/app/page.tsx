@@ -385,9 +385,8 @@ export default function Home() {
                   combine cutting-edge technology with expert implementation to build infrastructures that drive business
                   excellence.
                 </p>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 text-[15px] font-semibold uppercase tracking-[0.02em] text-white transition hover:bg-black/80"
+                <div
+                  className="inline-flex items-center gap-3 rounded-[75px] border border-white/30 bg-black px-6 py-3 text-[15px] font-semibold uppercase tracking-[0.02em] text-white"
                 >
                   About Us
                   <Image
@@ -397,7 +396,7 @@ export default function Home() {
                     height={20}
                     className="h-5 w-5"
                   />
-                </Link>
+                </div>
               </div>
             </div>
           </div>
