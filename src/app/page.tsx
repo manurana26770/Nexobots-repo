@@ -437,7 +437,10 @@ export default function Home() {
                   <div key={service.id} className="space-y-[12px]">
                     {isExpanded ? (
                       <div className="space-y-[12px]">
-                      <div className="flex w-full items-center justify-between px-6 py-6">
+                      <div 
+                        onClick={() => toggleService(service.id)}
+                        className="flex w-full items-center justify-between px-6 py-6 cursor-pointer"
+                      >
                         <div className="flex items-center gap-20">
                           <p className="font-['TASA_Orbiter'] text-[28px] font-semibold leading-[1.57] tracking-[0.02em] text-white">
                             {service.id}
@@ -446,10 +449,8 @@ export default function Home() {
                             {service.title}
                           </p>
                         </div>
-                        <button
-                          onClick={() => toggleService(service.id)}
+                        <div
                           className="flex h-[46px] w-[46px] items-center justify-center transition hover:opacity-90 flex-shrink-0"
-                          aria-label={`Collapse ${service.title}`}
                           style={{ minWidth: "46px", minHeight: "46px" }}
                         >
                           <Image
@@ -459,7 +460,7 @@ export default function Home() {
                             height={47}
                             className="h-[47px] w-[47px]"
                           />
-                        </button>
+                        </div>
                       </div>
                         <div className="flex flex-col items-end gap-[12px] pb-6">
                           <div className="flex w-full flex-col gap-[10px] px-6 pb-[10px] pt-[10px]">
@@ -493,7 +494,10 @@ export default function Home() {
                         </div>
                       </div>
                     ) : (
-                      <div className="flex w-full items-center justify-between px-6 py-6">
+                      <div 
+                        onClick={() => toggleService(service.id)}
+                        className="flex w-full items-center justify-between px-6 py-6 cursor-pointer"
+                      >
                         <div className="flex items-center gap-20">
                           <p className="font-['TASA_Orbiter'] text-[28px] font-semibold leading-[1.57] tracking-[0.02em] text-white/60">
                             {service.id}
@@ -502,10 +506,8 @@ export default function Home() {
                             {service.title}
                           </p>
                         </div>
-                        <button
-                          onClick={() => toggleService(service.id)}
+                        <div
                           className="flex h-[46px] w-[46px] items-center justify-center transition hover:opacity-90 flex-shrink-0"
-                          aria-label={`Expand ${service.title}`}
                           style={{ minWidth: "46px", minHeight: "46px" }}
                         >
                           <Image
@@ -515,7 +517,7 @@ export default function Home() {
                             height={47}
                             className="h-[47px] w-[47px]"
                           />
-                        </button>
+                        </div>
                       </div>
                     )}
                     {index < services.length - 1 ? (
