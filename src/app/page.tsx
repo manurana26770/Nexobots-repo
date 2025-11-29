@@ -577,14 +577,15 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* Blog Cards - Horizontal Scroll - positioned at x: 75, y: 280, gap: 30px */}
+            {/* Blog Cards - Horizontal Scroll with 2 visible, right card touches right edge */}
             <div 
               className="absolute blog-container overflow-x-auto overflow-y-visible"
               style={{ 
-                left: "75px",
+                left: "0",
+                right: "0",
                 top: "280px",
-                width: "calc(674px * 2 + 30px)",
-                maxWidth: "calc(674px * 2 + 30px)"
+                paddingLeft: "75px",
+                paddingRight: "0",
               }}
             >
               <div 
@@ -592,7 +593,9 @@ export default function Home() {
                 style={{ 
                   scrollSnapType: "x mandatory",
                   WebkitOverflowScrolling: "touch",
-                  scrollBehavior: "smooth"
+                  scrollBehavior: "smooth",
+                  width: "max-content",
+                  paddingRight: "70px"
                 }}
               >
                 {blogs.map((blog, index) => (
@@ -602,7 +605,8 @@ export default function Home() {
                     style={{ 
                       width: "674px", 
                       height: "527px",
-                      scrollSnapAlign: "start"
+                      scrollSnapAlign: "start",
+                      marginLeft: index === 0 ? "auto" : "0"
                     }}
                   >
                     <div className="relative h-[361px] w-full overflow-hidden rounded-[27px]">
@@ -1067,3 +1071,4 @@ export default function Home() {
     </div>
   );
 }
+
