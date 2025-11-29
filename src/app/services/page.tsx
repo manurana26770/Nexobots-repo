@@ -93,7 +93,7 @@ export default function ServicesPage() {
               className="font-display text-black"
               style={{
                 fontFamily: "TASA Orbiter",
-                fontSize: "clamp(32px, 3.5vw, 50px)",
+                fontSize: "clamp(32px, 3.5vw, 60px)",
                 fontWeight: 600,
                 lineHeight: "1.32em",
                 textAlign: "left",
